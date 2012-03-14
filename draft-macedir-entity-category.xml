@@ -4,7 +4,7 @@
 ]>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
 <rfc category="info" docName="draft-macedir-entity-attribute-00.xml"
-     ipr="pre5378Trust200902" iprExtract="codeExample">
+     ipr="pre5378Trust200902">
   <front>
     <!---->
 
@@ -55,15 +55,16 @@
     <section title="Example">
       <figure>
         <artwork><![CDATA[<EntityDescriptor entityID="https://foo.example.com">
-   <Extensions>
-       <EntityAttributes>
-          <Attribute NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-                     Name="http://macedir.org/entity-category">
-             <AttributeValue>urn:oid:4.7.1.1</AttributeValue>
-             <AttributeValue>https://federation.example.org/the-foo-services</AttributeValue>
-          </Attribute>
-       </EntityAttributes>
-   </Extensions>
+  <Extensions>
+    <EntityAttributes>
+      <Attribute 
+         NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+         Name="http://macedir.org/entity-category">
+        <AttributeValue>urn:oid:4.7.1.1</AttributeValue>
+        <AttributeValue>https://f.example.org/foo</AttributeValue>
+      </Attribute>
+    </EntityAttributes>
+  </Extensions>
 </EntityDescriptor>]]></artwork>
       </figure>
     </section>
@@ -106,7 +107,5 @@
     <references title="Normative References">
       <?rfc include='reference.RFC.2119.xml'?>
     </references>
-
-    <references title="Informative References"></references>
   </back>
 </rfc>
