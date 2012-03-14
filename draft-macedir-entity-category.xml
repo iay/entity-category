@@ -29,15 +29,24 @@
     <note title="Requirements Language">
       <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
       "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-      document are to be interpreted as described in <xref target="RFC2119">RFC 2119</xref>.</t>
+      document are to be interpreted as described in <xref
+      target="RFC2119">RFC 2119</xref>.</t>
     </note>
   </front>
 
   <middle>
-    <section title="Introduction">
+    <section title="Introduction and Motivation">
       <t>This document describes an attribute for use by the EntityAttribute
-      extension to SAML metadata. The attribute is used to denote the type or
-      category of the SAML entity.</t>
+      extension to SAML metadata (denoted "entity category attribute" below).
+      The entity category attribute is used to denote the type or category of
+      the SAML entity with wich the attribute is associated. </t>
+
+      <t>The category of an entity MAY be used to provision policy for release
+      of attributes from an Identity Provider but other uses is also possible.
+      This document only specifies syntax and semantics for the attribute, it
+      does not specify a controlled vocabulary for the attribute values. It is
+      expected that other specifications will provide management and discovery
+      of the values of the entity category attribute.</t>
     </section>
 
     <section title="Syntax">
@@ -45,11 +54,13 @@
       represented using an Attribute element with @NameFormat
       urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
       http://macedir.org/entity-category. The Entity Category attribute MAY
-      contain multiple AttributeValue elements.</t>
+      contain multiple AttributeValue elements. A single EntityAttributes
+      element MUST NOT contain multiple separate Attribute elements for this
+      attribute type.</t>
     </section>
 
     <section title="Semantics">
-      <t></t>
+      <t>TBD</t>
     </section>
 
     <section title="Example">
@@ -93,8 +104,6 @@
 
     <section anchor="IANA" title="IANA Considerations">
       <t>This memo includes no request to IANA.</t>
-
-      <t>None</t>
     </section>
 
     <section anchor="Security" title="Security Considerations">
