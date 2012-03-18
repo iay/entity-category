@@ -1,0 +1,672 @@
+
+
+
+Network Working Group                                       L. Johansson
+Internet-Draft                                                       NDN
+Intended status: Informational                            March 14, 2012
+Expires: September 15, 2012
+
+
+        The Entity Category SAML Entity Metadata Attribute Type
+                 draft-macedir-entity-attribute-00.xml
+
+Abstract
+
+   This document describes a SAML entity attribute which can be used to
+   assign a category semantics to an entity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012               [Page 1]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+Requirements Language
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
+   document are to be interpreted as described in RFC 2119 [RFC2119].
+
+Status of this Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at http://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on September 15, 2012.
+
+Copyright Notice
+
+   Copyright (c) 2012 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (http://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.  Code Components extracted from this document must
+   include Simplified BSD License text as described in Section 4.e of
+   the Trust Legal Provisions and are provided without warranty as
+   described in the Simplified BSD License.
+
+   This document may contain material from IETF Documents or IETF
+   Contributions published or made publicly available before November
+   10, 2008.  The person(s) controlling the copyright in some of this
+   material may not have granted the IETF Trust the right to allow
+   modifications of such material outside the IETF Standards Process.
+   Without obtaining an adequate license from the person(s) controlling
+   the copyright in such materials, this document may not be modified
+   outside the IETF Standards Process, and derivative works of it may
+   not be created outside the IETF Standards Process, except to format
+   it for publication as an RFC or to translate it into languages other
+
+
+
+Johansson              Expires September 15, 2012               [Page 2]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+   than English.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012               [Page 3]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+1.  Introduction and Motivation
+
+   This document describes an attribute for use by the EntityAttribute
+   extension to SAML metadata (denoted "entity category attribute"
+   below).  The entity category attribute is used to denote the type or
+   category of the SAML entity with wich the attribute is associated.
+
+   The category of an entity MAY be used to provision policy for release
+   of attributes from an Identity Provider but other uses is also
+   possible.  This document only specifies syntax and semantics for the
+   attribute, it does not specify a controlled vocabulary for the
+   attribute values.  It is expected that other specifications will
+   provide management and discovery of the values of the entity category
+   attribute.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012               [Page 4]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+2.  Syntax
+
+   When asserted in SAML metadata the entity category attribute MUST be
+   represented using an Attribute element with @NameFormat
+   urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
+   http://macedir.org/entity-category.  The Entity Category attribute
+   MAY contain multiple AttributeValue elements.  A single
+   EntityAttributes element MUST NOT contain multiple separate Attribute
+   elements for the same attribute type and instead such cases MUST be
+   represented as mutiple AttributeValue type.
+
+   The AttributeValue element MUST contain a URI.  The URI provides a
+   unique identifier of the entity category.  This document does not
+   specify how such values are discovered but future versions of this
+   specification may reference or establish a registry for such values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012               [Page 5]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+3.  Semantics
+
+   By associating an entity category attribute with a SAML metadata
+   entity the publisher of that metdata attests to the fact that
+   according to the publisher the SAML metadata entity has the
+   properties and semantics associated with each of the attribute
+   values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012               [Page 6]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+4.  Example
+   <EntityDescriptor entityID="https://foo.example.com">
+     <Extensions>
+       <EntityAttributes>
+         <Attribute
+            NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+            Name="http://macedir.org/entity-category">
+           <AttributeValue>urn:oid:4.7.1.1</AttributeValue>
+           <AttributeValue>https://f.example.org/foo</AttributeValue>
+         </Attribute>
+       </EntityAttributes>
+     </Extensions>
+   </EntityDescriptor>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012               [Page 7]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+5.  Acknowledgements
+
+   This work has been a collaborative effort within the REFEDS and MACE
+   Dir communitieis.  Special thanks to (in no order of appearance):
+
+   o  Bob 'RL' Morgan
+
+   o  Ken Klingenstien
+
+   o  Keith Hazelton
+
+   o  Steven Olshansky
+
+   o  Mikael Linden
+
+   o  Nicole Harris
+
+   o  Ian Young
+
+   o  Tom Scavo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012               [Page 8]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+6.  IANA Considerations
+
+   This memo includes no request to IANA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012               [Page 9]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+7.  Security Considerations
+
+   TBD - basically we need to talk about the importance of keeping FOP
+   control over the attribute here.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012              [Page 10]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+8.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119, March 1997.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012              [Page 11]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+Author's Address
+
+   Leif Johansson
+   NORDUNet
+
+   Email: leifj@sunet.se
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 15, 2012              [Page 12]
+

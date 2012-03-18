@@ -39,7 +39,7 @@
       <t>This document describes an attribute for use by the EntityAttribute
       extension to SAML metadata (denoted "entity category attribute" below).
       The entity category attribute is used to denote the type or category of
-      the SAML entity with wich the attribute is associated. </t>
+      the SAML entity with wich the attribute is associated.</t>
 
       <t>The category of an entity MAY be used to provision policy for release
       of attributes from an Identity Provider but other uses is also possible.
@@ -50,17 +50,26 @@
     </section>
 
     <section title="Syntax">
-      <t>When asserted in SAML metadata the Entity Category attribute MUST be
+      <t>When asserted in SAML metadata the entity category attribute MUST be
       represented using an Attribute element with @NameFormat
       urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
       http://macedir.org/entity-category. The Entity Category attribute MAY
       contain multiple AttributeValue elements. A single EntityAttributes
-      element MUST NOT contain multiple separate Attribute elements for this
-      attribute type.</t>
+      element MUST NOT contain multiple separate Attribute elements for the
+      same attribute type and instead such cases MUST be represented as
+      mutiple AttributeValue type.</t>
+
+      <t>The AttributeValue element MUST contain a URI. The URI provides a
+      unique identifier of the entity category. This document does not specify
+      how such values are discovered but future versions of this specification
+      may reference or establish a registry for such values.</t>
     </section>
 
     <section title="Semantics">
-      <t>TBD</t>
+      <t>By associating an entity category attribute with a SAML metadata
+      entity the publisher of that metdata attests to the fact that according
+      to the publisher the SAML metadata entity has the properties and
+      semantics associated with each of the attribute values.</t>
     </section>
 
     <section title="Example">
