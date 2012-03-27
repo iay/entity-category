@@ -7,4 +7,4 @@ all: draft-macedir-entity-category.txt draft-macedir-entity-category.html
 	xml2rfc $< $@
 
 clean:
-	rm *.html *.txt
+	rm *~
