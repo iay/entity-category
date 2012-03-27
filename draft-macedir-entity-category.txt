@@ -265,18 +265,74 @@ Internet-Draft               Entity Category                  March 2012
    assertions within EntityAttributes elements associated with entities
    (as opposed to with entity groups, where only Attribute values are
    permitted).  I'm not sure how we should incorporate this aspect of
-   the underlying specification.  The above wording hedges very
-   carefully around this.  Again, I think we need to get Scott's input
-   on this.]]
-
-
-
-
-
+   the underlying specification.  The above wording very carefully
+   allows this, but perhaps not very obviously.  If we did intent to
+   permit this, it has implications for the security section.  If we
+   intended to disallow this, we'd need to say so.  My personal guess is
+   that we might want to say that this is something you SHOULD NOT do,
+   as it's bound to cause interoperability problems vs. "light" entity
+   attribute implementations and of course anything that's being passed
+   from hand to hand a few times might find out just how brittle XML
 
 
 
 Johansson              Expires September 27, 2012               [Page 5]
+
+Internet-Draft               Entity Category                  March 2012
+
+
+   signatures are...  Again, I think we need to get Scott's input on
+   this.]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Johansson              Expires September 27, 2012               [Page 6]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -332,7 +388,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 6]
+Johansson              Expires September 27, 2012               [Page 7]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -388,7 +444,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 7]
+Johansson              Expires September 27, 2012               [Page 8]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -444,7 +500,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 8]
+Johansson              Expires September 27, 2012               [Page 9]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -500,7 +556,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 9]
+Johansson              Expires September 27, 2012              [Page 10]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -518,6 +574,11 @@ Internet-Draft               Entity Category                  March 2012
 
    o  The integrity of the metadata delivered to the relying party, as
       for example assured by a digital signature.
+
+   o  [[If we're allowing for an attribute statement inside a signed
+      SAML assertion inside EntityAttributes, as well as just Attribute
+      elements, then we'd want to say something here about taking that
+      signature into account.]]
 
    o  The procedures and policies of the immediate source of the
       metadata; in particular, any procedures the immediate source has
@@ -551,12 +612,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-
-
-
-
-
-Johansson              Expires September 27, 2012              [Page 10]
+Johansson              Expires September 27, 2012              [Page 11]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -612,7 +668,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012              [Page 11]
+Johansson              Expires September 27, 2012              [Page 12]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -668,5 +724,5 @@ Author's Address
 
 
 
-Johansson              Expires September 27, 2012              [Page 12]
+Johansson              Expires September 27, 2012              [Page 13]
 

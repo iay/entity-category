@@ -111,7 +111,14 @@
         assertions within EntityAttributes elements associated with entities (as opposed
         to with entity groups, where only Attribute values are permitted).  I'm not
         sure how we should incorporate this aspect of the underlying specification.  The above
-        wording hedges very carefully around this.  Again, I think we need to get Scott's
+        wording very carefully allows this, but perhaps not very obviously.
+        If we did intent to permit this, it has implications for the security section.
+        If we intended to disallow this, we'd need to say so.  My personal guess is that
+        we might want to say that this is something you SHOULD NOT do, as it's bound to
+        cause interoperability problems vs. "light" entity attribute implementations and
+        of course anything that's being passed from hand to hand a few times might find
+        out just how brittle XML signatures are...
+        Again, I think we need to get Scott's
         input on this.]]
       </t>
       
@@ -221,6 +228,11 @@
           <t>
             The integrity of the metadata delivered to the relying party, as for example
             assured by a digital signature.
+          </t>
+          <t>
+            [[If we're allowing for an attribute statement inside a signed SAML assertion inside
+            EntityAttributes, as well as just Attribute elements, then we'd want to say something
+            here about taking that signature into account.]]
           </t>
           <t>
             The procedures and policies of the immediate source of the metadata;
