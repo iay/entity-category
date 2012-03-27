@@ -3,8 +3,8 @@
 
 Network Working Group                                       L. Johansson
 Internet-Draft                                                       NDN
-Intended status: Informational                            March 14, 2012
-Expires: September 15, 2012
+Intended status: Informational                            March 26, 2012
+Expires: September 27, 2012
 
 
         The Entity Category SAML Entity Metadata Attribute Type
@@ -13,7 +13,7 @@ Expires: September 15, 2012
 Abstract
 
    This document describes a SAML entity attribute which can be used to
-   assign a category semantics to an entity.
+   assign category membership semantics to an entity.
 
 
 
@@ -52,7 +52,7 @@ Abstract
 
 
 
-Johansson              Expires September 15, 2012               [Page 1]
+Johansson              Expires September 27, 2012               [Page 1]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -78,7 +78,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 15, 2012.
+   This Internet-Draft will expire on September 27, 2012.
 
 Copyright Notice
 
@@ -108,7 +108,7 @@ Copyright Notice
 
 
 
-Johansson              Expires September 15, 2012               [Page 2]
+Johansson              Expires September 27, 2012               [Page 2]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -164,20 +164,20 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 15, 2012               [Page 3]
+Johansson              Expires September 27, 2012               [Page 3]
 
 Internet-Draft               Entity Category                  March 2012
 
 
 1.  Introduction and Motivation
 
-   This document describes an attribute for use by the EntityAttribute
+   This document describes an attribute for use with the EntityAttribute
    extension to SAML metadata (denoted "entity category attribute"
    below).  The entity category attribute is used to denote the type or
-   category of the SAML entity with wich the attribute is associated.
+   category of the SAML entity with which the attribute is associated.
 
    The category of an entity MAY be used to provision policy for release
-   of attributes from an Identity Provider but other uses is also
+   of attributes from an Identity Provider but other uses are also
    possible.  This document only specifies syntax and semantics for the
    attribute, it does not specify a controlled vocabulary for the
    attribute values.  It is expected that other specifications will
@@ -220,7 +220,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 15, 2012               [Page 4]
+Johansson              Expires September 27, 2012               [Page 4]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -230,13 +230,13 @@ Internet-Draft               Entity Category                  March 2012
    When asserted in SAML metadata the entity category attribute MUST be
    represented using an Attribute element with @NameFormat
    urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
-   http://macedir.org/entity-category.  The Entity Category attribute
+   http://macedir.org/entity-category.  The entity category attribute
    MAY contain multiple AttributeValue elements.  A single
    EntityAttributes element MUST NOT contain multiple separate Attribute
    elements for the same attribute type and instead such cases MUST be
-   represented as mutiple AttributeValue type.
+   represented as mutiple AttributeValue elements.
 
-   The AttributeValue element MUST contain a URI.  The URI provides a
+   Each AttributeValue element MUST contain a URI.  The URI provides a
    unique identifier of the entity category.  This document does not
    specify how such values are discovered but future versions of this
    specification may reference or establish a registry for such values.
@@ -276,7 +276,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 15, 2012               [Page 5]
+Johansson              Expires September 27, 2012               [Page 5]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -332,7 +332,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 15, 2012               [Page 6]
+Johansson              Expires September 27, 2012               [Page 6]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -388,19 +388,19 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 15, 2012               [Page 7]
+Johansson              Expires September 27, 2012               [Page 7]
 
 Internet-Draft               Entity Category                  March 2012
 
 
 5.  Acknowledgements
 
-   This work has been a collaborative effort within the REFEDS and MACE
-   Dir communitieis.  Special thanks to (in no order of appearance):
+   This work has been a collaborative effort within the REFEDS and MACE-
+   Dir communities.  Special thanks to (in no particular order):
 
-   o  Bob 'RL' Morgan
+   o  RL 'Bob' Morgan
 
-   o  Ken Klingenstien
+   o  Ken Klingenstein
 
    o  Keith Hazelton
 
@@ -410,7 +410,7 @@ Internet-Draft               Entity Category                  March 2012
 
    o  Nicole Harris
 
-   o  Ian Young
+   o  Ian A. Young
 
    o  Tom Scavo
 
@@ -444,7 +444,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 15, 2012               [Page 8]
+Johansson              Expires September 27, 2012               [Page 8]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -500,7 +500,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 15, 2012               [Page 9]
+Johansson              Expires September 27, 2012               [Page 9]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -556,7 +556,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 15, 2012              [Page 10]
+Johansson              Expires September 27, 2012              [Page 10]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -612,7 +612,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 15, 2012              [Page 11]
+Johansson              Expires September 27, 2012              [Page 11]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -668,5 +668,5 @@ Author's Address
 
 
 
-Johansson              Expires September 15, 2012              [Page 12]
+Johansson              Expires September 27, 2012              [Page 12]
 

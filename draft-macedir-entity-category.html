@@ -144,8 +144,8 @@
 <table summary="layout" width="66%" border="0" cellpadding="0" cellspacing="0"><tr><td><table summary="layout" width="100%" border="0" cellpadding="2" cellspacing="1">
 <tr><td class="header">Network Working Group</td><td class="header">L. Johansson</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">NDN</td></tr>
-<tr><td class="header">Intended status: Informational</td><td class="header">March 14, 2012</td></tr>
-<tr><td class="header">Expires: September 15, 2012</td><td class="header">&nbsp;</td></tr>
+<tr><td class="header">Intended status: Informational</td><td class="header">March 26, 2012</td></tr>
+<tr><td class="header">Expires: September 27, 2012</td><td class="header">&nbsp;</td></tr>
 </table></td></tr></table>
 <h1><br />The Entity Category SAML Entity Metadata
     Attribute Type<br />draft-macedir-entity-attribute-00.xml</h1>
@@ -153,7 +153,7 @@
 <h3>Abstract</h3>
 
 <p>This document describes a SAML entity attribute which can be used to
-      assign a category semantics to an entity.
+      assign category membership semantics to an entity.
 </p>
 <h3>Requirements Language</h3>
 
@@ -176,7 +176,7 @@ and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
 them other than as &ldquo;work in progress.&rdquo;</p>
 <p>
-This Internet-Draft will expire on September 15, 2012.</p>
+This Internet-Draft will expire on September 27, 2012.</p>
 
 <h3>Copyright Notice</h3>
 <p>
@@ -209,13 +209,13 @@ than English.</p>
 <a name="rfc.section.1"></a><h3>1.&nbsp;
 Introduction and Motivation</h3>
 
-<p>This document describes an attribute for use by the EntityAttribute
+<p>This document describes an attribute for use with the EntityAttribute
       extension to SAML metadata (denoted "entity category attribute" below).
       The entity category attribute is used to denote the type or category of
-      the SAML entity with wich the attribute is associated.
+      the SAML entity with which the attribute is associated.
 </p>
 <p>The category of an entity MAY be used to provision policy for release
-      of attributes from an Identity Provider but other uses is also possible.
+      of attributes from an Identity Provider but other uses are also possible.
       This document only specifies syntax and semantics for the attribute, it
       does not specify a controlled vocabulary for the attribute values. It is
       expected that other specifications will provide management and discovery
@@ -228,13 +228,13 @@ Syntax</h3>
 <p>When asserted in SAML metadata the entity category attribute MUST be
       represented using an Attribute element with @NameFormat
       urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
-      http://macedir.org/entity-category. The Entity Category attribute MAY
+      http://macedir.org/entity-category. The entity category attribute MAY
       contain multiple AttributeValue elements. A single EntityAttributes
       element MUST NOT contain multiple separate Attribute elements for the
       same attribute type and instead such cases MUST be represented as
-      mutiple AttributeValue type.
+      mutiple AttributeValue elements.
 </p>
-<p>The AttributeValue element MUST contain a URI. The URI provides a
+<p>Each AttributeValue element MUST contain a URI. The URI provides a
       unique identifier of the entity category. This document does not specify
       how such values are discovered but future versions of this specification
       may reference or establish a registry for such values.
@@ -267,12 +267,12 @@ Example</h3>
 <a name="rfc.section.5"></a><h3>5.&nbsp;
 Acknowledgements</h3>
 
-<p>This work has been a collaborative effort within the REFEDS and MACE
-      Dir communitieis. Special thanks to (in no order of appearance):</p>
+<p>This work has been a collaborative effort within the REFEDS and MACE-Dir
+        communities. Special thanks to (in no particular order):</p>
 <ul class="text">
-<li>Bob 'RL' Morgan
+<li>RL 'Bob' Morgan
 </li>
-<li>Ken Klingenstien
+<li>Ken Klingenstein
 </li>
 <li>Keith Hazelton
 </li>
@@ -282,7 +282,7 @@ Acknowledgements</h3>
 </li>
 <li>Nicole Harris
 </li>
-<li>Ian Young
+<li>Ian A. Young
 </li>
 <li>Tom Scavo
 </li>
