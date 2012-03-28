@@ -1,10 +1,11 @@
 
 
 
-Network Working Group                                  L. Johansson, Ed.
-Internet-Draft                                                       NDN
-Intended status: Informational                            March 26, 2012
-Expires: September 27, 2012
+Network Working Group                                           I. Young
+Internet-Draft                                                       UKf
+Intended status: Informational                         L. Johansson, Ed.
+Expires: September 29, 2012                                          NDN
+                                                          March 28, 2012
 
 
         The Entity Category SAML Entity Metadata Attribute Type
@@ -51,8 +52,7 @@ Abstract
 
 
 
-
-Johansson              Expires September 27, 2012               [Page 1]
+Young & Johansson      Expires September 29, 2012               [Page 1]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -78,7 +78,7 @@ Status of this Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 27, 2012.
+   This Internet-Draft will expire on September 29, 2012.
 
 Copyright Notice
 
@@ -108,7 +108,7 @@ Copyright Notice
 
 
 
-Johansson              Expires September 27, 2012               [Page 2]
+Young & Johansson      Expires September 29, 2012               [Page 2]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -164,7 +164,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 3]
+Young & Johansson      Expires September 29, 2012               [Page 3]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -220,7 +220,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 4]
+Young & Johansson      Expires September 29, 2012               [Page 4]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -276,7 +276,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 5]
+Young & Johansson      Expires September 29, 2012               [Page 5]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -332,7 +332,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 6]
+Young & Johansson      Expires September 29, 2012               [Page 6]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -388,7 +388,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 7]
+Young & Johansson      Expires September 29, 2012               [Page 7]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -444,7 +444,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 8]
+Young & Johansson      Expires September 29, 2012               [Page 8]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -500,7 +500,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012               [Page 9]
+Young & Johansson      Expires September 29, 2012               [Page 9]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -556,7 +556,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012              [Page 10]
+Young & Johansson      Expires September 29, 2012              [Page 10]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -612,7 +612,7 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012              [Page 11]
+Young & Johansson      Expires September 29, 2012              [Page 11]
 
 Internet-Draft               Entity Category                  March 2012
 
@@ -668,12 +668,18 @@ Internet-Draft               Entity Category                  March 2012
 
 
 
-Johansson              Expires September 27, 2012              [Page 12]
+Young & Johansson      Expires September 29, 2012              [Page 12]
 
 Internet-Draft               Entity Category                  March 2012
 
 
-Author's Address
+Authors' Addresses
+
+   Ian A. Young
+   UK Access Management Federation for Education and Research
+
+   Email: ian@iay.org.uk
+
 
    Leif Johansson (editor)
    NORDUNet
@@ -718,11 +724,5 @@ Author's Address
 
 
 
-
-
-
-
-
-
-Johansson              Expires September 27, 2012              [Page 13]
+Young & Johansson      Expires September 29, 2012              [Page 13]
 

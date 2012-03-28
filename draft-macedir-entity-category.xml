@@ -11,15 +11,21 @@
     <title abbrev="Entity Category">The Entity Category SAML Entity Metadata
     Attribute Type</title>
 
+    <author fullname="Ian A. Young" initials="I. A." surname="Young">
+      <organization abbrev="UKf">UK Access Management Federation for Education and Research</organization>
+      <address>
+        <email>ian@iay.org.uk</email>
+      </address>
+    </author>
+
     <author fullname="Leif Johansson" initials="L." surname="Johansson" role="editor">
       <organization abbrev="NDN">NORDUNet</organization>
-
       <address>
         <email>leifj@sunet.se</email>
       </address>
     </author>
 
-    <date day="26" month="March" year="2012" />
+    <date day="28" month="March" year="2012" />
 
     <abstract>
       <t>This document describes a SAML entity attribute which can be used to
