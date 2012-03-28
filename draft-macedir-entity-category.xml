@@ -11,15 +11,21 @@
     <title abbrev="Entity Category">The Entity Category SAML Entity Metadata
     Attribute Type</title>
 
-    <author fullname="Leif Johansson" initials="L." surname="Johansson">
-      <organization abbrev="NDN">NORDUNet</organization>
+    <author fullname="Ian A. Young" initials="I. A." surname="Young">
+      <organization abbrev="UKf">UK Access Management Federation for Education and Research</organization>
+      <address>
+        <email>ian@iay.org.uk</email>
+      </address>
+    </author>
 
+    <author fullname="Leif Johansson" initials="L." surname="Johansson" role="editor">
+      <organization abbrev="NDN">NORDUNet</organization>
       <address>
         <email>leifj@sunet.se</email>
       </address>
     </author>
 
-    <date day="26" month="March" year="2012" />
+    <date day="28" month="March" year="2012" />
 
     <abstract>
       <t>This document describes a SAML entity attribute which can be used to
@@ -36,40 +42,137 @@
 
   <middle>
     <section title="Introduction and Motivation">
-      <t>This document describes an attribute for use with the EntityAttribute
-      extension to SAML metadata (denoted "entity category attribute" below).
-      The entity category attribute is used to denote the type or category of
-      the SAML entity with which the attribute is associated.</t>
+      <t>
+        This document describes a SAML attribute, referred to here as the
+        "entity category attribute", values of which represent entity types
+        or categories. When used with the
+        <xref target="SAML2MetadataAttr">SAML V2.0 Metadata Extension for Entity Attributes</xref>
+        each such entity category attribute value represents a claim that the entity thus labelled
+        meets the requirements of, and is asserted to be a member of, the indicated category.
+      </t>
 
-      <t>The category of an entity MAY be used to provision policy for release
-      of attributes from an Identity Provider but other uses are also possible.
-      This document only specifies syntax and semantics for the attribute, it
-      does not specify a controlled vocabulary for the attribute values. It is
-      expected that other specifications will provide management and discovery
-      of the values of the entity category attribute.</t>
+      <t>
+        These category membership claims MAY be used by a relying party to provision policy
+        for release of attributes from an identity provider, to influence user interface decisions
+        such as those related to identity provider discovery, or for any other purpose.
+        In general, the intended uses of any claim of membership in a given category will
+        depend on the details of the category's definition, and will often be included as
+        part of that definition.
+      </t>
+      
+      <t>
+        Entity category attribute values are URIs, and this document does not specify a
+        controlled vocabulary.  Category URIs may therefore be defined by any appropriate
+        authority without any requirement for central registration.  It is anticipated that
+        other specifications may provide management and discovery mechanisms for entity category
+        attribute values.
+      </t>
     </section>
 
     <section title="Syntax">
-      <t>When asserted in SAML metadata the entity category attribute MUST be
-      represented using an Attribute element with @NameFormat
-      urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
-      http://macedir.org/entity-category. The entity category attribute MAY
-      contain multiple AttributeValue elements. A single EntityAttributes
-      element MUST NOT contain multiple separate Attribute elements for the
-      same attribute type and instead such cases MUST be represented as
-      mutiple AttributeValue elements.</t>
+      <t>
+        Entity category attribute values MUST be URIs.  It is RECOMMENDED that http:-scheme
+        or https:-scheme URLs are used, and further RECOMMENDED that each such value
+        resolves to a human-readable document defining the category.
+      </t>
+      
+      <t>
+        The entity category attribute MUST be encoded as a SAML 2.0 Attribute element
+        with @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
+        http://macedir.org/entity-category.
+      </t>
+      
+      <t>
+        A SAML entity is associated with one or more categories by including the
+        Attribute element described here in the entity's metadata through use of the
+        <xref target="SAML2MetadataAttr"/> metadata extension, in which the
+        Attribute element is contained within an mdattr:EntityAttributes
+        element directly contained within an md:Extensions element directly
+        contained within the entity's md:EntitiesDescriptor.
+        
+        The meaning of the entity category attribute is undefined by this specification if it
+        appears anywhere else within a metadata instance, or within any other XML document.
+      </t>
 
-      <t>Each AttributeValue element MUST contain a URI. The URI provides a
-      unique identifier of the entity category. This document does not specify
-      how such values are discovered but future versions of this specification
-      may reference or establish a registry for such values.</t>
+      <t>
+        [[Issue:  I removed the next paragraph because it seemed to me to
+        go much further in restricting the application of the underlying entity attributes
+        specification than is required for interoperability.  I see no evidence, for example,
+        that we aren't expecting anyone implementing <xref target="SAML2MetadataAttr"/>
+        to handle duplicate values, split across multiple Attribute elements.
+        I think I'd like to talk to
+        Scott about this before resolving this one.]]
+      </t>
+      <t>
+        [[Removed:
+        The entity category attribute MAY
+        contain multiple AttributeValue elements. A single EntityAttributes
+        element MUST NOT contain multiple separate Attribute elements for the
+        same attribute type and instead such cases MUST be represented as
+        multiple AttributeValue elements.]]
+      </t>
+
+      <t>
+        [[Issue: the <xref target="SAML2MetadataAttr"/> extension permits signed SAML
+        assertions within EntityAttributes elements associated with entities (as opposed
+        to with entity groups, where only Attribute values are permitted).  I'm not
+        sure how we should incorporate this aspect of the underlying specification.  The above
+        wording very carefully allows this, but perhaps not very obviously.
+        If we did intent to permit this, it has implications for the security section.
+        If we intended to disallow this, we'd need to say so.  My personal guess is that
+        we might want to say that this is something you SHOULD NOT do, as it's bound to
+        cause interoperability problems vs. "light" entity attribute implementations and
+        of course anything that's being passed from hand to hand a few times might find
+        out just how brittle XML signatures are...
+        Again, I think we need to get Scott's
+        input on this.]]
+      </t>
+      
     </section>
 
     <section title="Semantics">
-      <t>By associating an entity category attribute with a SAML metadata
-      entity the publisher of that metdata attests to the fact that according
-      to the publisher the SAML metadata entity has the properties and
-      semantics associated with each of the attribute values.</t>
+      <t>
+        The presence of the entity category attribute within an entity's entity attributes
+        represents a series of claims (one for each attribute value) that the entity is
+        a member of each named category.  The precise semantics of such a claim depend
+        on the definition of the category itself.
+      </t>
+      
+      <t>
+        The definition of the concept of a category is intentionally not addressed in this
+        document, in order to leave it as general as possible.  However, to be useful,
+        category definitions SHOULD include the following as appropriate:
+        <list style="symbols">
+          <t>
+            A definition of the authorities who may validly assert
+            membership in the category.  While membership in some categories may be
+            self-asserted informally by an entity's owner, others may need to be
+            validated by third parties such as the entity's home federation or other
+            registrar.
+          </t>
+          <t>
+            A set of criteria by which an entity's membership in the category can be
+            objectively assessed.
+          </t>
+          <t>
+            A definition of the processes by which valid authorities
+            may determine that an entity meets the category's membership criteria.
+          </t>
+          <t>
+            A description of the anticipated uses for category membership by relying parties.
+          </t>
+        </list>
+      </t>
+      
+      <t>
+        If significant changes are made to a category definition, the new version of
+        the category SHOULD be represented by a different category URI.
+      </t>
+      
+      <t>
+        Entity category attribute value URIs MUST be treated as opaque strings.
+      </t>
+      
     </section>
 
     <section title="Example">
@@ -85,6 +188,7 @@
       </Attribute>
     </EntityAttributes>
   </Extensions>
+  ...
 </EntityDescriptor>]]></artwork>
       </figure>
     </section>
@@ -116,14 +220,71 @@
     </section>
 
     <section anchor="Security" title="Security Considerations">
-      <t>TBD - basically we need to talk about the importance of keeping FOP
-      control over the attribute here.</t>
+      <t>
+        The presence of the entity category attribute within an entity's entity attributes
+        represents a series of claims (one for each attribute value) that the entity is
+        a member of the named categories.  Before accepting and acting on such claims, any
+        relying party needs to establish, at a level of assurance sufficient for the
+        intended use, a chain of trust concluding that the claim is justified.
+      </t>
+      
+      <t>
+        Some of the elements in such a chain of trust might include:
+        <list style="symbols">
+          <t>
+            The integrity of the metadata delivered to the relying party, as for example
+            assured by a digital signature.
+          </t>
+          <t>
+            [[If we're allowing for an attribute statement inside a signed SAML assertion inside
+            EntityAttributes, as well as just Attribute elements, then we'd want to say something
+            here about taking that signature into account.]]
+          </t>
+          <t>
+            The procedures and policies of the immediate source of the metadata;
+            in particular, any procedures the immediate source has with regard to aggregation
+            of metadata from other sources.
+          </t>
+          <t>
+            The policies and procedures implemented by agents along the publication path from
+            the original metadata registrar: this may be determined either by examination of
+            the published procedures of each agent in turn, or may be simplified if the
+            entity metadata includes publication path metadata as described in the
+            <xref target="SAML2MetadataDRI"/> extension.
+          </t>
+          <t>
+            The policies and procedures implemented by the original metadata registrar.
+          </t>
+          <t>
+            The definition of the category itself; in particular, any statements it makes about
+            whether membership of the category may be self-asserted, or may only be asserted
+            by particular authorities.
+          </t>
+        </list>
+      </t>
     </section>
   </middle>
 
   <back>
     <references title="Normative References">
       <?rfc include='reference.RFC.2119.xml'?>
+      <reference anchor="SAML2MetadataAttr"
+        target="http://wiki.oasis-open.org/security/SAML2MetadataAttr">
+        <front>
+          <title>SAML V2.0 Metadata Extension for Entity Attributes</title>
+          <author fullname="Scott Cantor" role="editor" initials="S." surname="Cantor"/>
+          <date day="3" month="August" year="2009"/>
+        </front>
+        <format type="PDF" target="http://docs.oasis-open.org/security/saml/Post2.0/sstc-metadata-attr-cs-01.pdf"/>
+      </reference>
+      <reference anchor="SAML2MetadataDRI"
+        target="http://wiki.oasis-open.org/security/SAML2MetadataDRI">
+        <front>
+          <title>SAML V2.0 Metadata Extensions for Registration and Publication Information Version 1.0</title>
+          <author surname="La Joie" initials="C." role="editor" fullname="Chad La Joie"/>
+          <date/>
+        </front>
+      </reference>
     </references>
   </back>
 </rfc>
