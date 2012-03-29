@@ -177,17 +177,18 @@
 
     <section title="Example">
       <figure>
-        <artwork><![CDATA[<EntityDescriptor entityID="https://foo.example.com">
-  <Extensions>
-    <EntityAttributes>
-      <Attribute 
+        <artwork><![CDATA[<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+      entityID="https://foo.example.com">
+  <md:Extensions>
+    <mdattr:EntityAttributes xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
+      <saml:Attribute xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
          NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
          Name="http://macedir.org/entity-category">
-        <AttributeValue>urn:oid:4.7.1.1</AttributeValue>
-        <AttributeValue>https://f.example.org/foo</AttributeValue>
-      </Attribute>
-    </EntityAttributes>
-  </Extensions>
+        <saml:AttributeValue>urn:oid:4.7.1.1</AttributeValue>
+        <saml:AttributeValue>https://f.example.org/foo</AttributeValue>
+      </saml:Attribute>
+    </mdattr:EntityAttributes>
+  </md:Extensions>
   ...
 </EntityDescriptor>]]></artwork>
       </figure>
