@@ -242,7 +242,7 @@ Internet-Draft               Entity Category                  March 2012
    use of the [SAML2MetadataAttr] metadata extension, in which the
    Attribute element is contained within an mdattr:EntityAttributes
    element directly contained within an md:Extensions element directly
-   contained within the entity's md:EntitiesDescriptor.  The meaning of
+   contained within the entity's md:EntityDescriptor.  The meaning of
    the entity category attribute is undefined by this specification if
    it appears anywhere else within a metadata instance, or within any
    other XML document.
@@ -394,20 +394,20 @@ Internet-Draft               Entity Category                  March 2012
 
 
 4.  Example
-   <EntityDescriptor entityID="https://foo.example.com">
-     <Extensions>
-       <EntityAttributes>
-         <Attribute
-            NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-            Name="http://macedir.org/entity-category">
-           <AttributeValue>urn:oid:4.7.1.1</AttributeValue>
-           <AttributeValue>https://f.example.org/foo</AttributeValue>
-         </Attribute>
-       </EntityAttributes>
-     </Extensions>
-     ...
-   </EntityDescriptor>
-
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+      entityID="https://foo.example.com">
+  <md:Extensions>
+    <mdattr:EntityAttributes xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
+      <saml:Attribute xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
+         NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+         Name="http://macedir.org/entity-category">
+        <saml:AttributeValue>urn:oid:4.7.1.1</AttributeValue>
+        <saml:AttributeValue>https://f.example.org/foo</AttributeValue>
+      </saml:Attribute>
+    </mdattr:EntityAttributes>
+  </md:Extensions>
+  ...
+</md:EntityDescriptor>
 
 
 

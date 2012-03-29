@@ -258,7 +258,7 @@ Syntax</h3>
         <a class='info' href='#SAML2MetadataAttr'>[SAML2MetadataAttr]<span> (</span><span class='info'>Cantor, S., Ed., &ldquo;SAML V2.0 Metadata Extension for Entity Attributes,&rdquo; August&nbsp;2009.</span><span>)</span></a> metadata extension, in which the
         Attribute element is contained within an mdattr:EntityAttributes
         element directly contained within an md:Extensions element directly
-        contained within the entity's md:EntitiesDescriptor.
+        contained within the entity's md:EntityDescriptor.
         
         The meaning of the entity category attribute is undefined by this specification if it
         appears anywhere else within a metadata instance, or within any other XML document.
@@ -353,19 +353,20 @@ Semantics</h3>
 <a name="anchor4"></a><br /><hr />
 <a name="rfc.section.4"></a><h3>4.&nbsp;
 Example</h3>
-<div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>&lt;EntityDescriptor entityID="https://foo.example.com"&gt;
-  &lt;Extensions&gt;
-    &lt;EntityAttributes&gt;
-      &lt;Attribute
+<div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>&lt;md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+      entityID="https://foo.example.com"&gt;
+  &lt;md:Extensions&gt;
+    &lt;mdattr:EntityAttributes xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute"&gt;
+      &lt;saml:Attribute xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
          NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
          Name="http://macedir.org/entity-category"&gt;
-        &lt;AttributeValue&gt;urn:oid:4.7.1.1&lt;/AttributeValue&gt;
-        &lt;AttributeValue&gt;https://f.example.org/foo&lt;/AttributeValue&gt;
-      &lt;/Attribute&gt;
-    &lt;/EntityAttributes&gt;
-  &lt;/Extensions&gt;
+        &lt;saml:AttributeValue&gt;urn:oid:4.7.1.1&lt;/AttributeValue&gt;
+        &lt;saml:AttributeValue&gt;https://f.example.org/foo&lt;/AttributeValue&gt;
+      &lt;/saml:Attribute&gt;
+    &lt;/mdattr:EntityAttributes&gt;
+  &lt;/md:Extensions&gt;
   ...
-&lt;/EntityDescriptor&gt;</pre></div>
+&lt;/md:EntityDescriptor&gt;</pre></div>
 <a name="Acknowledgements"></a><br /><hr />
 <a name="rfc.section.5"></a><h3>5.&nbsp;
 Acknowledgements</h3>
