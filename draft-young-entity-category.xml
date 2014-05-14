@@ -336,13 +336,13 @@
             by particular authorities.
           </t>
         </list>
-        <t>
-          Although entity category support attribute values will often be defined as self-asserted
-          claims by the containing entity, the provenance of the metadata remains
-          relevant to a relying party's decision to accept a claim of support as legitimate,
-          and the specific definition of a support claim will influence the assurance
-          required to act on it.
-        </t>
+      </t>
+      <t>
+        Although entity category support attribute values will often be defined as self-asserted
+        claims by the containing entity, the provenance of the metadata remains
+        relevant to a relying party's decision to accept a claim of support as legitimate,
+        and the specific definition of a support claim will influence the assurance
+        required to act on it.
       </t>
     </section>
   </middle>
