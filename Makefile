@@ -1,10 +1,10 @@
-all: draft-macedir-entity-category.txt draft-macedir-entity-category.html
+all: draft-young-entity-category.txt draft-young-entity-category.html
 
 %.txt: %.xml
-	xml2rfc $< $@
+	xml2rfc $< --text -o $@
 
 %.html: %.xml
-	xml2rfc $< $@
+	xml2rfc $< --html -o $@
 
 clean:
 	rm *~
