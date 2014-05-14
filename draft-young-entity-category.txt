@@ -78,10 +78,10 @@ Table of Contents
    6.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   8
      6.1.  Normative References  . . . . . . . . . . . . . . . . . .   8
      6.2.  Informative References  . . . . . . . . . . . . . . . . .   8
-   Appendix A.  Change Log (to be removed by RFC Editor before
-                publication) . . . . . . . . . . . . . . . . . . . .   8
-     A.1.  Since draft-macedir-entity-category . . . . . . . . . . .   8
-   Appendix B.  Acknowledgements . . . . . . . . . . . . . . . . . .   9
+   Appendix A.  Acknowledgements . . . . . . . . . . . . . . . . . .   8
+   Appendix B.  Change Log (to be removed by RFC Editor before
+                publication) . . . . . . . . . . . . . . . . . . . .   9
+     B.1.  Since draft-macedir-entity-category . . . . . . . . . . .   9
 
 1.  Introduction and Motivation
 
@@ -425,35 +425,7 @@ Internet-Draft               Entity Category                    May 2014
    [RFC4844]  Daigle, L. Internet Architecture Board, "The RFC Series
               and RFC Editor", RFC 4844, July 2007.
 
-Appendix A.  Change Log (to be removed by RFC Editor before publication)
-
-A.1.  Since draft-macedir-entity-category
-
-   Adopted as base for draft-young-entity-category-00.
-
-   Changed ipr from "pre5378Trust200902" to "trust200902" and submission
-   type from IETF to independent.
-
-   Designate Ian Young as editor for this version.  Set more general
-   affiliation.
-
-   Modernised reference to RFC 2119 [BCP14] and moved that reference to
-   the introduction.
-
-   Adjusted layout of examples so that they don't exceed the RFC
-   standard line length.
-
-
-
-Young, et al.           Expires November 15, 2014               [Page 8]
-
-Internet-Draft               Entity Category                    May 2014
-
-
-   Minor typographical nits but (intentionally) no substantive content
-   changes.
-
-Appendix B.  Acknowledgements
+Appendix A.  Acknowledgements
 
    This work has been a collaborative effort within the REFEDS and MACE-
    Dir communities.  Special thanks to (in no particular order):
@@ -470,9 +442,38 @@ Appendix B.  Acknowledgements
 
    o  Nicole Harris
 
+
+
+
+Young, et al.           Expires November 15, 2014               [Page 8]
+
+Internet-Draft               Entity Category                    May 2014
+
+
    o  Ian A. Young
 
    o  Tom Scavo
+
+Appendix B.  Change Log (to be removed by RFC Editor before publication)
+
+B.1.  Since draft-macedir-entity-category
+
+   Adopted as base for draft-young-entity-category-00.
+
+   Changed ipr from "pre5378Trust200902" to "trust200902" and submission
+   type from IETF to independent.
+
+   Designate Ian Young as editor for this version.  Set more general
+   affiliation.
+
+   Modernised reference to RFC 2119 [BCP14] and moved that reference to
+   the introduction.
+
+   Adjusted layout of examples so that they don't exceed the RFC
+   standard line length.
+
+   Minor typographical nits but (intentionally) no substantive content
+   changes.
 
 Authors' Addresses
 
@@ -492,7 +493,6 @@ Authors' Addresses
    Internet2
 
    EMail: cantor.2@osu.edu
-
 
 
 
