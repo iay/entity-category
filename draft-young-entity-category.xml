@@ -19,13 +19,14 @@
 
   <front>
 
-    <title abbrev="Entity Category">The Entity Category SAML Entity Metadata
-    Attribute Types</title>
+    <title abbrev="Entity Category">
+      The Entity Category SAML Entity Metadata Attribute Types
+    </title>
 
     <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
       <organization>Independent</organization>
       <address>
-          <email>ian@iay.org.uk</email>
+        <email>ian@iay.org.uk</email>
       </address>
     </author>
 
@@ -77,7 +78,7 @@
         depend on the details of the category's definition, and will often be included as
         part of that definition.
       </t>
-      
+
       <t>
         Entity category attribute values are URIs, and this document does not specify a
         controlled vocabulary.  Category URIs may therefore be defined by any appropriate
@@ -130,13 +131,13 @@
           or https:-scheme URLs are used, and further RECOMMENDED that each such value
           resolves to a human-readable document defining the category.
         </t>
-        
+
         <t>
           The entity category attribute MUST be encoded as a SAML 2.0 Attribute element
           with @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
           http://macedir.org/entity-category.
         </t>
-        
+
         <t>
           A SAML entity is associated with one or more categories by including the
           Attribute element described here in the entity's metadata through use of the
@@ -144,13 +145,13 @@
           Attribute element is contained within an mdattr:EntityAttributes
           element directly contained within an md:Extensions element directly
           contained within the entity's md:EntityDescriptor.
-          
+
           The meaning of the entity category attribute is undefined by this specification if it
           appears anywhere else within a metadata instance, or within any other XML document.
         </t>
-  
+
       </section>
-  
+
       <section title="Semantics">
         <t>
           The presence of the entity category attribute within an entity's entity attributes
@@ -158,7 +159,7 @@
           a member of each named category.  The precise semantics of such a claim depend
           on the definition of the category itself.
         </t>
-        
+
         <t>
           The definition of the concept of a category is intentionally not addressed in this
           document, in order to leave it as general as possible.  However, to be useful,
@@ -184,16 +185,16 @@
             </t>
           </list>
         </t>
-        
+
         <t>
           If significant changes are made to a category definition, the new version of
           the category SHOULD be represented by a different category URI.
         </t>
-        
+
         <t>
           Entity category attribute value URIs MUST be treated as opaque strings.
         </t>
-        
+
       </section>
 
       <section title="Entity Category Example">
@@ -228,13 +229,13 @@
           order to allow for multiple forms of support, participation, or interoperation
           with entities in the category.
         </t>
-        
+
         <t>
           The entity category support attribute MUST be encoded as a SAML 2.0 Attribute
           element with @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri and
           @Name http://macedir.org/entity-category-support.
         </t>
-        
+
         <t>
           A SAML entity claims a form of support for entities in one or more categories
           by including the Attribute element described here in the entity's metadata
@@ -242,14 +243,14 @@
           which the Attribute element is contained within an mdattr:EntityAttributes
           element directly contained within an md:Extensions element directly
           contained within the entity's md:EntityDescriptor.
-          
+
           The meaning of the entity category support attribute is undefined by this
           specification if it appears anywhere else within a metadata instance, or within
           any other XML document.
         </t>
-  
+
       </section>
-  
+
       <section title="Semantics">
         <t>
           The presence of the entity category support attribute within an entity's entity
@@ -259,7 +260,7 @@
           category support identifier itself.
           Category support claims will often be defined to be self-asserted.
         </t>
-        
+
         <t>
           The definition of the concept of "support" for a category is intentionally not
           addressed in this document, in order to leave it as general as possible.  It is
@@ -272,16 +273,16 @@
           A common case is expected to be the definition of a single support value
           whose URI is identical to that defined for the category itself. 
         </t>
-        
+
         <t>
           If significant changes are made to a category support definition, the new version
           SHOULD be represented by a different category support URI.
         </t>
-        
+
         <t>
           Entity category support attribute value URIs MUST be treated as opaque strings.
         </t>
-        
+
       </section>
 
       <section title="Entity Category Support Example">
@@ -342,7 +343,7 @@
         relying party needs to establish, at a level of assurance sufficient for the
         intended use, a chain of trust concluding that the claim is justified.
       </t>
-      
+
       <t>
         Some of the elements in such a chain of trust might include:
         <list style="symbols">
