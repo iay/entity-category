@@ -5,9 +5,7 @@ The main directory contains the editor's working copy of the draft in their XML
 and plain text forms.
 
 The current IETF process status for this document can be viewed at
-its tracker page:
-
-[draft-young-entity-category](https://datatracker.ietf.org/doc/draft-young-entity-category/)
+its [tracker page](https://datatracker.ietf.org/doc/draft-young-entity-category/).
 
 The editor's working copy may be fresher, but less stable, than the most
 recent formally submitted Internet Draft.
