@@ -23,6 +23,12 @@ This document is being standardised within the Research and Education Federation
 
 Discussion of the current draft will normally take place on the REFEDS mailing list.
 
+## Background
+
+The base document for the current specification was published at <http://macedir.org>.
+The present effort aims to republish that specification as an informational RFC within
+the REFEDS stream.
+
 ## Building the Documents
 
 The canonical source of the document is the `.xml` source file.  The
