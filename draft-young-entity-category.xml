@@ -23,14 +23,14 @@
     <title abbrev="Entity Category">The Entity Category SAML Entity Metadata
     Attribute Types</title>
 
-    <author fullname="Ian A. Young" initials="I. A." surname="Young">
-      <organization abbrev="UKf">UK Access Management Federation for Education and Research</organization>
+    <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
+      <organization>Independent</organization>
       <address>
-        <email>ian@iay.org.uk</email>
+          <email>ian@iay.org.uk</email>
       </address>
     </author>
 
-    <author fullname="Leif Johansson" initials="L." surname="Johansson" role="editor">
+    <author fullname="Leif Johansson" initials="L." surname="Johansson">
       <organization abbrev="NDN">NORDUNet</organization>
       <address>
         <email>leifj@sunet.se</email>
@@ -389,6 +389,10 @@
         <t>
           Changed ipr from "pre5378Trust200902" to "trust200902" and
           submission type from IETF to independent.
+        </t>
+        <t>
+          Designate Ian Young as editor for this version. Set more general
+          affiliation.
         </t>
         <t>
           Minor typographical nits but (intentionally) no substantive
