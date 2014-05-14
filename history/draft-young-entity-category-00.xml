@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?rfc toc="yes"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc compact="yes"?>
+<?rfc subcompact="no" ?>
+<?rfc linkmailto="no" ?>
+<?rfc editing="no" ?>
+<?rfc comments="yes" ?>
+<?rfc inline="yes"?>
+<?rfc rfcedstyle="yes"?>
+<?rfc-ext allow-markup-in-artwork="yes" ?>
+<?rfc-ext include-index="no" ?>
+
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+]>
+
+<rfc ipr="trust200902" docName="draft-young-entity-category-00" submissionType="independent" category="info">
+
+  <front>
+
+    <title abbrev="Entity Category">
+      The Entity Category SAML Entity Metadata Attribute Types
+    </title>
+
+    <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
+      <organization>Independent</organization>
+      <address>
+        <email>ian@iay.org.uk</email>
+      </address>
+    </author>
+
+    <author fullname="Leif Johansson" initials="L." surname="Johansson">
+      <organization abbrev="NDN">NORDUNet</organization>
+      <address>
+        <email>leifj@sunet.se</email>
+      </address>
+    </author>
+
+    <author fullname="Scott Cantor" initials="S." surname="Cantor">
+      <organization>Internet2</organization>
+      <address>
+        <email>cantor.2@osu.edu</email>
+      </address>
+    </author>
+
+    <date/>
+
+    <abstract>
+      <t>
+        This document describes a SAML entity attribute which can be used to
+        assign category membership semantics to an entity, and a second attribute
+        for use in claiming interoperation or support for entities in such categories.
+      </t>
+      <t>
+        This document is a product of the Research and Education Federations (REFEDS) Working Group process.
+      </t>
+    </abstract>
+
+  </front>
+
+  <middle>
+    <section title="Introduction and Motivation">
+      <t>
+        This document describes a SAML attribute, referred to here as the
+        "entity category attribute", values of which represent entity types
+        or categories. When used with the
+        <xref target="SAML2MetadataAttr">SAML V2.0 Metadata Extension for Entity Attributes</xref>
+        each such entity category attribute value represents a claim that the entity thus labelled
+        meets the requirements of, and is asserted to be a member of, the indicated category.
+      </t>
+
+      <t>
+        These category membership claims MAY be used by a relying party to provision policy
+        for release of attributes from an identity provider, to influence user interface decisions
+        such as those related to identity provider discovery, or for any other purpose.
+        In general, the intended uses of any claim of membership in a given category will
+        depend on the details of the category's definition, and will often be included as
+        part of that definition.
+      </t>
+
+      <t>
+        Entity category attribute values are URIs, and this document does not specify a
+        controlled vocabulary.  Category URIs may therefore be defined by any appropriate
+        authority without any requirement for central registration.  It is anticipated that
+        other specifications may provide management and discovery mechanisms for entity category
+        attribute values.
+      </t>
+
+      <t>
+        A second SAML attribute, referred to here as the "entity category support attribute",
+        contains URI values which represent claims by an entity to support and/or interoperate with
+        entities in a given category or categories. These values, defined in conjunction with
+        specific entity category values, provide entities in a category with the means to identify
+        peer entities that wish to interact with them in category-specific fashion.
+      </t>
+
+      <t>
+          The Research and Education Federations group (<xref target="REFEDS"/>)
+          is the voice that articulates the mutual needs of research and education
+          identity federations worldwide. It aims to represent the requirements of
+          research and education in the ever-growing space of access and identity
+          management.
+      </t>
+      <t>
+          From time to time REFEDS
+          will wish to publish a document in the Internet RFC series.  Such
+          documents will be published as part of the RFC Independent Submission
+          Stream <xref target="RFC4844"/>; however the REFEDS working group sign-off process will
+          have been followed for these documents, as described in
+          the <xref target="REFEDS.agreement">REFEDS Participant's Agreement</xref>.
+      </t>
+      <t>
+          This document is a product of the REFEDS Working Group process.
+      </t>
+
+      <section title="Notation and Conventions">
+        <t>
+          The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
+          "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in
+          <xref target="BCP14">RFC 2119</xref>.
+        </t>
+      </section>
+
+    </section>
+
+    <section title="Entity Category Attribute">
+      <section title="Syntax">
+        <t>
+          Entity category attribute values MUST be URIs.  It is RECOMMENDED that http:-scheme
+          or https:-scheme URLs are used, and further RECOMMENDED that each such value
+          resolves to a human-readable document defining the category.
+        </t>
+
+        <t>
+          The entity category attribute MUST be encoded as a SAML 2.0 Attribute element
+          with @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
+          http://macedir.org/entity-category.
+        </t>
+
+        <t>
+          A SAML entity is associated with one or more categories by including the
+          Attribute element described here in the entity's metadata through use of the
+          <xref target="SAML2MetadataAttr"/> metadata extension, in which the
+          Attribute element is contained within an mdattr:EntityAttributes
+          element directly contained within an md:Extensions element directly
+          contained within the entity's md:EntityDescriptor.
+
+          The meaning of the entity category attribute is undefined by this specification if it
+          appears anywhere else within a metadata instance, or within any other XML document.
+        </t>
+
+      </section>
+
+      <section title="Semantics">
+        <t>
+          The presence of the entity category attribute within an entity's entity attributes
+          represents a series of claims (one for each attribute value) that the entity is
+          a member of each named category.  The precise semantics of such a claim depend
+          on the definition of the category itself.
+        </t>
+
+        <t>
+          The definition of the concept of a category is intentionally not addressed in this
+          document, in order to leave it as general as possible.  However, to be useful,
+          category definitions SHOULD include the following as appropriate:
+          <list style="symbols">
+            <t>
+              A definition of the authorities who may validly assert
+              membership in the category.  While membership in some categories may be
+              self-asserted informally by an entity's owner, others may need to be
+              validated by third parties such as the entity's home federation or other
+              registrar.
+            </t>
+            <t>
+              A set of criteria by which an entity's membership in the category can be
+              objectively assessed.
+            </t>
+            <t>
+              A definition of the processes by which valid authorities
+              may determine that an entity meets the category's membership criteria.
+            </t>
+            <t>
+              A description of the anticipated uses for category membership by relying parties.
+            </t>
+          </list>
+        </t>
+
+        <t>
+          If significant changes are made to a category definition, the new version of
+          the category SHOULD be represented by a different category URI.
+        </t>
+
+        <t>
+          Entity category attribute value URIs MUST be treated as opaque strings.
+        </t>
+
+      </section>
+
+      <section title="Entity Category Example">
+        <figure>
+          <artwork><![CDATA[<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+  entityID="https://service.example.com/entity">
+  <md:Extensions>
+    <mdattr:EntityAttributes
+      xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
+      <Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
+        NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+        Name="http://macedir.org/entity-category">
+        <AttributeValue
+          >http://example.org/category/dog</AttributeValue>
+        <AttributeValue>urn:oid:1.3.6.1.4.1.21829</AttributeValue>
+      </Attribute>
+    </mdattr:EntityAttributes>
+  </md:Extensions>
+  ...
+</md:EntityDescriptor>]]></artwork>
+        </figure>
+      </section>
+    </section>
+
+    <section title="Entity Category Support Attribute">
+      <section title="Syntax">
+        <t>
+          Entity category support attribute values MUST be URIs.  It is RECOMMENDED that
+          http:-scheme or https:-scheme URLs are used, and further RECOMMENDED that each
+          such value resolves to a human-readable document defining the value's semantics.
+          A given entity category value MAY be associated with multiple support values in
+          order to allow for multiple forms of support, participation, or interoperation
+          with entities in the category.
+        </t>
+
+        <t>
+          The entity category support attribute MUST be encoded as a SAML 2.0 Attribute
+          element with @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri and
+          @Name http://macedir.org/entity-category-support.
+        </t>
+
+        <t>
+          A SAML entity claims a form of support for entities in one or more categories
+          by including the Attribute element described here in the entity's metadata
+          through use of the <xref target="SAML2MetadataAttr"/> metadata extension, in
+          which the Attribute element is contained within an mdattr:EntityAttributes
+          element directly contained within an md:Extensions element directly
+          contained within the entity's md:EntityDescriptor.
+
+          The meaning of the entity category support attribute is undefined by this
+          specification if it appears anywhere else within a metadata instance, or within
+          any other XML document.
+        </t>
+
+      </section>
+
+      <section title="Semantics">
+        <t>
+          The presence of the entity category support attribute within an entity's entity
+          attributes represents a series of claims (one for each attribute
+          value) that the entity supports peer entities in a category in a particular
+          fashion. The precise semantics of such a claim depend on the definition of the
+          category support identifier itself.
+          Category support claims will often be defined to be self-asserted.
+        </t>
+
+        <t>
+          The definition of the concept of "support" for a category is intentionally not
+          addressed in this document, in order to leave it as general as possible.  It is
+          assumed that entity category definitions MAY define one or more support values
+          signifying particular definitions for "support" by peers as motivated by use
+          cases arising from the definition of the category itself.
+        </t>
+
+        <t>
+          A common case is expected to be the definition of a single support value
+          whose URI is identical to that defined for the category itself. 
+        </t>
+
+        <t>
+          If significant changes are made to a category support definition, the new version
+          SHOULD be represented by a different category support URI.
+        </t>
+
+        <t>
+          Entity category support attribute value URIs MUST be treated as opaque strings.
+        </t>
+
+      </section>
+
+      <section title="Entity Category Support Example">
+        <figure>
+          <artwork><![CDATA[<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+  entityID="https://idp.example.edu/entity">
+  <md:Extensions>
+    <mdattr:EntityAttributes
+      xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
+      <Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
+        NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+        Name="http://macedir.org/entity-category-support">
+        <AttributeValue
+          >http://example.org/category/dog/basic</AttributeValue>
+        <AttributeValue
+          >http://example.org/category/dog/advanced</AttributeValue>
+        <AttributeValue>urn:oid:1.3.6.1.4.1.21829</AttributeValue>
+      </Attribute>
+    </mdattr:EntityAttributes>
+  </md:Extensions>
+  ...
+</md:EntityDescriptor>]]></artwork>
+        </figure>
+      </section>
+    </section>
+
+    <section anchor="IANA" title="IANA Considerations">
+      <t>This memo includes no request to IANA.</t>
+    </section>
+
+    <section anchor="Security" title="Security Considerations">
+      <t>
+        The presence of the entity category attribute within an entity's entity attributes
+        represents a series of claims (one for each attribute value) that the entity is
+        a member of the named categories.  Before accepting and acting on such claims, any
+        relying party needs to establish, at a level of assurance sufficient for the
+        intended use, a chain of trust concluding that the claim is justified.
+      </t>
+
+      <t>
+        Some of the elements in such a chain of trust might include:
+        <list style="symbols">
+          <t>
+            The integrity of the metadata delivered to the relying party, as for example
+            assured by a digital signature.
+          </t>
+          <t>
+            If the entity category attribute is carried within a signed assertion, the assertion
+            itself must be evaluated.
+          </t>
+          <t>
+            The procedures and policies of the immediate source of the metadata;
+            in particular, any procedures the immediate source has with regard to aggregation
+            of metadata from other sources.
+          </t>
+          <t>
+            The policies and procedures implemented by agents along the publication path from
+            the original metadata registrar: this may be determined either by examination of
+            the published procedures of each agent in turn, or may be simplified if the
+            entity metadata includes publication path metadata as described in the
+            <xref target="SAML2MetadataDRI"/> extension.
+          </t>
+          <t>
+            The policies and procedures implemented by the original metadata registrar.
+          </t>
+          <t>
+            The definition of the category itself; in particular, any statements it makes about
+            whether membership of the category may be self-asserted, or may only be asserted
+            by particular authorities.
+          </t>
+        </list>
+      </t>
+      <t>
+        Although entity category support attribute values will often be defined as self-asserted
+        claims by the containing entity, the provenance of the metadata remains
+        relevant to a relying party's decision to accept a claim of support as legitimate,
+        and the specific definition of a support claim will influence the assurance
+        required to act on it.
+      </t>
+    </section>
+  </middle>
+
+  <back>
+    <references title="Normative References">
+
+      <reference anchor="BCP14">
+        <front>
+          <title>
+            Key words for use in RFCs to Indicate Requirement Levels
+          </title>
+          <author initials="S." surname="Bradner" fullname="Scott Bradner">
+            <organization>Harvard University</organization>
+            <address><email>sob@harvard.edu</email></address>
+          </author>
+          <date month="March" year="1997"/>
+        </front>
+        <seriesInfo name="BCP" value="14"/>
+        <seriesInfo name="RFC" value="2119"/>
+        <format type='TXT' octets='4723' target='http://www.rfc-editor.org/rfc/rfc2119.txt' />
+        <format type='HTML' octets='17970' target='http://xml.resource.org/public/rfc/html/rfc2119.html' />
+        <format type='XML' octets='5777' target='http://xml.resource.org/public/rfc/xml/rfc2119.xml' />
+      </reference>
+
+      <reference anchor="SAML2MetadataAttr"
+        target="http://wiki.oasis-open.org/security/SAML2MetadataAttr">
+        <front>
+          <title>SAML V2.0 Metadata Extension for Entity Attributes</title>
+          <author fullname="Scott Cantor" role="editor" initials="S." surname="Cantor"/>
+          <date day="3" month="August" year="2009"/>
+        </front>
+        <format type="PDF" target="http://docs.oasis-open.org/security/saml/Post2.0/sstc-metadata-attr-cs-01.pdf"/>
+      </reference>
+      <reference anchor="SAML2MetadataDRI"
+        target="http://wiki.oasis-open.org/security/SAML2MetadataDRI">
+        <front>
+          <title>SAML V2.0 Metadata Extensions for Registration and Publication Information Version 1.0</title>
+          <author surname="La Joie" initials="C." role="editor" fullname="Chad La Joie"/>
+          <date day="3" month="April" year="2012"/>
+        </front>
+        <format type="PDF" target="http://docs.oasis-open.org/security/saml/Post2.0/saml-metadata-rpi/v1.0/cs01/saml-metadata-rpi-v1.0-cs01.pdf"/>
+      </reference>
+    </references>
+
+    <references title="Informative References">
+
+      <reference anchor='RFC4844'>
+        <front>
+          <title>The RFC Series and RFC Editor</title>
+          <author initials='L.' surname='Daigle' fullname='L. Daigle'>
+            <organization />
+          </author>
+          <author>
+            <organization>Internet Architecture Board</organization>
+          </author>
+          <date year='2007' month='July' />
+        </front>
+        <seriesInfo name='RFC' value='4844' />
+        <format type='TXT' octets='38752' target='http://www.rfc-editor.org/rfc/rfc4844.txt' />
+      </reference>
+
+      <reference anchor="REFEDS" target="http://www.refeds.org/">
+        <front>
+          <title>REFEDS Home Page</title>
+          <author>
+            <organization>Research and Education Federations</organization>
+          </author>
+          <date/>
+        </front>
+      </reference>
+
+      <reference anchor="REFEDS.agreement" target="https://refeds.org/about/about_agreement.html">
+        <front>
+          <title>REFEDS Participant's Agreement</title>
+          <author>
+            <organization>Research and Education Federations</organization>
+          </author>
+          <date/>
+        </front>
+      </reference>
+
+    </references>
+
+    <section anchor="Acknowledgements" title="Acknowledgements">
+      <t>
+        This work has been a collaborative effort within the REFEDS and MACE-Dir
+        communities. Special thanks to (in no particular order):
+        <list style="symbols">
+          <t>RL 'Bob' Morgan</t>
+
+          <t>Ken Klingenstein</t>
+
+          <t>Keith Hazelton</t>
+
+          <t>Steven Olshansky</t>
+
+          <t>Mikael Linden</t>
+
+          <t>Nicole Harris</t>
+
+          <t>Ian A. Young</t>
+
+          <t>Tom Scavo</t>
+        </list>
+      </t>
+    </section>
+
+    <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
+
+      <section title="Since draft-macedir-entity-category" anchor="changes.since.draft-macedir-entity-category">
+        <t>
+          Adopted as base for draft-young-entity-category-00.
+        </t>
+        <t>
+          Changed ipr from "pre5378Trust200902" to "trust200902" and
+          submission type from IETF to independent.
+        </t>
+        <t>
+          Designate Ian Young as editor for this version. Set more general
+          affiliation.
+        </t>
+        <t>
+          Modernised reference to <xref target="BCP14">RFC 2119</xref> and moved
+          that reference to the introduction.
+        </t>
+        <t>
+          Adjusted layout of examples so that they don't exceed the RFC standard
+          line length.
+        </t>
+        <t>
+          Minor typographical nits but (intentionally) no substantive
+          content changes.
+        </t>
+      </section>
+
+    </section>
+
+  </back>
+</rfc>
