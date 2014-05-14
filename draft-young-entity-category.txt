@@ -73,15 +73,15 @@ Table of Contents
      3.1.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . .   5
      3.2.  Semantics . . . . . . . . . . . . . . . . . . . . . . . .   5
      3.3.  Entity Category Support Example . . . . . . . . . . . . .   6
-   4.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .   7
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
-   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
-   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   8
-     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   8
-     7.2.  Informative References  . . . . . . . . . . . . . . . . .   8
+   4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
+   6.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   8
+     6.1.  Normative References  . . . . . . . . . . . . . . . . . .   8
+     6.2.  Informative References  . . . . . . . . . . . . . . . . .   8
    Appendix A.  Change Log (to be removed by RFC Editor before
-                publication) . . . . . . . . . . . . . . . . . . . .   9
-     A.1.  Since draft-macedir-entity-category . . . . . . . . . . .   9
+                publication) . . . . . . . . . . . . . . . . . . . .   8
+     A.1.  Since draft-macedir-entity-category . . . . . . . . . . .   8
+   Appendix B.  Acknowledgements . . . . . . . . . . . . . . . . . .   9
 
 1.  Introduction and Motivation
 
@@ -338,32 +338,11 @@ Young, et al.           Expires November 15, 2014               [Page 6]
 Internet-Draft               Entity Category                    May 2014
 
 
-4.  Acknowledgements
-
-   This work has been a collaborative effort within the REFEDS and MACE-
-   Dir communities.  Special thanks to (in no particular order):
-
-   o  RL 'Bob' Morgan
-
-   o  Ken Klingenstein
-
-   o  Keith Hazelton
-
-   o  Steven Olshansky
-
-   o  Mikael Linden
-
-   o  Nicole Harris
-
-   o  Ian A. Young
-
-   o  Tom Scavo
-
-5.  IANA Considerations
+4.  IANA Considerations
 
    This memo includes no request to IANA.
 
-6.  Security Considerations
+5.  Security Considerations
 
    The presence of the entity category attribute within an entity's
    entity attributes represents a series of claims (one for each
@@ -386,14 +365,6 @@ Internet-Draft               Entity Category                    May 2014
 
    o  The policies and procedures implemented by agents along the
       publication path from the original metadata registrar: this may be
-
-
-
-Young, et al.           Expires November 15, 2014               [Page 7]
-
-Internet-Draft               Entity Category                    May 2014
-
-
       determined either by examination of the published procedures of
       each agent in turn, or may be simplified if the entity metadata
       includes publication path metadata as described in the
@@ -414,9 +385,18 @@ Internet-Draft               Entity Category                    May 2014
    definition of a support claim will influence the assurance required
    to act on it.
 
-7.  References
 
-7.1.  Normative References
+
+
+
+Young, et al.           Expires November 15, 2014               [Page 7]
+
+Internet-Draft               Entity Category                    May 2014
+
+
+6.  References
+
+6.1.  Normative References
 
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels ", BCP 14, RFC 2119, March 1997.
@@ -432,7 +412,7 @@ Internet-Draft               Entity Category                    May 2014
               April 2012,
               <http://wiki.oasis-open.org/security/SAML2MetadataDRI>.
 
-7.2.  Informative References
+6.2.  Informative References
 
    [REFEDS.agreement]
               Research and Education Federations, "REFEDS Participant's
@@ -441,14 +421,6 @@ Internet-Draft               Entity Category                    May 2014
 
    [REFEDS]   Research and Education Federations, "REFEDS Home Page", ,
               <http://www.refeds.org/>.
-
-
-
-
-Young, et al.           Expires November 15, 2014               [Page 8]
-
-Internet-Draft               Entity Category                    May 2014
-
 
    [RFC4844]  Daigle, L. Internet Architecture Board, "The RFC Series
               and RFC Editor", RFC 4844, July 2007.
@@ -471,8 +443,36 @@ A.1.  Since draft-macedir-entity-category
    Adjusted layout of examples so that they don't exceed the RFC
    standard line length.
 
+
+
+Young, et al.           Expires November 15, 2014               [Page 8]
+
+Internet-Draft               Entity Category                    May 2014
+
+
    Minor typographical nits but (intentionally) no substantive content
    changes.
+
+Appendix B.  Acknowledgements
+
+   This work has been a collaborative effort within the REFEDS and MACE-
+   Dir communities.  Special thanks to (in no particular order):
+
+   o  RL 'Bob' Morgan
+
+   o  Ken Klingenstein
+
+   o  Keith Hazelton
+
+   o  Steven Olshansky
+
+   o  Mikael Linden
+
+   o  Nicole Harris
+
+   o  Ian A. Young
+
+   o  Tom Scavo
 
 Authors' Addresses
 

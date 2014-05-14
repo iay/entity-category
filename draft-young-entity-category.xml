@@ -309,28 +309,6 @@
       </section>
     </section>
 
-    <section anchor="Acknowledgements" title="Acknowledgements">
-      <t>This work has been a collaborative effort within the REFEDS and MACE-Dir
-        communities. Special thanks to (in no particular order):<list
-          style="symbols">
-          <t>RL 'Bob' Morgan</t>
-
-          <t>Ken Klingenstein</t>
-
-          <t>Keith Hazelton</t>
-
-          <t>Steven Olshansky</t>
-
-          <t>Mikael Linden</t>
-
-          <t>Nicole Harris</t>
-
-          <t>Ian A. Young</t>
-
-          <t>Tom Scavo</t>
-        </list></t>
-    </section>
-
     <section anchor="IANA" title="IANA Considerations">
       <t>This memo includes no request to IANA.</t>
     </section>
@@ -466,6 +444,30 @@
       </reference>
 
     </references>
+
+    <section anchor="Acknowledgements" title="Acknowledgements">
+      <t>
+        This work has been a collaborative effort within the REFEDS and MACE-Dir
+        communities. Special thanks to (in no particular order):
+        <list style="symbols">
+          <t>RL 'Bob' Morgan</t>
+
+          <t>Ken Klingenstein</t>
+
+          <t>Keith Hazelton</t>
+
+          <t>Steven Olshansky</t>
+
+          <t>Mikael Linden</t>
+
+          <t>Nicole Harris</t>
+
+          <t>Ian A. Young</t>
+
+          <t>Tom Scavo</t>
+        </list>
+      </t>
+    </section>
 
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
