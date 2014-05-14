@@ -1,7 +1,7 @@
 # Entity Category Specification
 
 This is the working area for the draft Entity Category specification.
-The main directory contains the editor's working copy of the draft in their XML
+The main directory contains the editor's working copy of the draft in its XML
 and plain text forms.
 
 The current IETF process status for this document can be viewed at
