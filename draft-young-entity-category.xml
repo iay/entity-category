@@ -199,14 +199,15 @@
       <section title="Entity Category Example">
         <figure>
           <artwork><![CDATA[<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
-      entityID="https://service.example.com/entity">
+  entityID="https://service.example.com/entity">
   <md:Extensions>
     <mdattr:EntityAttributes
-        xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
+      xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
       <Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
-          NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-          Name="http://macedir.org/entity-category">
-        <AttributeValue>http://example.org/category/dog</AttributeValue>
+        NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+        Name="http://macedir.org/entity-category">
+        <AttributeValue
+          >http://example.org/category/dog</AttributeValue>
         <AttributeValue>urn:oid:1.3.6.1.4.1.21829</AttributeValue>
       </Attribute>
     </mdattr:EntityAttributes>
@@ -286,15 +287,17 @@
       <section title="Entity Category Support Example">
         <figure>
           <artwork><![CDATA[<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
-      entityID="https://idp.example.edu/entity">
+  entityID="https://idp.example.edu/entity">
   <md:Extensions>
     <mdattr:EntityAttributes
-        xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
+      xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
       <Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
-          NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
-          Name="http://macedir.org/entity-category-support">
-        <AttributeValue>http://example.org/category/dog/basic</AttributeValue>
-        <AttributeValue>http://example.org/category/dog/advanced</AttributeValue>
+        NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+        Name="http://macedir.org/entity-category-support">
+        <AttributeValue
+          >http://example.org/category/dog/basic</AttributeValue>
+        <AttributeValue
+          >http://example.org/category/dog/advanced</AttributeValue>
         <AttributeValue>urn:oid:1.3.6.1.4.1.21829</AttributeValue>
       </Attribute>
     </mdattr:EntityAttributes>
@@ -480,6 +483,10 @@
         <t>
           Modernised reference to <xref target="BCP14">RFC 2119</xref> and moved
           that reference to the introduction.
+        </t>
+        <t>
+          Adjusted layout of examples so that they don't exceed the RFC standard
+          line length.
         </t>
         <t>
           Minor typographical nits but (intentionally) no substantive
