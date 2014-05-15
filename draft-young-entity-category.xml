@@ -60,7 +60,7 @@
   </front>
 
   <middle>
-    <section title="Introduction and Motivation">
+    <section title="Introduction">
       <t>
         This document describes a SAML attribute, referred to here as the
         "entity category attribute", values of which represent entity types
@@ -95,33 +95,35 @@
         peer entities that wish to interact with them in category-specific fashion.
       </t>
 
-      <t>
-        The Research and Education Federations group (<xref target="REFEDS"/>)
-        is the voice that articulates the mutual needs of research and education
-        identity federations worldwide. It aims to represent the requirements of
-        research and education in the ever-growing space of access and identity
-        management.
-      </t>
-      <t>
-        From time to time REFEDS
-        will wish to publish a document in the Internet RFC series.  Such
-        documents will be published as part of the RFC Independent Submission
-        Stream <xref target="RFC4844"/>; however the REFEDS working group sign-off process will
-        have been followed for these documents, as described in
-        the <xref target="REFEDS.agreement">REFEDS Participant's Agreement</xref>.
-      </t>
-      <t>
-        This document is a product of the REFEDS Working Group process.
-      </t>
-
-      <section title="Notation and Conventions">
+      <section title="REFEDS Document Process">
         <t>
-          The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
-          "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in
-          <xref target="BCP14">RFC 2119</xref>.
+          The Research and Education Federations group (<xref target="REFEDS"/>)
+          is the voice that articulates the mutual needs of research and education
+          identity federations worldwide. It aims to represent the requirements of
+          research and education in the ever-growing space of access and identity
+          management.
+        </t>
+        <t>
+          From time to time REFEDS
+          will wish to publish a document in the Internet RFC series.  Such
+          documents will be published as part of the RFC Independent Submission
+          Stream <xref target="RFC4844"/>; however the REFEDS working group sign-off process will
+          have been followed for these documents, as described in
+          the <xref target="REFEDS.agreement">REFEDS Participant's Agreement</xref>.
+        </t>
+        <t>
+          This document is a product of the REFEDS Working Group process.
         </t>
       </section>
 
+    </section>
+
+    <section title="Notation and Conventions">
+      <t>
+        The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT",
+        "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in
+        <xref target="BCP14">RFC 2119</xref>.
+      </t>
     </section>
 
     <section title="Entity Category Attribute">
@@ -475,6 +477,9 @@
         </t>
         <t>
           Remove authors from acknowledgements.
+        </t>
+        <t>
+          Reorganize some of the introductory boilerplate sections.
         </t>
       </section>
 
