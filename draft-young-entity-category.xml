@@ -31,14 +31,14 @@
     </author>
 
     <author fullname="Leif Johansson" initials="L." surname="Johansson">
-      <organization abbrev="NDN">NORDUNet</organization>
+      <organization>SUNET</organization>
       <address>
         <email>leifj@sunet.se</email>
       </address>
     </author>
 
     <author fullname="Scott Cantor" initials="S." surname="Cantor">
-      <organization>Internet2</organization>
+      <organization>Shibboleth Consortium</organization>
       <address>
         <email>cantor.2@osu.edu</email>
       </address>
@@ -472,6 +472,9 @@
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
       <section title="Since draft-young-entity-category-00" anchor="changes.since.draft-young-entity-category-00">
+        <t>
+          Update affiliations for Leif Johansson and Scott Cantor.
+        </t>
       </section>
 
       <section title="Since draft-macedir-entity-category" anchor="changes.since.draft-macedir-entity-category">
