@@ -440,7 +440,7 @@ Appendix A.  Acknowledgements
 
    o  Nicole Harris
 
-   o  Ian A. Young
+   o  Tom Scavo
 
 
 
@@ -450,13 +450,13 @@ Young, et al.           Expires November 16, 2014               [Page 8]
 Internet-Draft               Entity Category                    May 2014
 
 
-   o  Tom Scavo
-
 Appendix B.  Change Log (to be removed by RFC Editor before publication)
 
 B.1.  Since draft-young-entity-category-00
 
    Update affiliations for Leif Johansson and Scott Cantor.
+
+   Remove authors from acknowledgements.
 
 B.2.  Since draft-macedir-entity-category
 

@@ -462,8 +462,6 @@
 
           <t>Nicole Harris</t>
 
-          <t>Ian A. Young</t>
-
           <t>Tom Scavo</t>
         </list>
       </t>
@@ -474,6 +472,9 @@
       <section title="Since draft-young-entity-category-00" anchor="changes.since.draft-young-entity-category-00">
         <t>
           Update affiliations for Leif Johansson and Scott Cantor.
+        </t>
+        <t>
+          Remove authors from acknowledgements.
         </t>
       </section>
 
