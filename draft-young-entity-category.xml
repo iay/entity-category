@@ -20,7 +20,7 @@
   <front>
 
     <title abbrev="Entity Category">
-      The Entity Category SAML Entity Metadata Attribute Types
+      The Entity Category SAML Attribute Types
     </title>
 
     <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
@@ -472,6 +472,10 @@
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
       <section title="Since draft-young-entity-category-01" anchor="changes.since.draft-young-entity-category-01">
+        <t>
+          Simplify title from "The Entity Category SAML Entity Metadata Attribute Types" to
+          "The Entity Category SAML Attribute Types".
+        </t>
         <t>
           Grammar fix in Abstract.
         </t>

@@ -11,7 +11,7 @@ Expires: November 27, 2014                                         SUNET
                                                             May 26, 2014
 
 
-        The Entity Category SAML Entity Metadata Attribute Types
+                The Entity Category SAML Attribute Types
                      draft-young-entity-category-02
 
 Abstract
@@ -456,6 +456,9 @@ Appendix B.  Change Log (to be removed by RFC Editor before publication)
 
 B.1.  Since draft-young-entity-category-01
 
+   Simplify title from "The Entity Category SAML Entity Metadata
+   Attribute Types" to "The Entity Category SAML Attribute Types".
+
    Grammar fix in Abstract.
 
 B.2.  Since draft-young-entity-category-00
@@ -493,10 +496,7 @@ Authors' Addresses
    EMail: ian@iay.org.uk
 
 
-   Leif Johansson
-   SUNET
 
-   EMail: leifj@sunet.se
 
 
 
@@ -506,16 +506,16 @@ Young, et al.           Expires November 27, 2014               [Page 9]
 Internet-Draft               Entity Category                    May 2014
 
 
+   Leif Johansson
+   SUNET
+
+   EMail: leifj@sunet.se
+
+
    Scott Cantor
    Shibboleth Consortium
 
    EMail: cantor.2@osu.edu
-
-
-
-
-
-
 
 
 
