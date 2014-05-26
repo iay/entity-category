@@ -50,7 +50,7 @@
       <t>
         This document describes a SAML entity attribute which can be used to
         assign category membership semantics to an entity, and a second attribute
-        for use in claiming interoperation or support for entities in such categories.
+        for use in claiming interoperation with or support for entities in such categories.
       </t>
       <t>
         This document is a product of the Research and Education Federations (REFEDS) Working Group process.
@@ -472,6 +472,9 @@
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
       <section title="Since draft-young-entity-category-01" anchor="changes.since.draft-young-entity-category-01">
+        <t>
+          Grammar fix in Abstract.
+        </t>
       </section>
 
       <section title="Since draft-young-entity-category-00" anchor="changes.since.draft-young-entity-category-00">

@@ -18,8 +18,8 @@ Abstract
 
    This document describes a SAML entity attribute which can be used to
    assign category membership semantics to an entity, and a second
-   attribute for use in claiming interoperation or support for entities
-   in such categories.
+   attribute for use in claiming interoperation with or support for
+   entities in such categories.
 
    This document is a product of the Research and Education Federations
    (REFEDS) Working Group process.
@@ -456,6 +456,8 @@ Appendix B.  Change Log (to be removed by RFC Editor before publication)
 
 B.1.  Since draft-young-entity-category-01
 
+   Grammar fix in Abstract.
+
 B.2.  Since draft-young-entity-category-00
 
    Update affiliations for Leif Johansson and Scott Cantor.
@@ -495,8 +497,6 @@ Authors' Addresses
    SUNET
 
    EMail: leifj@sunet.se
-
-
 
 
 
