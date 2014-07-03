@@ -542,7 +542,7 @@ B.1.  Since draft-young-entity-category-01
        are necessarily being made "by" the entity itself.
 
    4.  Clarify that the origin of a category membership or support claim
-       may not always be the originating registrar.
+       may not always be the original registrar.
 
    Grammar fix in Abstract.
 
