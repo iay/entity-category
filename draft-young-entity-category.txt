@@ -5,10 +5,10 @@
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
 Intended status: Informational                              L. Johansson
-Expires: January 9, 2015                                           SUNET
+Expires: January 11, 2015                                          SUNET
                                                                S. Cantor
                                                    Shibboleth Consortium
-                                                            July 8, 2014
+                                                           July 10, 2014
 
 
                 The Entity Category SAML Attribute Types
@@ -39,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on January 9, 2015.
+   This Internet-Draft will expire on January 11, 2015.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Young, et al.            Expires January 9, 2015                [Page 1]
+Young, et al.           Expires January 11, 2015                [Page 1]
 
 Internet-Draft               Entity Category                   July 2014
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Young, et al.            Expires January 9, 2015                [Page 2]
+Young, et al.           Expires January 11, 2015                [Page 2]
 
 Internet-Draft               Entity Category                   July 2014
 
@@ -165,7 +165,7 @@ Internet-Draft               Entity Category                   July 2014
 
 
 
-Young, et al.            Expires January 9, 2015                [Page 3]
+Young, et al.           Expires January 11, 2015                [Page 3]
 
 Internet-Draft               Entity Category                   July 2014
 
@@ -221,7 +221,7 @@ Internet-Draft               Entity Category                   July 2014
 
 
 
-Young, et al.            Expires January 9, 2015                [Page 4]
+Young, et al.           Expires January 11, 2015                [Page 4]
 
 Internet-Draft               Entity Category                   July 2014
 
@@ -277,7 +277,7 @@ Internet-Draft               Entity Category                   July 2014
 
 
 
-Young, et al.            Expires January 9, 2015                [Page 5]
+Young, et al.           Expires January 11, 2015                [Page 5]
 
 Internet-Draft               Entity Category                   July 2014
 
@@ -333,7 +333,7 @@ Internet-Draft               Entity Category                   July 2014
 
 
 
-Young, et al.            Expires January 9, 2015                [Page 6]
+Young, et al.           Expires January 11, 2015                [Page 6]
 
 Internet-Draft               Entity Category                   July 2014
 
@@ -389,7 +389,7 @@ Internet-Draft               Entity Category                   July 2014
 
 
 
-Young, et al.            Expires January 9, 2015                [Page 7]
+Young, et al.           Expires January 11, 2015                [Page 7]
 
 Internet-Draft               Entity Category                   July 2014
 
@@ -400,10 +400,10 @@ Internet-Draft               Entity Category                   July 2014
    The conclusion that a claim of category membership or support is
    justified and should be acted upon may require a determination of the
    origin of the claim.  In many cases, such a claim will be included in
-   an entity's metadata by the originating metadata registrar on behalf
-   of the entity's owner.  However, any agent that is part of the chain
-   of custody between the originating registrar and the final relying
-   party MAY add, remove or transform claims according to local policy.
+   an entity's metadata by the original metadata registrar on behalf of
+   the entity's owner.  However, any agent that is part of the chain of
+   custody between the originating registrar and the final relying party
+   MAY add, remove or transform claims according to local policy.
 
 7.  References
 
@@ -445,7 +445,7 @@ Internet-Draft               Entity Category                   July 2014
 
 
 
-Young, et al.            Expires January 9, 2015                [Page 8]
+Young, et al.           Expires January 11, 2015                [Page 8]
 
 Internet-Draft               Entity Category                   July 2014
 
@@ -501,7 +501,7 @@ B.1.  Since draft-young-entity-category-01
 
 
 
-Young, et al.            Expires January 9, 2015                [Page 9]
+Young, et al.           Expires January 11, 2015                [Page 9]
 
 Internet-Draft               Entity Category                   July 2014
 
@@ -557,4 +557,4 @@ Authors' Addresses
 
 
 
-Young, et al.            Expires January 9, 2015               [Page 10]
+Young, et al.           Expires January 11, 2015               [Page 10]
