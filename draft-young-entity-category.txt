@@ -84,7 +84,7 @@ Table of Contents
                 publication) . . . . . . . . . . . . . . . . . . . .   9
      B.1.  Since draft-young-entity-category-01  . . . . . . . . . .   9
      B.2.  Since draft-young-entity-category-00  . . . . . . . . . .   9
-     B.3.  Since draft-macedir-entity-category . . . . . . . . . . .   9
+     B.3.  Since draft-macedir-entity-category . . . . . . . . . . .  10
 
 1.  Introduction
 
@@ -367,11 +367,15 @@ Internet-Draft               Entity Category                   July 2014
       publication path from the original metadata registrar: this may be
       determined either by examination of the published procedures of
       each agent in turn, or may be simplified if the entity metadata
-      includes publication path metadata as described in the
-      [SAML2MetadataRPI] extension.
+      includes publication path metadata in mdrpi:PublicationPath
+      elements as described in [SAML2MetadataRPI] section 2.3.1.
 
    o  The policies and procedures implemented by the original metadata
-      registrar.
+      registrar.  The registrar's identity may be known implicitly, or
+      may be determined from the entity metadata if it includes an
+      mdrpi:RegistrationInfo element and corresponding
+      @registrationAuthority attribute as described in
+      [SAML2MetadataRPI] section 2.1.1.
 
    o  The definition of the category itself; in particular, any
       statements it makes about whether membership of the category may
@@ -382,10 +386,6 @@ Internet-Draft               Entity Category                   July 2014
    defined as self-asserted claims by the containing entity, the
    provenance of the metadata remains relevant to a relying party's
    decision to accept a claim of support as legitimate, and the specific
-   definition of a support claim will influence the assurance required
-   to act on it.
-
-
 
 
 
@@ -393,6 +393,9 @@ Young, et al.            Expires January 9, 2015                [Page 7]
 
 Internet-Draft               Entity Category                   July 2014
 
+
+   definition of a support claim will influence the assurance required
+   to act on it.
 
 7.  References
 
@@ -424,9 +427,6 @@ Internet-Draft               Entity Category                   July 2014
 
    [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, July 2007.
-
-
-
 
 
 
@@ -478,6 +478,10 @@ B.1.  Since draft-young-entity-category-01
    1.  Simplify title from "The Entity Category SAML Entity Metadata
        Attribute Types" to "The Entity Category SAML Attribute Types".
 
+   2.  Clarify the use of [SAML2MetadataRPI] in Section 6 by indicating
+       the elements and attributes to be used, and the sections of
+       [SAML2MetadataRPI] in which they are defined.
+
    Grammar fix in Abstract.
 
    Change the reference anchor for the SAML [SAML2MetadataRPI]
@@ -492,12 +496,8 @@ B.2.  Since draft-young-entity-category-00
 
    Reorganize some of the introductory boilerplate sections.
 
-B.3.  Since draft-macedir-entity-category
 
-   Adopted as base for draft-young-entity-category-00.
 
-   Changed ipr from "pre5378Trust200902" to "trust200902" and submission
-   type from IETF to independent.
 
 
 
@@ -505,6 +505,13 @@ Young, et al.            Expires January 9, 2015                [Page 9]
 
 Internet-Draft               Entity Category                   July 2014
 
+
+B.3.  Since draft-macedir-entity-category
+
+   Adopted as base for draft-young-entity-category-00.
+
+   Changed ipr from "pre5378Trust200902" to "trust200902" and submission
+   type from IETF to independent.
 
    Designate Ian Young as editor for this version.  Set more general
    affiliation.
@@ -536,13 +543,6 @@ Authors' Addresses
    Shibboleth Consortium
 
    EMail: cantor.2@osu.edu
-
-
-
-
-
-
-
 
 
 

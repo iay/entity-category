@@ -344,11 +344,16 @@
             The policies and procedures implemented by agents along the publication path from
             the original metadata registrar: this may be determined either by examination of
             the published procedures of each agent in turn, or may be simplified if the
-            entity metadata includes publication path metadata as described in the
-            <xref target="SAML2MetadataRPI"/> extension.
+            entity metadata includes publication path metadata in mdrpi:PublicationPath
+            elements as described in
+            <xref target="SAML2MetadataRPI"/> section 2.3.1.
           </t>
           <t>
             The policies and procedures implemented by the original metadata registrar.
+            The registrar's identity may be known implicitly, or may be determined
+            from the entity metadata if it includes an mdrpi:RegistrationInfo element
+            and corresponding @registrationAuthority attribute as described in
+            <xref target="SAML2MetadataRPI"/> section 2.1.1.
           </t>
           <t>
             The definition of the category itself; in particular, any statements it makes about
@@ -407,6 +412,7 @@
         </front>
         <format type="PDF" target="http://docs.oasis-open.org/security/saml/Post2.0/saml-metadata-rpi/v1.0/cs01/saml-metadata-rpi-v1.0-cs01.pdf"/>
       </reference>
+
     </references>
 
     <references title="Informative References">
@@ -478,6 +484,11 @@
             <t>
               Simplify title from "The Entity Category SAML Entity Metadata Attribute Types" to
               "The Entity Category SAML Attribute Types".
+            </t>
+            <t>
+              Clarify the use of <xref target="SAML2MetadataRPI"/> in <xref target="Security"/> by
+              indicating the elements and attributes to be used, and the sections of <xref target="SAML2MetadataRPI"/>
+              in which they are defined.
             </t>
           </list>
         </t>
