@@ -83,7 +83,7 @@ Table of Contents
    Appendix B.  Change Log (to be removed by RFC Editor before
                 publication) . . . . . . . . . . . . . . . . . . . .   9
      B.1.  Since draft-young-entity-category-01  . . . . . . . . . .   9
-     B.2.  Since draft-young-entity-category-00  . . . . . . . . . .   9
+     B.2.  Since draft-young-entity-category-00  . . . . . . . . . .  10
      B.3.  Since draft-macedir-entity-category . . . . . . . . . . .  10
 
 1.  Introduction
@@ -397,6 +397,14 @@ Internet-Draft               Entity Category                   July 2014
    definition of a support claim will influence the assurance required
    to act on it.
 
+   The conclusion that a claim of category membership or support is
+   justified and should be acted upon may require a determination of the
+   origin of the claim.  In many cases, such a claim will be included in
+   an entity's metadata by the originating metadata registrar on behalf
+   of the entity's owner.  However, any agent that is part of the chain
+   of custody between the originating registrar and the final relying
+   party MAY add, remove or transform claims according to local policy.
+
 7.  References
 
 7.1.  Normative References
@@ -427,14 +435,6 @@ Internet-Draft               Entity Category                   July 2014
 
    [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, July 2007.
-
-
-
-
-
-
-
-
 
 
 
@@ -485,11 +485,26 @@ B.1.  Since draft-young-entity-category-01
    3.  Remove any implication that category and category support claims
        are necessarily being made "by" the entity itself.
 
+   4.  Clarify that the origin of a category membership or support claim
+       may not always be the originating registrar.
+
    Grammar fix in Abstract.
 
    Change the reference anchor for the SAML [SAML2MetadataRPI]
    extension, as it now more commonly known as RPI than its original DRI
    abbreviation.
+
+
+
+
+
+
+
+
+Young, et al.            Expires January 9, 2015                [Page 9]
+
+Internet-Draft               Entity Category                   July 2014
+
 
 B.2.  Since draft-young-entity-category-00
 
@@ -498,13 +513,6 @@ B.2.  Since draft-young-entity-category-00
    Remove authors from acknowledgements.
 
    Reorganize some of the introductory boilerplate sections.
-
-
-
-Young, et al.            Expires January 9, 2015                [Page 9]
-
-Internet-Draft               Entity Category                   July 2014
-
 
 B.3.  Since draft-macedir-entity-category
 
@@ -543,14 +551,6 @@ Authors' Addresses
    Shibboleth Consortium
 
    EMail: cantor.2@osu.edu
-
-
-
-
-
-
-
-
 
 
 
