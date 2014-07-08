@@ -120,8 +120,8 @@ Internet-Draft               Entity Category                   July 2014
    attribute values.
 
    A second SAML attribute, referred to here as the "entity category
-   support attribute", contains URI values which represent claims by an
-   entity to support and/or interoperate with entities in a given
+   support attribute", contains URI values which represent claims that
+   an entity supports and/or interoperates with entities in a given
    category or categories.  These values, defined in conjunction with
    specific entity category values, provide entities in a category with
    the means to identify peer entities that wish to interact with them
@@ -262,16 +262,16 @@ Internet-Draft               Entity Category                   July 2014
    urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
    http://macedir.org/entity-category-support.
 
-   A SAML entity claims a form of support for entities in one or more
-   categories by including the Attribute element described here in the
-   entity's metadata through use of the [SAML2MetadataAttr] metadata
-   extension, in which the Attribute element is contained within an
-   mdattr:EntityAttributes element directly contained within an
-   md:Extensions element directly contained within the entity's
-   md:EntityDescriptor.  The meaning of the entity category support
-   attribute is undefined by this specification if it appears anywhere
-   else within a metadata instance, or within any other XML document.
-
+   Claims that a SAML entity implements support for one or more
+   categories are represented by including the Attribute element
+   described here in the entity's metadata through use of the
+   [SAML2MetadataAttr] metadata extension, in which the Attribute
+   element is contained within an mdattr:EntityAttributes element
+   directly contained within an md:Extensions element directly contained
+   within the entity's md:EntityDescriptor.  The meaning of the entity
+   category support attribute is undefined by this specification if it
+   appears anywhere else within a metadata instance, or within any other
+   XML document.
 
 
 
@@ -473,7 +473,7 @@ Appendix B.  Change Log (to be removed by RFC Editor before publication)
 
 B.1.  Since draft-young-entity-category-01
 
-   REFEDS consultation process resolutions:
+   Changes from REFEDS consultation process:
 
    1.  Simplify title from "The Entity Category SAML Entity Metadata
        Attribute Types" to "The Entity Category SAML Attribute Types".
@@ -481,6 +481,9 @@ B.1.  Since draft-young-entity-category-01
    2.  Clarify the use of [SAML2MetadataRPI] in Section 6 by indicating
        the elements and attributes to be used, and the sections of
        [SAML2MetadataRPI] in which they are defined.
+
+   3.  Remove any implication that category and category support claims
+       are necessarily being made "by" the entity itself.
 
    Grammar fix in Abstract.
 
@@ -495,9 +498,6 @@ B.2.  Since draft-young-entity-category-00
    Remove authors from acknowledgements.
 
    Reorganize some of the introductory boilerplate sections.
-
-
-
 
 
 

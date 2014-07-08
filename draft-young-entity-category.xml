@@ -89,7 +89,7 @@
 
       <t>
         A second SAML attribute, referred to here as the "entity category support attribute",
-        contains URI values which represent claims by an entity to support and/or interoperate with
+        contains URI values which represent claims that an entity supports and/or interoperates with
         entities in a given category or categories. These values, defined in conjunction with
         specific entity category values, provide entities in a category with the means to identify
         peer entities that wish to interact with them in category-specific fashion.
@@ -239,8 +239,8 @@
         </t>
 
         <t>
-          A SAML entity claims a form of support for entities in one or more categories
-          by including the Attribute element described here in the entity's metadata
+          Claims that a SAML entity implements support for one or more categories
+          are represented by including the Attribute element described here in the entity's metadata
           through use of the <xref target="SAML2MetadataAttr"/> metadata extension, in
           which the Attribute element is contained within an mdattr:EntityAttributes
           element directly contained within an md:Extensions element directly
@@ -479,7 +479,7 @@
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
       <section title="Since draft-young-entity-category-01" anchor="changes.since.draft-young-entity-category-01">
-        <t>REFEDS consultation process resolutions:
+        <t>Changes from REFEDS consultation process:
           <list style="numbers">
             <t>
               Simplify title from "The Entity Category SAML Entity Metadata Attribute Types" to
@@ -489,6 +489,10 @@
               Clarify the use of <xref target="SAML2MetadataRPI"/> in <xref target="Security"/> by
               indicating the elements and attributes to be used, and the sections of <xref target="SAML2MetadataRPI"/>
               in which they are defined.
+            </t>
+            <t>
+              Remove any implication that category and category support claims are necessarily
+              being made "by" the entity itself.
             </t>
           </list>
         </t>
