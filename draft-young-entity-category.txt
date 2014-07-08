@@ -368,7 +368,7 @@ Internet-Draft               Entity Category                   July 2014
       determined either by examination of the published procedures of
       each agent in turn, or may be simplified if the entity metadata
       includes publication path metadata as described in the
-      [SAML2MetadataDRI] extension.
+      [SAML2MetadataRPI] extension.
 
    o  The policies and procedures implemented by the original metadata
       registrar.
@@ -406,7 +406,7 @@ Internet-Draft               Entity Category                   July 2014
               Attributes", August 2009,
               <http://wiki.oasis-open.org/security/SAML2MetadataAttr>.
 
-   [SAML2MetadataDRI]
+   [SAML2MetadataRPI]
               La Joie, C., Ed., "SAML V2.0 Metadata Extensions for
               Registration and Publication Information Version 1.0",
               April 2012,
@@ -480,6 +480,10 @@ B.1.  Since draft-young-entity-category-01
 
    Grammar fix in Abstract.
 
+   Change the reference anchor for the SAML [SAML2MetadataRPI]
+   extension, as it now more commonly known as RPI than its original DRI
+   abbreviation.
+
 B.2.  Since draft-young-entity-category-00
 
    Update affiliations for Leif Johansson and Scott Cantor.
@@ -495,16 +499,15 @@ B.3.  Since draft-macedir-entity-category
    Changed ipr from "pre5378Trust200902" to "trust200902" and submission
    type from IETF to independent.
 
-   Designate Ian Young as editor for this version.  Set more general
-   affiliation.
-
-
 
 
 Young, et al.            Expires January 9, 2015                [Page 9]
 
 Internet-Draft               Entity Category                   July 2014
 
+
+   Designate Ian Young as editor for this version.  Set more general
+   affiliation.
 
    Modernised reference to RFC 2119 [BCP14] and moved that reference to
    the introduction.
@@ -533,9 +536,6 @@ Authors' Addresses
    Shibboleth Consortium
 
    EMail: cantor.2@osu.edu
-
-
-
 
 
 
