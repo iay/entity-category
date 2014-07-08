@@ -5,10 +5,10 @@
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
 Intended status: Informational                              L. Johansson
-Expires: November 27, 2014                                         SUNET
+Expires: January 9, 2015                                           SUNET
                                                                S. Cantor
                                                    Shibboleth Consortium
-                                                            May 26, 2014
+                                                            July 8, 2014
 
 
                 The Entity Category SAML Attribute Types
@@ -39,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 27, 2014.
+   This Internet-Draft will expire on January 9, 2015.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young, et al.           Expires November 27, 2014               [Page 1]
+Young, et al.            Expires January 9, 2015                [Page 1]
 
-Internet-Draft               Entity Category                    May 2014
+Internet-Draft               Entity Category                   July 2014
 
 
    carefully, as they describe your rights and restrictions with respect
@@ -69,17 +69,17 @@ Table of Contents
    3.  Entity Category Attribute . . . . . . . . . . . . . . . . . .   3
      3.1.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . .   3
      3.2.  Semantics . . . . . . . . . . . . . . . . . . . . . . . .   4
-     3.3.  Entity Category Example . . . . . . . . . . . . . . . . .   4
+     3.3.  Entity Category Example . . . . . . . . . . . . . . . . .   5
    4.  Entity Category Support Attribute . . . . . . . . . . . . . .   5
      4.1.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . .   5
-     4.2.  Semantics . . . . . . . . . . . . . . . . . . . . . . . .   5
+     4.2.  Semantics . . . . . . . . . . . . . . . . . . . . . . . .   6
      4.3.  Entity Category Support Example . . . . . . . . . . . . .   6
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
    6.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
    7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   8
      7.1.  Normative References  . . . . . . . . . . . . . . . . . .   8
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   8
-   Appendix A.  Acknowledgements . . . . . . . . . . . . . . . . . .   8
+   Appendix A.  Acknowledgements . . . . . . . . . . . . . . . . . .   9
    Appendix B.  Change Log (to be removed by RFC Editor before
                 publication) . . . . . . . . . . . . . . . . . . . .   9
      B.1.  Since draft-young-entity-category-01  . . . . . . . . . .   9
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young, et al.           Expires November 27, 2014               [Page 2]
+Young, et al.            Expires January 9, 2015                [Page 2]
 
-Internet-Draft               Entity Category                    May 2014
+Internet-Draft               Entity Category                   July 2014
 
 
    defined by any appropriate authority without any requirement for
@@ -165,9 +165,9 @@ Internet-Draft               Entity Category                    May 2014
 
 
 
-Young, et al.           Expires November 27, 2014               [Page 3]
+Young, et al.            Expires January 9, 2015                [Page 3]
 
-Internet-Draft               Entity Category                    May 2014
+Internet-Draft               Entity Category                   July 2014
 
 
    A SAML entity is associated with one or more categories by including
@@ -215,16 +215,18 @@ Internet-Draft               Entity Category                    May 2014
    Entity category attribute value URIs MUST be treated as opaque
    strings.
 
-3.3.  Entity Category Example
 
 
 
 
 
-Young, et al.           Expires November 27, 2014               [Page 4]
+
+Young, et al.            Expires January 9, 2015                [Page 4]
 
-Internet-Draft               Entity Category                    May 2014
+Internet-Draft               Entity Category                   July 2014
 
+
+3.3.  Entity Category Example
 
    <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
      entityID="https://service.example.com/entity">
@@ -242,7 +244,6 @@ Internet-Draft               Entity Category                    May 2014
      </md:Extensions>
      ...
    </md:EntityDescriptor>
-
 
 4.  Entity Category Support Attribute
 
@@ -271,16 +272,17 @@ Internet-Draft               Entity Category                    May 2014
    attribute is undefined by this specification if it appears anywhere
    else within a metadata instance, or within any other XML document.
 
-4.2.  Semantics
 
 
 
 
 
-Young, et al.           Expires November 27, 2014               [Page 5]
+Young, et al.            Expires January 9, 2015                [Page 5]
 
-Internet-Draft               Entity Category                    May 2014
+Internet-Draft               Entity Category                   July 2014
 
+
+4.2.  Semantics
 
    The presence of the entity category support attribute within an
    entity's entity attributes represents a series of claims (one for
@@ -331,11 +333,9 @@ Internet-Draft               Entity Category                    May 2014
 
 
 
-
-
-Young, et al.           Expires November 27, 2014               [Page 6]
+Young, et al.            Expires January 9, 2015                [Page 6]
 
-Internet-Draft               Entity Category                    May 2014
+Internet-Draft               Entity Category                   July 2014
 
 
 5.  IANA Considerations
@@ -389,9 +389,9 @@ Internet-Draft               Entity Category                    May 2014
 
 
 
-Young, et al.           Expires November 27, 2014               [Page 7]
+Young, et al.            Expires January 9, 2015                [Page 7]
 
-Internet-Draft               Entity Category                    May 2014
+Internet-Draft               Entity Category                   July 2014
 
 
 7.  References
@@ -399,7 +399,7 @@ Internet-Draft               Entity Category                    May 2014
 7.1.  Normative References
 
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels ", BCP 14, RFC 2119, March 1997.
+              Requirement Levels", BCP 14, RFC 2119, March 1997.
 
    [SAML2MetadataAttr]
               Cantor, S., Ed., "SAML V2.0 Metadata Extension for Entity
@@ -416,14 +416,39 @@ Internet-Draft               Entity Category                    May 2014
 
    [REFEDS.agreement]
               Research and Education Federations, "REFEDS Participant's
-              Agreement", , <https://refeds.org/about/
+              Agreement", <https://refeds.org/about/
               about_agreement.html>.
 
-   [REFEDS]   Research and Education Federations, "REFEDS Home Page", ,
+   [REFEDS]   Research and Education Federations, "REFEDS Home Page",
               <http://www.refeds.org/>.
 
-   [RFC4844]  Daigle, L. Internet Architecture Board, "The RFC Series
-              and RFC Editor", RFC 4844, July 2007.
+   [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
+              Series and RFC Editor", RFC 4844, July 2007.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Young, et al.            Expires January 9, 2015                [Page 8]
+
+Internet-Draft               Entity Category                   July 2014
+
 
 Appendix A.  Acknowledgements
 
@@ -442,22 +467,16 @@ Appendix A.  Acknowledgements
 
    o  Nicole Harris
 
-
-
-
-Young, et al.           Expires November 27, 2014               [Page 8]
-
-Internet-Draft               Entity Category                    May 2014
-
-
    o  Tom Scavo
 
 Appendix B.  Change Log (to be removed by RFC Editor before publication)
 
 B.1.  Since draft-young-entity-category-01
 
-   Simplify title from "The Entity Category SAML Entity Metadata
-   Attribute Types" to "The Entity Category SAML Attribute Types".
+   REFEDS consultation process resolutions:
+
+   1.  Simplify title from "The Entity Category SAML Entity Metadata
+       Attribute Types" to "The Entity Category SAML Attribute Types".
 
    Grammar fix in Abstract.
 
@@ -479,6 +498,14 @@ B.3.  Since draft-macedir-entity-category
    Designate Ian Young as editor for this version.  Set more general
    affiliation.
 
+
+
+
+Young, et al.            Expires January 9, 2015                [Page 9]
+
+Internet-Draft               Entity Category                   July 2014
+
+
    Modernised reference to RFC 2119 [BCP14] and moved that reference to
    the introduction.
 
@@ -494,16 +521,6 @@ Authors' Addresses
    Independent
 
    EMail: ian@iay.org.uk
-
-
-
-
-
-
-
-Young, et al.           Expires November 27, 2014               [Page 9]
-
-Internet-Draft               Entity Category                    May 2014
 
 
    Leif Johansson
@@ -540,21 +557,4 @@ Internet-Draft               Entity Category                    May 2014
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young, et al.           Expires November 27, 2014              [Page 10]
+Young, et al.            Expires January 9, 2015               [Page 10]

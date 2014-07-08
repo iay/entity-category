@@ -472,9 +472,13 @@
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
       <section title="Since draft-young-entity-category-01" anchor="changes.since.draft-young-entity-category-01">
-        <t>
-          Simplify title from "The Entity Category SAML Entity Metadata Attribute Types" to
-          "The Entity Category SAML Attribute Types".
+        <t>REFEDS consultation process resolutions:
+          <list style="numbers">
+            <t>
+              Simplify title from "The Entity Category SAML Entity Metadata Attribute Types" to
+              "The Entity Category SAML Attribute Types".
+            </t>
+          </list>
         </t>
         <t>
           Grammar fix in Abstract.
