@@ -359,7 +359,7 @@ Internet-Draft               Entity Category                   July 2014
    o  If the entity category attribute is carried within a signed
       assertion, the assertion itself must be evaluated.
 
-   o  The procedures and policies of the immediate source of the
+   o  The policies and procedures of the immediate source of the
       metadata; in particular, any procedures the immediate source has
       with regard to aggregation of metadata from other sources.
 
