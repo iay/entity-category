@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-entity-category-02" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-entity-category-03" submissionType="independent" category="info">
 
   <front>
 
@@ -496,6 +496,9 @@
     </section>
 
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
+
+      <section title="Since draft-young-entity-category-02" anchor="changes.since.draft-young-entity-category-02">
+      </section>
 
       <section title="Since draft-young-entity-category-01" anchor="changes.since.draft-young-entity-category-01">
         <t>Changes from REFEDS consultation process:
