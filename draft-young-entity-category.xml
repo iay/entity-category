@@ -156,7 +156,7 @@
 
       </section>
 
-      <section title="Semantics">
+      <section anchor="cat-semantics" title="Semantics">
         <t>
           The presence of the entity category attribute within an entity's entity attributes
           represents a series of claims (one for each attribute value) that the entity is
@@ -196,7 +196,9 @@
         </t>
 
         <t>
-          Entity category attribute value URIs MUST be treated as opaque strings.
+          No ordering relation is defined over entity category value URIs.
+          Entity category attribute value URIs MUST be treated as opaque strings
+          for the purpose of comparison.
         </t>
 
       </section>
@@ -255,7 +257,7 @@
 
       </section>
 
-      <section title="Semantics">
+      <section anchor="sup-semantics" title="Semantics">
         <t>
           The presence of the entity category support attribute within an entity's entity
           attributes represents a series of claims (one for each attribute
@@ -275,7 +277,7 @@
 
         <t>
           A common case is expected to be the definition of a single support value
-          whose URI is identical to that defined for the category itself. 
+          whose URI is identical to that defined for the category itself.
         </t>
 
         <t>
@@ -284,7 +286,9 @@
         </t>
 
         <t>
-          Entity category support attribute value URIs MUST be treated as opaque strings.
+          No ordering relation is defined over entity category value URIs.
+          Entity category attribute value URIs MUST be treated as opaque strings
+          for the purpose of comparison.
         </t>
 
       </section>
@@ -500,6 +504,17 @@
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
       <section title="Since draft-young-entity-category-02" anchor="changes.since.draft-young-entity-category-02">
+        <t>Clarifications in response to IETF Gen-Art review:
+          <list style="symbols">
+            <t>
+              <xref target="cat-semantics"/>, <xref target="sup-semantics"/>:
+              <spanx style="strong">No ordering relation is defined over
+              entity category value URIs.</spanx>
+              Entity category attribute value URIs MUST be treated as opaque strings
+              <spanx style="strong">for the purpose of comparison</spanx>.
+            </t>
+          </list>
+        </t>
       </section>
 
       <section title="Since draft-young-entity-category-01" anchor="changes.since.draft-young-entity-category-01">
