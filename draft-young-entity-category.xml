@@ -467,7 +467,7 @@
         </front>
       </reference>
 
-      <reference anchor="REFEDS.agreement" target="https://refeds.org/about/about_agreement.html">
+      <reference anchor="REFEDS.agreement" target="https://refeds.org/about/refeds-participants-agreement">
         <front>
           <title>REFEDS Participant's Agreement</title>
           <author>
@@ -504,6 +504,9 @@
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
 
       <section title="Since draft-young-entity-category-02" anchor="changes.since.draft-young-entity-category-02">
+        <t>
+          Fix link to the <xref target="REFEDS.agreement">REFEDS Participant's Agreement</xref>.
+        </t>
         <t>Clarifications in response to IETF Gen-Art review:
           <list style="symbols">
             <t>

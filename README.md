@@ -17,7 +17,7 @@ are also archived in the `history` directory here for quick comparison between v
 
 This document is being standardised within the Research and Education Federations
 (REFEDS) Working Group process, as described in the
-[REFEDS Participant's Agreement](https://refeds.org/about/about_agreement.html).
+[REFEDS Participant's Agreement](https://refeds.org/about/refeds-participants-agreement).
 
 Discussion of the current draft will normally take place on the REFEDS mailing list.
 

@@ -5,10 +5,10 @@
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
 Intended status: Informational                              L. Johansson
-Expires: February 1, 2016                                          SUNET
+Expires: February 15, 2016                                         SUNET
                                                                S. Cantor
                                                    Shibboleth Consortium
-                                                           July 31, 2015
+                                                         August 14, 2015
 
 
                 The Entity Category SAML Attribute Types
@@ -39,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 1, 2016.
+   This Internet-Draft will expire on February 15, 2016.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young, et al.           Expires February 1, 2016                [Page 1]
+Young, et al.           Expires February 15, 2016               [Page 1]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
 
    carefully, as they describe your rights and restrictions with respect
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young, et al.           Expires February 1, 2016                [Page 2]
+Young, et al.           Expires February 15, 2016               [Page 2]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
 
    Entity category attribute values are URIs, and this document does not
@@ -165,9 +165,9 @@ Internet-Draft               Entity Category                   July 2015
 
 
 
-Young, et al.           Expires February 1, 2016                [Page 3]
+Young, et al.           Expires February 15, 2016               [Page 3]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
 
    The entity category attribute MUST be encoded as a SAML 2.0 Attribute
@@ -221,9 +221,9 @@ Internet-Draft               Entity Category                   July 2015
 
 
 
-Young, et al.           Expires February 1, 2016                [Page 4]
+Young, et al.           Expires February 15, 2016               [Page 4]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
 
    No ordering relation is defined over entity category value URIs.
@@ -277,9 +277,9 @@ Internet-Draft               Entity Category                   July 2015
 
 
 
-Young, et al.           Expires February 1, 2016                [Page 5]
+Young, et al.           Expires February 15, 2016               [Page 5]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
 
    appears anywhere else within a metadata instance, or within any other
@@ -333,9 +333,9 @@ Internet-Draft               Entity Category                   July 2015
 
 
 
-Young, et al.           Expires February 1, 2016                [Page 6]
+Young, et al.           Expires February 15, 2016               [Page 6]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
 
    <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
@@ -389,9 +389,9 @@ Internet-Draft               Entity Category                   July 2015
 
 
 
-Young, et al.           Expires February 1, 2016                [Page 7]
+Young, et al.           Expires February 15, 2016               [Page 7]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
 
       includes publication path metadata in mdrpi:PublicationPath
@@ -445,9 +445,9 @@ Internet-Draft               Entity Category                   July 2015
 
 
 
-Young, et al.           Expires February 1, 2016                [Page 8]
+Young, et al.           Expires February 15, 2016               [Page 8]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
 
    [SAML2MetadataAttr]
@@ -468,8 +468,8 @@ Internet-Draft               Entity Category                   July 2015
 
    [REFEDS.agreement]
               Research and Education Federations, "REFEDS Participant's
-              Agreement", <https://refeds.org/about/
-              about_agreement.html>.
+              Agreement", <https://refeds.org/about/refeds-participants-
+              agreement>.
 
    [RFC4844]  Daigle, L. and Internet Architecture Board, "The RFC
               Series and RFC Editor", RFC 4844, July 2007.
@@ -501,9 +501,9 @@ Internet-Draft               Entity Category                   July 2015
 
 
 
-Young, et al.           Expires February 1, 2016                [Page 9]
+Young, et al.           Expires February 15, 2016               [Page 9]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
 
 Appendix A.  Acknowledgements
@@ -529,6 +529,8 @@ Appendix B.  Change Log (to be removed by RFC Editor before publication)
 
 B.1.  Since draft-young-entity-category-02
 
+   Fix link to the REFEDS Participant's Agreement [REFEDS.agreement].
+
    Clarifications in response to IETF Gen-Art review:
 
    o  Section 3.2, Section 4.2: *No ordering relation is defined over
@@ -552,15 +554,15 @@ B.2.  Since draft-young-entity-category-01
    4.  Clarify that the origin of a category membership or support claim
        may not always be the original registrar.
 
-   Grammar fix in Abstract.
 
 
 
-
-Young, et al.           Expires February 1, 2016               [Page 10]
+Young, et al.           Expires February 15, 2016              [Page 10]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
+
+   Grammar fix in Abstract.
 
    Change the reference anchor for the SAML [SAML2MetadataRPI]
    extension, as it now more commonly known as RPI than its original DRI
@@ -611,11 +613,9 @@ Authors' Addresses
 
 
 
-
-
-Young, et al.           Expires February 1, 2016               [Page 11]
+Young, et al.           Expires February 15, 2016              [Page 11]
 
-Internet-Draft               Entity Category                   July 2015
+Internet-Draft               Entity Category                 August 2015
 
 
    Scott Cantor
@@ -669,4 +669,4 @@ Internet-Draft               Entity Category                   July 2015
 
 
 
-Young, et al.           Expires February 1, 2016               [Page 12]
+Young, et al.           Expires February 15, 2016              [Page 12]
