@@ -60,7 +60,7 @@
   </front>
 
   <middle>
-    <section title="Introduction">
+    <section title="Introduction" anchor="introduction">
       <t>
         This document describes a SAML attribute, referred to here as the
         "entity category attribute", values of which represent entity types
@@ -93,6 +93,11 @@
         entities in a given category or categories. These values, defined in conjunction with
         specific entity category values, provide entities in a category with the means to identify
         peer entities that wish to interact with them in category-specific fashion.
+      </t>
+
+      <t>
+        This document does not specify any values either for the entity category attribute
+        or for the entity category support attribute.
       </t>
 
       <section title="REFEDS Document Process">
@@ -511,6 +516,10 @@
         </t>
         <t>Clarifications in response to IETF Gen-Art review:
           <list style="symbols">
+            <t>
+              <xref target="introduction"/>: make explicit the fact that we don't specify any values of either
+              attribute in this document.
+            </t>
             <t>
               <xref target="cat-semantics"/>, <xref target="sup-semantics"/>:
               If significant changes are made to a category definition, the new version of
