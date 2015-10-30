@@ -5,10 +5,10 @@
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
 Intended status: Informational                              L. Johansson
-Expires: February 15, 2016                                         SUNET
+Expires: May 2, 2016                                               SUNET
                                                                S. Cantor
                                                    Shibboleth Consortium
-                                                         August 14, 2015
+                                                        October 30, 2015
 
 
                 The Entity Category SAML Attribute Types
@@ -39,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 15, 2016.
+   This Internet-Draft will expire on May 2, 2016.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young, et al.           Expires February 15, 2016               [Page 1]
+Young, et al.              Expires May 2, 2016                  [Page 1]
 
-Internet-Draft               Entity Category                 August 2015
+Internet-Draft               Entity Category                October 2015
 
 
    carefully, as they describe your rights and restrictions with respect
@@ -73,17 +73,17 @@ Table of Contents
    4.  Entity Category Support Attribute . . . . . . . . . . . . . .   5
      4.1.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . .   5
      4.2.  Semantics . . . . . . . . . . . . . . . . . . . . . . . .   6
-     4.3.  Entity Category Support Example . . . . . . . . . . . . .   6
+     4.3.  Entity Category Support Example . . . . . . . . . . . . .   7
    5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   7
    6.  Security Considerations . . . . . . . . . . . . . . . . . . .   7
-   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   8
-     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   8
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   9
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   9
      7.2.  Informative References  . . . . . . . . . . . . . . . . .   9
    Appendix A.  Acknowledgements . . . . . . . . . . . . . . . . . .  10
    Appendix B.  Change Log (to be removed by RFC Editor before
                 publication) . . . . . . . . . . . . . . . . . . . .  10
      B.1.  Since draft-young-entity-category-02  . . . . . . . . . .  10
-     B.2.  Since draft-young-entity-category-01  . . . . . . . . . .  10
+     B.2.  Since draft-young-entity-category-01  . . . . . . . . . .  11
      B.3.  Since draft-young-entity-category-00  . . . . . . . . . .  11
      B.4.  Since draft-macedir-entity-category . . . . . . . . . . .  11
 
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young, et al.           Expires February 15, 2016               [Page 2]
+Young, et al.              Expires May 2, 2016                  [Page 2]
 
-Internet-Draft               Entity Category                 August 2015
+Internet-Draft               Entity Category                October 2015
 
 
    Entity category attribute values are URIs, and this document does not
@@ -128,6 +128,9 @@ Internet-Draft               Entity Category                 August 2015
    specific entity category values, provide entities in a category with
    the means to identify peer entities that wish to interact with them
    in category-specific fashion.
+
+   This document does not specify any values either for the entity
+   category attribute or for the entity category support attribute.
 
 1.1.  REFEDS Document Process
 
@@ -158,17 +161,17 @@ Internet-Draft               Entity Category                 August 2015
 
    Entity category attribute values MUST be URIs.  It is RECOMMENDED
    that http:-scheme or https:-scheme URLs are used, and further
+
+
+
+
+Young, et al.              Expires May 2, 2016                  [Page 3]
+
+Internet-Draft               Entity Category                October 2015
+
+
    RECOMMENDED that each such value resolves to a human-readable
    document defining the category.
-
-
-
-
-
-Young, et al.           Expires February 15, 2016               [Page 3]
-
-Internet-Draft               Entity Category                 August 2015
-
 
    The entity category attribute MUST be encoded as a SAML 2.0 Attribute
    element with @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-
@@ -185,6 +188,11 @@ Internet-Draft               Entity Category                 August 2015
    specification if it appears anywhere else within a metadata instance,
    or within any other XML document.
 
+   If the entity category attribute Attribute element appears more than
+   once in the metadata for an entity, the combined set of associated
+   attribute values SHOULD be interpreted by relying parties as if they
+   all appeared within a single Attribute element.
+
 3.2.  Semantics
 
    The presence of the entity category attribute within an entity's
@@ -192,6 +200,11 @@ Internet-Draft               Entity Category                 August 2015
    attribute value) that the entity is a member of each named category.
    The precise semantics of such a claim depend on the definition of the
    category itself.
+
+   An entity may be claimed to be a member of more than one category.
+   In this case, the entity is claimed to meet the requirements of each
+   category independently unless otherwise specified by the category
+   definitions themselves.
 
    The definition of the concept of a category is intentionally not
    addressed in this document, in order to leave it as general as
@@ -204,6 +217,15 @@ Internet-Draft               Entity Category                 August 2015
       validated by third parties such as the entity's home federation or
       other registrar.
 
+
+
+
+
+Young, et al.              Expires May 2, 2016                  [Page 4]
+
+Internet-Draft               Entity Category                October 2015
+
+
    o  A set of criteria by which an entity's membership in the category
       can be objectively assessed.
 
@@ -215,16 +237,8 @@ Internet-Draft               Entity Category                 August 2015
 
    If significant changes are made to a category definition, the new
    version of the category SHOULD be represented by a different category
-   URI.
-
-
-
-
-
-Young, et al.           Expires February 15, 2016               [Page 4]
-
-Internet-Draft               Entity Category                 August 2015
-
+   URI so that the old and new versions can be distinguished by a
+   relying party.
 
    No ordering relation is defined over entity category value URIs.
    Entity category attribute value URIs MUST be treated as opaque
@@ -261,6 +275,13 @@ Internet-Draft               Entity Category                 August 2015
    allow for multiple forms of support, participation, or interoperation
    with entities in the category.
 
+
+
+Young, et al.              Expires May 2, 2016                  [Page 5]
+
+Internet-Draft               Entity Category                October 2015
+
+
    The entity category support attribute MUST be encoded as a SAML 2.0
    Attribute element with @NameFormat
    urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
@@ -272,18 +293,16 @@ Internet-Draft               Entity Category                 August 2015
    [SAML2MetadataAttr] metadata extension, in which the Attribute
    element is contained within an mdattr:EntityAttributes element
    directly contained within an md:Extensions element directly contained
-   within the entity's md:EntityDescriptor.  The meaning of the entity
-   category support attribute is undefined by this specification if it
+   within the entity's md:EntityDescriptor.
 
+   The meaning of the entity category support attribute is undefined by
+   this specification if it appears anywhere else within a metadata
+   instance, or within any other XML document.
 
-
-Young, et al.           Expires February 15, 2016               [Page 5]
-
-Internet-Draft               Entity Category                 August 2015
-
-
-   appears anywhere else within a metadata instance, or within any other
-   XML document.
+   If the entity category support attribute Attribute element appears
+   more than once in the metadata for an entity, the combined set of
+   associated attribute values SHOULD be interpreted by relying parties
+   as if they all appeared within a single Attribute element.
 
 4.2.  Semantics
 
@@ -295,6 +314,11 @@ Internet-Draft               Entity Category                 August 2015
    itself.  Category support claims will often be defined to be self-
    asserted.
 
+   An entity may be claimed to support more than one category.  In this
+   case, the entity is claimed to meet the support requirements of each
+   category independently unless otherwise specified by the category
+   definitions themselves.
+
    The definition of the concept of "support" for a category is
    intentionally not addressed in this document, in order to leave it as
    general as possible.  It is assumed that entity category definitions
@@ -305,38 +329,25 @@ Internet-Draft               Entity Category                 August 2015
    A common case is expected to be the definition of a single support
    value whose URI is identical to that defined for the category itself.
 
+
+
+
+
+Young, et al.              Expires May 2, 2016                  [Page 6]
+
+Internet-Draft               Entity Category                October 2015
+
+
    If significant changes are made to a category support definition, the
-   new version SHOULD be represented by a different category support
-   URI.
+   new version SHOULD be represented by a different category support URI
+   so that the old and new versions can be distinguished by a relying
+   party.
 
    No ordering relation is defined over entity category value URIs.
    Entity category attribute value URIs MUST be treated as opaque
    strings for the purpose of comparison.
 
 4.3.  Entity Category Support Example
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young, et al.           Expires February 15, 2016               [Page 6]
-
-Internet-Draft               Entity Category                 August 2015
-
 
    <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
      entityID="https://idp.example.edu/entity">
@@ -375,6 +386,14 @@ Internet-Draft               Entity Category                 August 2015
    o  The integrity of the metadata delivered to the relying party, as
       for example assured by a digital signature.
 
+
+
+
+Young, et al.              Expires May 2, 2016                  [Page 7]
+
+Internet-Draft               Entity Category                October 2015
+
+
    o  If the entity category attribute is carried within a signed
       assertion, the assertion itself must be evaluated.
 
@@ -386,14 +405,6 @@ Internet-Draft               Entity Category                 August 2015
       publication path from the original metadata registrar: this may be
       determined either by examination of the published procedures of
       each agent in turn, or may be simplified if the entity metadata
-
-
-
-Young, et al.           Expires February 15, 2016               [Page 7]
-
-Internet-Draft               Entity Category                 August 2015
-
-
       includes publication path metadata in mdrpi:PublicationPath
       elements as described in [SAML2MetadataRPI] section 2.3.1.
 
@@ -430,6 +441,15 @@ Internet-Draft               Entity Category                 August 2015
    and the final relying party may have added, removed or transformed
    claims according to local policy.  For example, an agent charged with
    redistributing metadata may remove claims it regards as
+
+
+
+
+Young, et al.              Expires May 2, 2016                  [Page 8]
+
+Internet-Draft               Entity Category                October 2015
+
+
    untrustworthy, or add others which were not already present if they
    have value to its intended audience.
 
@@ -439,16 +459,6 @@ Internet-Draft               Entity Category                 August 2015
 
    [BCP14]    Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, March 1997.
-
-
-
-
-
-
-Young, et al.           Expires February 15, 2016               [Page 8]
-
-Internet-Draft               Entity Category                 August 2015
-
 
    [SAML2MetadataAttr]
               Cantor, S., Ed., "SAML V2.0 Metadata Extension for Entity
@@ -491,19 +501,9 @@ Internet-Draft               Entity Category                 August 2015
 
 
 
-
-
-
-
-
-
-
-
-
-
-Young, et al.           Expires February 15, 2016               [Page 9]
+Young, et al.              Expires May 2, 2016                  [Page 9]
 
-Internet-Draft               Entity Category                 August 2015
+Internet-Draft               Entity Category                October 2015
 
 
 Appendix A.  Acknowledgements
@@ -533,9 +533,34 @@ B.1.  Since draft-young-entity-category-02
 
    Clarifications in response to IETF Gen-Art review:
 
+   o  Section 1: make explicit the fact that we don't specify any values
+      of either attribute in this document.
+
+   o  Section 3.1, Section 4.1: clarify that it is possible for
+      attribute values to appear within multiple Attribute elements, and
+      that this SHOULD be regarded as equivalent to combining them
+      within a single Attribute element.
+
+   o  Section 3.2, Section 4.2: clarify the expectation that categories
+      are independent unless their definitions say otherwise.
+
+   o  Section 3.2, Section 4.2: If significant changes are made to a
+      category definition, the new version of the category SHOULD be
+      represented by a different category URI *so that the old and new
+      versions can be distinguished by a relying party*.
+
    o  Section 3.2, Section 4.2: *No ordering relation is defined over
       entity category value URIs.* Entity category attribute value URIs
       MUST be treated as opaque strings *for the purpose of comparison*.
+
+
+
+
+
+Young, et al.              Expires May 2, 2016                 [Page 10]
+
+Internet-Draft               Entity Category                October 2015
+
 
 B.2.  Since draft-young-entity-category-01
 
@@ -553,14 +578,6 @@ B.2.  Since draft-young-entity-category-01
 
    4.  Clarify that the origin of a category membership or support claim
        may not always be the original registrar.
-
-
-
-
-Young, et al.           Expires February 15, 2016              [Page 10]
-
-Internet-Draft               Entity Category                 August 2015
-
 
    Grammar fix in Abstract.
 
@@ -592,6 +609,15 @@ B.4.  Since draft-macedir-entity-category
    Adjusted layout of examples so that they don't exceed the RFC
    standard line length.
 
+
+
+
+
+Young, et al.              Expires May 2, 2016                 [Page 11]
+
+Internet-Draft               Entity Category                October 2015
+
+
    Minor typographical nits but (intentionally) no substantive content
    changes.
 
@@ -607,15 +633,6 @@ Authors' Addresses
    SUNET
 
    EMail: leifj@sunet.se
-
-
-
-
-
-
-Young, et al.           Expires February 15, 2016              [Page 11]
-
-Internet-Draft               Entity Category                 August 2015
 
 
    Scott Cantor
@@ -652,21 +669,4 @@ Internet-Draft               Entity Category                 August 2015
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Young, et al.           Expires February 15, 2016              [Page 12]
+Young, et al.              Expires May 2, 2016                 [Page 12]
