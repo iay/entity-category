@@ -176,6 +176,12 @@
         </t>
 
         <t>
+          An entity may be claimed to be a member of more than one category. In this case, the entity
+          is claimed to meet the requirements of each category independently unless otherwise
+          specified by the category definitions themselves.
+        </t>
+
+        <t>
           The definition of the concept of a category is intentionally not addressed in this
           document, in order to leave it as general as possible.  However, to be useful,
           category definitions SHOULD include the following as appropriate:
@@ -285,6 +291,12 @@
           fashion. The precise semantics of such a claim depend on the definition of the
           category support identifier itself.
           Category support claims will often be defined to be self-asserted.
+        </t>
+
+        <t>
+          An entity may be claimed to support more than one category. In this case, the entity
+          is claimed to meet the support requirements of each category independently unless otherwise
+          specified by the category definitions themselves.
         </t>
 
         <t>
@@ -539,6 +551,11 @@
               clarify that it is possible for attribute values to appear within multiple Attribute
               elements, and that this SHOULD be regarded as equivalent to combining them within a single
               Attribute element.
+            </t>
+            <t>
+              <xref target="cat-semantics"/>, <xref target="sup-semantics"/>:
+              clarify the expectation that categories are independent unless their
+              definitions say otherwise.
             </t>
             <t>
               <xref target="cat-semantics"/>, <xref target="sup-semantics"/>:
