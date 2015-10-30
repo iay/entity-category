@@ -192,7 +192,8 @@
 
         <t>
           If significant changes are made to a category definition, the new version of
-          the category SHOULD be represented by a different category URI.
+          the category SHOULD be represented by a different category URI
+          so that the old and new versions can be distinguished by a relying party.
         </t>
 
         <t>
@@ -282,7 +283,8 @@
 
         <t>
           If significant changes are made to a category support definition, the new version
-          SHOULD be represented by a different category support URI.
+          SHOULD be represented by a different category support URI
+          so that the old and new versions can be distinguished by a relying party.
         </t>
 
         <t>
@@ -509,6 +511,12 @@
         </t>
         <t>Clarifications in response to IETF Gen-Art review:
           <list style="symbols">
+            <t>
+              <xref target="cat-semantics"/>, <xref target="sup-semantics"/>:
+              If significant changes are made to a category definition, the new version of
+              the category SHOULD be represented by a different category URI
+              <spanx style="strong">so that the old and new versions can be distinguished by a relying party</spanx>.
+            </t>
             <t>
               <xref target="cat-semantics"/>, <xref target="sup-semantics"/>:
               <spanx style="strong">No ordering relation is defined over
