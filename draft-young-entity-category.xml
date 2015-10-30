@@ -132,7 +132,7 @@
     </section>
 
     <section title="Entity Category Attribute">
-      <section title="Syntax">
+      <section anchor="cat-syntax" title="Syntax">
         <t>
           Entity category attribute values MUST be URIs.  It is RECOMMENDED that http:-scheme
           or https:-scheme URLs are used, and further RECOMMENDED that each such value
@@ -159,6 +159,12 @@
           appears anywhere else within a metadata instance, or within any other XML document.
         </t>
 
+        <t>
+          If the entity category attribute Attribute element appears more than once in the
+          metadata for an entity, the combined set of associated attribute values SHOULD be
+          interpreted by relying parties as if they all appeared within a single Attribute
+          element.
+        </t>
       </section>
 
       <section anchor="cat-semantics" title="Semantics">
@@ -232,7 +238,7 @@
     </section>
 
     <section title="Entity Category Support Attribute">
-      <section title="Syntax">
+      <section anchor="sup-syntax" title="Syntax">
         <t>
           Entity category support attribute values MUST be URIs.  It is RECOMMENDED that
           http:-scheme or https:-scheme URLs are used, and further RECOMMENDED that each
@@ -261,6 +267,12 @@
           any other XML document.
         </t>
 
+        <t>
+          If the entity category support attribute Attribute element appears more than once in the
+          metadata for an entity, the combined set of associated attribute values SHOULD be
+          interpreted by relying parties as if they all appeared within a single Attribute
+          element.
+        </t>
       </section>
 
       <section anchor="sup-semantics" title="Semantics">
@@ -519,6 +531,12 @@
             <t>
               <xref target="introduction"/>: make explicit the fact that we don't specify any values of either
               attribute in this document.
+            </t>
+            <t>
+              <xref target="cat-syntax"/>, <xref target="sup-syntax"/>:
+              clarify that it is possible for attribute values to appear within multiple Attribute
+              elements, and that this SHOULD be regarded as equivalent to combining them within a single
+              Attribute element.
             </t>
             <t>
               <xref target="cat-semantics"/>, <xref target="sup-semantics"/>:
