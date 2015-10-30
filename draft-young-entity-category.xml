@@ -261,7 +261,9 @@
           which the Attribute element is contained within an mdattr:EntityAttributes
           element directly contained within an md:Extensions element directly
           contained within the entity's md:EntityDescriptor.
+        </t>
 
+        <t>
           The meaning of the entity category support attribute is undefined by this
           specification if it appears anywhere else within a metadata instance, or within
           any other XML document.
