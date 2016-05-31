@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-entity-category-03" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-entity-category-04" submissionType="independent" category="info">
 
   <front>
 
@@ -204,7 +204,20 @@
             <t>
               A description of the anticipated uses for category membership by relying parties.
             </t>
+            <t>
+              A statement indicating the applicability or otherwise of membership
+              of the entity category to different SAML role descriptors, and any
+              protocol support restrictions that may be relevant.
+            </t>
           </list>
+        </t>
+
+        <t>
+          Entity categories SHOULD NOT be used to indicate the certification
+          status of an entity regarding its conformance to the requirements
+          of an identity assurance framework.
+          The <xref target="SAML2IDAssuranceProfile"/> extension SHOULD be used
+          for this purpose.
         </t>
 
         <t>
@@ -510,6 +523,18 @@
         </front>
       </reference>
 
+      <reference anchor="SAML2IDAssuranceProfile"
+        target="https://wiki.oasis-open.org/security/SAML2IDAssuranceProfile">
+        <front>
+          <title>SAML V2.0 Identity Assurance Profiles Version 1.0</title>
+          <author fullname='RL "Bob" Morgan' role="editor" initials="RL" surname="Morgan"/>
+          <author fullname="Paul Madsen" role="editor" initials="P" surname="Madsen"/>
+          <author fullname="Scott Cantor" role="editor" initials="S." surname="Cantor"/>
+          <date day="5" month="November" year="2010"/>
+        </front>
+        <format type="PDF" target="http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-assurance-profile-cs-01.pdf"/>
+      </reference>
+
     </references>
 
     <section anchor="Acknowledgements" title="Acknowledgements">
@@ -535,6 +560,26 @@
     </section>
 
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
+
+      <section title="Since draft-young-entity-category-03" anchor="changes.since.draft-young-entity-category-03">
+        <t>
+          Additional improvements in response to IETF Gen-Art review:
+          <list style="symbols">
+            <t>
+              <xref target="cat-semantics"/>:
+              additional SHOULD language recommending that category definitions
+              include applicability information for particular SAML role
+              descriptors.
+            </t>
+            <t>
+              <xref target="cat-semantics"/>:
+              added an informative reference to <xref target="SAML2IDAssuranceProfile"/>
+              and language recommending its use over entity categories
+              where appropriate.
+            </t>
+          </list>
+        </t>
+      </section>
 
       <section title="Since draft-young-entity-category-02" anchor="changes.since.draft-young-entity-category-02">
         <t>
