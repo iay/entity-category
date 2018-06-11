@@ -15,7 +15,7 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 ]>
 
-<rfc ipr="trust200902" docName="draft-young-entity-category-05" submissionType="independent" category="info">
+<rfc ipr="trust200902" docName="draft-young-entity-category-07" submissionType="independent" category="info">
 
   <front>
 
@@ -80,9 +80,9 @@
       </t>
 
       <t>
-        Entity category attribute values are URIs, and this document does not specify a
-        controlled vocabulary.  Category URIs may therefore be defined by any appropriate
-        authority without any requirement for central registration.  It is anticipated that
+        Entity category attribute values are URIs, and this document therefore does not specify a
+        controlled vocabulary for assigning entity category values.  Category URIs may be defined 
+        by any appropriate authority without any requirement for central registration.  It is anticipated that
         other specifications may provide management and discovery mechanisms for entity category
         attribute values.
       </t>
@@ -92,7 +92,7 @@
         contains URI values which represent claims that an entity supports and/or interoperates with
         entities in a given category or categories. These values, defined in conjunction with
         specific entity category values, provide entities in a category with the means to identify
-        peer entities that wish to interact with them in category-specific fashion.
+        peer entities that wish to interact with them in a fashion described by the category specification.
       </t>
 
       <t>
@@ -134,15 +134,30 @@
     <section title="Entity Category Attribute">
       <section anchor="cat-syntax" title="Syntax">
         <t>
-          Entity category attribute values MUST be URIs.  It is RECOMMENDED that http:-scheme
-          or https:-scheme URLs are used, and further RECOMMENDED that each such value
+          Entity category attribute values MUST be valid URIs. It is RECOMMENDED that http:-scheme
+          or https:-scheme URIs are used, and further RECOMMENDED that an entity category URI
           resolves to a human-readable document defining the category.
         </t>
 
         <t>
-          The entity category attribute MUST be encoded as a SAML 2.0 Attribute element
-          with @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
-          http://macedir.org/entity-category.
+          Authorities defining entity categories MUST produce a specification of the entity
+          category and SHOULD make arrangement for the entity category URI to resolve to the
+          specification in human readable form. 
+        </t>
+
+        <t>
+          Authorities defining entity categories MAY use versioning of entity category URIs where 
+          appropriate, in which case each version of the specification of the entity category 
+          SHOULD clearly indicate the latest version of the entity category URI (and hence of the 
+          specification). The specification SHOULD include a description of how the authority 
+          defining the entity category implements governance for the specification in the case 
+          when the specification may be updated.
+        </t>
+
+        <t>
+          When used in SAML metadata or protocol elements, the entity category attribute MUST 
+          be encoded as a SAML 2.0 Attribute element with @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri 
+          and @Name http://macedir.org/entity-category.
         </t>
 
         <t>
@@ -223,13 +238,20 @@
         <t>
           If significant changes are made to a category definition, the new version of
           the category SHOULD be represented by a different category URI
-          so that the old and new versions can be distinguished by a relying party.
+          so that the old and new versions can be distinguished by a relying party. It
+          is for this reason that authorities defining entity categories MAY
+          employ some form of versioning for entity category URI. When versioning is
+          used each version of the entity category MUST be treated as a separate URI.
         </t>
 
         <t>
           No ordering relation is defined over entity category value URIs.
           Entity category attribute value URIs MUST be treated as opaque strings
-          for the purpose of comparison.
+          for the purpose of comparison. In particular, if the specification defining the
+          entity category relies on versioning of the entity category URI, a relying
+          party MUST NOT assume any particular ordering between different versions of
+          the entity category. Any order between versions MUST be spelled out in the
+          specification.
         </t>
 
       </section>
@@ -264,7 +286,10 @@
           such value resolves to a human-readable document defining the value's semantics.
           A given entity category value MAY be associated with multiple support values in
           order to allow for multiple forms of support, participation, or interoperation
-          with entities in the category.
+          with entities in the category. The authoritiy defining the entity category and
+          entity category support values MUST clearly describe the relationship between 
+          (all versions of) the entity category URI and (all versions of) the entity 
+          category support URIs as applicable in the entity category specification.
         </t>
 
         <t>
@@ -327,14 +352,21 @@
 
         <t>
           If significant changes are made to a category support definition, the new version
-          SHOULD be represented by a different category support URI
-          so that the old and new versions can be distinguished by a relying party.
+          SHOULD be represented by a different category support URI so that the old and new 
+          versions can be distinguished by a relying party. It is for this reason that 
+          authorities defining entity categories support MAY employ some form of versioning. 
+          When versioning is used each version of the entity category support URI MUST be treated 
+          as a separate URI.
         </t>
 
         <t>
-          No ordering relation is defined over entity category value URIs.
-          Entity category attribute value URIs MUST be treated as opaque strings
-          for the purpose of comparison.
+          No ordering relation is defined over entity category URIs.
+          Entity category attribute support value URIs MUST be treated as opaque strings
+          for the purpose of comparison. In particular, if the specification defining the
+          entity category support values relies on versioning, a relying
+          party MUST NOT assume any particular ordering between different versions of
+          the entity category support URI. Any order between versions MUST be spelled 
+          out in the specification.
         </t>
 
       </section>
@@ -560,6 +592,12 @@
     </section>
 
     <section title="Change Log (to be removed by RFC Editor before publication)" anchor="change.log">
+
+      <section title="Since draft-young-entity-category-05" anchor="changes.since.draft-young-entity-category-05">
+        <t>
+           Recommendation on versioning and language on requirements for entity category specification.
+        </t>
+      </section>
 
       <section title="Since draft-young-entity-category-04" anchor="changes.since.draft-young-entity-category-04">
         <t>
