@@ -5,10 +5,10 @@
 Network Working Group                                      I. Young, Ed.
 Internet-Draft                                               Independent
 Intended status: Informational                              L. Johansson
-Expires: August 5, 2018                                            SUNET
+Expires: December 22, 2018                                         SUNET
                                                                S. Cantor
                                                    Shibboleth Consortium
-                                                        February 1, 2018
+                                                           June 20, 2018
 
 
                 The Entity Category SAML Attribute Types
@@ -39,7 +39,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 5, 2018.
+   This Internet-Draft will expire on December 22, 2018.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Young, et al.            Expires August 5, 2018                 [Page 1]
+Young, et al.           Expires December 22, 2018               [Page 1]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
    carefully, as they describe your rights and restrictions with respect
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Young, et al.            Expires August 5, 2018                 [Page 2]
+Young, et al.           Expires December 22, 2018               [Page 2]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
    depend on the details of the category's definition, and will often be
@@ -165,9 +165,9 @@ Internet-Draft               Entity Category               February 2018
 
 
 
-Young, et al.            Expires August 5, 2018                 [Page 3]
+Young, et al.           Expires December 22, 2018               [Page 3]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
 3.  Entity Category Attribute
@@ -221,9 +221,9 @@ Internet-Draft               Entity Category               February 2018
 
 
 
-Young, et al.            Expires August 5, 2018                 [Page 4]
+Young, et al.           Expires December 22, 2018               [Page 4]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
    The precise semantics of such a claim depend on the definition of the
@@ -277,9 +277,9 @@ Internet-Draft               Entity Category               February 2018
 
 
 
-Young, et al.            Expires August 5, 2018                 [Page 5]
+Young, et al.           Expires December 22, 2018               [Page 5]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
    strings for the purpose of comparison.  In particular, if the
@@ -333,9 +333,9 @@ Internet-Draft               Entity Category               February 2018
 
 
 
-Young, et al.            Expires August 5, 2018                 [Page 6]
+Young, et al.           Expires December 22, 2018               [Page 6]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
    Claims that a SAML entity implements support for one or more
@@ -389,9 +389,9 @@ Internet-Draft               Entity Category               February 2018
 
 
 
-Young, et al.            Expires August 5, 2018                 [Page 7]
+Young, et al.           Expires December 22, 2018               [Page 7]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
    versioning is used each version of the entity category support URI
@@ -445,9 +445,9 @@ Internet-Draft               Entity Category               February 2018
 
 
 
-Young, et al.            Expires August 5, 2018                 [Page 8]
+Young, et al.           Expires December 22, 2018               [Page 8]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
    o  The integrity of the metadata delivered to the relying party, as
@@ -501,9 +501,9 @@ Internet-Draft               Entity Category               February 2018
 
 
 
-Young, et al.            Expires August 5, 2018                 [Page 9]
+Young, et al.           Expires December 22, 2018               [Page 9]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
    claims according to local policy.  For example, an agent charged with
@@ -557,9 +557,9 @@ Internet-Draft               Entity Category               February 2018
 
 
 
-Young, et al.            Expires August 5, 2018                [Page 10]
+Young, et al.           Expires December 22, 2018              [Page 10]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
 Appendix A.  Acknowledgements
@@ -613,9 +613,9 @@ B.4.  Since draft-young-entity-category-02
 
 
 
-Young, et al.            Expires August 5, 2018                [Page 11]
+Young, et al.           Expires December 22, 2018              [Page 11]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
    o  Section 1: make explicit the fact that we don't specify any values
@@ -669,9 +669,9 @@ B.6.  Since draft-young-entity-category-00
 
 
 
-Young, et al.            Expires August 5, 2018                [Page 12]
+Young, et al.           Expires December 22, 2018              [Page 12]
 
-Internet-Draft               Entity Category               February 2018
+Internet-Draft               Entity Category                   June 2018
 
 
    Reorganize some of the introductory boilerplate sections.
@@ -725,4 +725,4 @@ Authors' Addresses
 
 
 
-Young, et al.            Expires August 5, 2018                [Page 13]
+Young, et al.           Expires December 22, 2018              [Page 13]
