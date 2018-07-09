@@ -1,0 +1,663 @@
+<html><head><title>wdiff rfc8409.original rfc8409.txt</title></head><body>
+<pre>
+
+<strike><font color='red'>Network Working Group</font></strike>
+<strong><font color='green'>Independent Submission</font></strong>                                     I. Young, Ed.
+<strike><font color='red'>Internet-Draft</font></strike>
+<strong><font color='green'>Request for Comments: 8409</font></strong>                                   Independent
+<strike><font color='red'>Intended status:</font></strike>
+<strong><font color='green'>Category:</font></strong> Informational                                     L. Johansson
+<strike><font color='red'>Expires: August 4, 2018</font></strike>
+<strong><font color='green'>ISSN: 2070-1721</font></strong>                                                    SUNET
+                                                               S. Cantor
+                                                   Shibboleth Consortium
+                                                        <strike><font color='red'>January 31,</font></strike>
+                                                               <strong><font color='green'>June</font></strong> 2018
+
+     The Entity Category <strike><font color='red'>SAML</font></strike> <strong><font color='green'>Security Assertion Markup Language (SAML)</font></strong>
+                            Attribute Types
+                     <strike><font color='red'>draft-young-entity-category-07</font></strike>
+
+Abstract
+
+   This document describes a <strike><font color='red'>SAML</font></strike> <strong><font color='green'>Security Assertion Markup Language (SAML)</font></strong>
+   entity attribute <strike><font color='red'>which</font></strike> <strong><font color='green'>that</font></strong> can be used to assign category membership
+   semantics to an <strike><font color='red'>entity,</font></strike> <strong><font color='green'>entity</font></strong> and a second attribute for use in claiming
+   interoperation with or support for entities in such categories.
+
+   This document is a product of the <strong><font color='green'>working group process of the</font></strong>
+   Research and Education Federations
+   <strike><font color='red'>(REFEDS) Working Group process.</font></strike> <strong><font color='green'>group (REFEDS).</font></strong>
+
+Status of This Memo
+
+   This <strike><font color='red'>Internet-Draft</font></strike> <strong><font color='green'>document</font></strong> is <strike><font color='red'>submitted in full conformance with</font></strike> <strong><font color='green'>not an Internet Standards Track specification; it is
+   published for informational purposes.
+
+   This is a contribution to</font></strong> the
+   <strike><font color='red'>provisions</font></strike> <strong><font color='green'>RFC Series, independently</font></strong> of <strike><font color='red'>BCP 78</font></strike> <strong><font color='green'>any other
+   RFC stream.  The RFC Editor has chosen to publish this document at
+   its discretion</font></strong> and <strike><font color='red'>BCP 79.
+
+   Internet-Drafts</font></strike> <strong><font color='green'>makes no statement about its value for
+   implementation or deployment.  Documents approved for publication by
+   the RFC Editor</font></strong> are <strike><font color='red'>working documents</font></strike> <strong><font color='green'>not candidates for any level</font></strong> of <strike><font color='red'>the</font></strike> Internet <strike><font color='red'>Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list</font></strike> <strong><font color='green'>Standard;
+   see Section 2</font></strong> of <strong><font color='green'>RFC 7841.
+
+   Information about the</font></strong> current <strike><font color='red'>Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum</font></strike> <strong><font color='green'>status</font></strong> of <strike><font color='red'>six months</font></strike> <strong><font color='green'>this document, any errata,</font></strong>
+   and <strong><font color='green'>how to provide feedback on it</font></strong> may be <strike><font color='red'>updated, replaced, or obsoleted by other documents</font></strike> <strong><font color='green'>obtained</font></strong> at <strike><font color='red'>any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on August 4, 2018.</font></strike>
+   <strong><font color='green'>https://www.rfc-editor.org/info/rfc8409.</font></strong>
+
+Copyright Notice
+
+   Copyright (c) 2018 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents
+   (https://trustee.ietf.org/license-info) in effect on the date of
+   publication of this document.  Please review these documents
+   carefully, as they describe your rights and restrictions with respect
+   to this document.
+
+Table of Contents
+
+   1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
+     1.1.  REFEDS Document Process . . . . . . . . . . . . . . . . .   3
+   2.  Notation and Conventions  . . . . . . . . . . . . . . . . . .   3
+   3.  Entity Category Attribute . . . . . . . . . . . . . . . . . .   <strike><font color='red'>4</font></strike>   <strong><font color='green'>3</font></strong>
+     3.1.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . .   <strike><font color='red'>4</font></strike>   <strong><font color='green'>3</font></strong>
+     3.2.  Semantics . . . . . . . . . . . . . . . . . . . . . . . .   4
+     3.3.  Entity Category Example . . . . . . . . . . . . . . . . .   <strike><font color='red'>6</font></strike>   <strong><font color='green'>5</font></strong>
+   4.  Entity Category Support Attribute . . . . . . . . . . . . . .   6
+     4.1.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . .   6
+     4.2.  Semantics . . . . . . . . . . . . . . . . . . . . . . . .   7
+     4.3.  Entity Category Support Example . . . . . . . . . . . . .   8
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  <strike><font color='red'>10</font></strike>   <strong><font color='green'>9</font></strong>
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .  10
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .  10
+   <strike><font color='red'>Appendix A.</font></strike>
+   Acknowledgements  . . . . . . . . . . . . . . . . . .  <strike><font color='red'>11
+   Appendix B.  Change Log (to be removed by RFC Editor before
+                publication) . . . . . . . . . . . . . . . . . . . .  11
+     B.1.  Since draft-young-entity-category-05  . . . . . . . . . .  11
+     B.2.  Since draft-young-entity-category-04  . . . . . . . . . .  11
+     B.3.  Since draft-young-entity-category-03  . . . . . . . . . .  11
+     B.4.  Since draft-young-entity-category-02  . . . .</font></strike> . . . . . .  11
+     <strike><font color='red'>B.5.  Since draft-young-entity-category-01  . . . . . . . . . .  12
+     B.6.  Since draft-young-entity-category-00  . . . . . . . . . .  12
+     B.7.  Since draft-macedir-entity-category . . . . . . . . . . .  13</font></strike>
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  <strike><font color='red'>13</font></strike>  <strong><font color='green'>11</font></strong>
+
+1.  Introduction
+
+   This document describes a SAML <strike><font color='red'>attribute,</font></strike> <strong><font color='green'>attribute</font></strong> referred to here as the
+   "entity category <strike><font color='red'>attribute", values</font></strike> <strong><font color='green'>attribute".  Values</font></strong> of <strike><font color='red'>which</font></strike> <strong><font color='green'>this attribute</font></strong> represent
+   entity types or categories.  When used with the SAML V2.0 Metadata
+   Extension for Entity Attributes <strike><font color='red'>[SAML2MetadataAttr]</font></strike> <strong><font color='green'>[SAML2MetadataAttr],</font></strong> each such entity
+   category attribute value represents a claim that the entity thus <strike><font color='red'>labelled</font></strike>
+   <strong><font color='green'>labeled</font></strong> meets the requirements of, and is asserted to be a member of,
+   the indicated category.
+
+   These category membership claims MAY be used by a relying party to
+   provision policy for release of attributes from an identity provider,
+   to influence user interface decisions such as those related to
+   identity provider discovery, or for any other purpose.  In general,
+   the intended uses of any claim of membership in a given category will
+   depend on the details of the category's <strike><font color='red'>definition,</font></strike> <strong><font color='green'>definition</font></strong> and will often be
+   included as part of that definition.
+
+   Entity category attribute values are <strike><font color='red'>URIs, and</font></strike> <strong><font color='green'>URIs; therefore,</font></strong> this document
+   <strike><font color='red'>therefore</font></strike>
+   does not specify a controlled vocabulary for assigning entity
+   category values.  Category URIs may be defined by any appropriate
+   authority without any requirement for central registration.  It is
+   anticipated that other specifications may provide management and
+   discovery mechanisms for entity category attribute values.
+
+   <strike><font color='red'>A second</font></strike>
+
+   <strong><font color='green'>This document also describes a</font></strong> SAML <strike><font color='red'>attribute,</font></strike> <strong><font color='green'>attribute</font></strong> referred to here as the
+   "entity category support <strike><font color='red'>attribute",</font></strike> <strong><font color='green'>attribute".  This attribute</font></strong> contains URI
+   values <strike><font color='red'>which</font></strike> <strong><font color='green'>that</font></strong> represent claims that an entity supports and/or
+   interoperates with entities in a given category or categories.  These
+   values, defined in conjunction with specific entity category values,
+   provide entities in a category with the means to identify peer
+   entities that wish to interact with them in a fashion described by
+   the category specification.
+
+   This document does not specify any values <strike><font color='red'>either</font></strike> for <strong><font color='green'>either</font></strong> the entity
+   category attribute or <strike><font color='red'>for</font></strike> the entity category support attribute.
+
+1.1.  REFEDS Document Process
+
+   The Research and Education Federations group <strike><font color='red'>([REFEDS])</font></strike> <strong><font color='green'>[REFEDS]</font></strong> is the voice
+   that articulates the mutual needs of research and education identity
+   federations worldwide.  It aims to represent the requirements of
+   research and education in the ever-growing space of access and
+   identity management.
+
+   From time to <strike><font color='red'>time</font></strike> <strong><font color='green'>time,</font></strong> REFEDS will <strike><font color='red'>wish to</font></strike> publish a document in the
+   <strike><font color='red'>Internet</font></strike> RFC <strike><font color='red'>series.</font></strike> <strong><font color='green'>Series.</font></strong>
+   Such documents will be published as part of the
+   <strike><font color='red'>RFC</font></strike> Independent
+   Submission <strike><font color='red'>Stream</font></strike> <strong><font color='green'>stream</font></strong> [RFC4844]; <strike><font color='red'>however</font></strike> <strong><font color='green'>however,</font></strong> the REFEDS
+   <strike><font color='red'>working group sign-off</font></strike> <strong><font color='green'>Working Group sign-
+   off</font></strong> process will have been followed for these documents, as described
+   in the REFEDS Participant's Agreement [REFEDS.agreement].
+
+   This document is a product of the REFEDS Working Group process.
+
+2.  Notation and Conventions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", <strong><font color='green'>"NOT RECOMMENDED",</font></strong> "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in <strike><font color='red'>RFC 2119 [BCP14].</font></strike>
+   <strong><font color='green'>BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.</font></strong>
+
+3.  Entity Category Attribute
+
+3.1.  Syntax
+
+   Entity category attribute values MUST be valid URIs.  It is
+   RECOMMENDED that http:-scheme or https:-scheme URIs are <strike><font color='red'>used, and</font></strike> <strong><font color='green'>used; it is</font></strong>
+   further RECOMMENDED that an entity category URI resolves to a human-
+   readable document defining the category.
+
+   Authorities defining entity categories MUST produce a specification
+   of the entity category and SHOULD make arrangement for the entity
+   category URI to resolve to the specification in <strike><font color='red'>human readable</font></strike> <strong><font color='green'>human-readable</font></strong> form.
+
+   Authorities defining entity categories MAY use versioning of entity
+   category URIs where <strike><font color='red'>appropriate, in which case</font></strike> <strong><font color='green'>appropriate; if versioning is used,</font></strong> each version
+   of the specification of the entity category SHOULD clearly indicate
+   the latest version of the entity category URI (and hence of the
+   specification).  The specification SHOULD include a description of
+   how the authority defining the entity category implements governance
+   for the specification in the case when the specification may be
+   updated.
+
+   When used in SAML metadata or protocol elements, the entity category
+   attribute MUST be encoded as a SAML 2.0 Attribute element with
+   @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
+   http://macedir.org/entity-category.
+
+   A SAML entity is associated with one or more categories by including
+   the Attribute element described here in the entity's metadata through
+   use of the <strike><font color='red'>[SAML2MetadataAttr]</font></strike> metadata <strike><font color='red'>extension,</font></strike> <strong><font color='green'>extension defined</font></strong> in <strike><font color='red'>which</font></strike> <strong><font color='green'>[SAML2MetadataAttr].  In
+   this extension,</font></strong> the Attribute element is contained within an
+   mdattr:EntityAttributes element directly contained within an
+   md:Extensions element directly contained within the entity's
+   md:EntityDescriptor.
+
+   The meaning of the entity category attribute is <strike><font color='red'>undefined</font></strike> <strong><font color='green'>not defined</font></strong> by this
+   specification if it appears anywhere else within a metadata <strike><font color='red'>instance,</font></strike> <strong><font color='green'>instance</font></strong>
+   or within any other XML document.
+
+   If the entity category attribute Attribute element appears more than
+   once in the metadata for an entity, the combined set of associated
+   attribute values SHOULD be interpreted by relying parties as if they
+   all appeared within a single Attribute element.
+
+3.2.  Semantics
+
+   The presence of the entity category attribute within an entity's
+   entity attributes represents a series of claims (one for each
+   attribute value) that the entity is a member of each named category.
+   The precise semantics of such a claim depend on the definition of the
+   category itself.
+
+   An entity may be claimed to be a member of more than one category.
+   In this case, the entity is claimed to meet the requirements of each
+   category independently unless otherwise specified by the category
+   definitions themselves.
+
+   The definition of the concept of a <strike><font color='red'>category</font></strike> <strong><font color='green'>"category"</font></strong> is intentionally not
+   addressed in this document, in order to leave it as general as
+   possible.  However, to be useful, category definitions SHOULD include
+   the following as appropriate:
+
+   o  A definition of the authorities who may validly assert membership
+      in the category.  While membership in some categories may be self-
+      asserted informally by an entity's owner, others may need to be
+      validated by third parties such as the entity's home federation or
+      other registrar.
+
+   o  A set of criteria by which an entity's membership in the category
+      can be objectively assessed.
+
+   o  A definition of the processes by which valid authorities may
+      determine that an entity meets the category's membership criteria.
+
+   o  A description of the anticipated uses for category membership by
+      relying parties.
+
+   o  A statement indicating the applicability or otherwise of
+      membership of the entity category to different SAML role
+      <strike><font color='red'>descriptors,</font></strike>
+      <strong><font color='green'>descriptors</font></strong> and any protocol support restrictions that may be
+      relevant.
+
+   Entity categories SHOULD NOT be used to indicate the certification
+   status of an entity regarding its conformance to the requirements of
+   an identity assurance framework.  The <strike><font color='red'>[SAML2IDAssuranceProfile]</font></strike> extension <strong><font color='green'>defined in
+   [SAML2IDAssuranceProfile]</font></strong> SHOULD be used for this purpose.
+
+   If significant changes are made to a category definition, the new
+   version of the category SHOULD be represented by a different category
+   URI so that the old and new versions can be distinguished by a
+   relying party.  It is for this reason that authorities defining
+   entity categories MAY employ some form of versioning for entity
+   category <strike><font color='red'>URI.</font></strike> <strong><font color='green'>URIs.</font></strong>  When versioning is <strike><font color='red'>used</font></strike> <strong><font color='green'>used,</font></strong> each version of the entity
+   category MUST be treated as a separate URI.
+
+   No ordering relation is defined over entity category value URIs.
+   Entity category attribute value URIs MUST be treated as opaque
+   strings for the purpose of comparison.  In particular, if the
+   specification defining the entity category relies on versioning of
+   the entity category URI, a relying party MUST NOT assume any
+   particular ordering between different versions of the entity
+   category.  Any order between versions MUST be spelled out in the
+   specification.
+
+3.3.  Entity Category Example
+   &lt;md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+     entityID="https://service.example.com/entity"&gt;
+     &lt;md:Extensions&gt;
+       &lt;mdattr:EntityAttributes
+         xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute"&gt;
+         &lt;Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
+           NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+           Name="http://macedir.org/entity-category"&gt;
+           &lt;AttributeValue
+             &gt;http://example.org/category/dog&lt;/AttributeValue&gt;
+           &lt;AttributeValue&gt;urn:oid:1.3.6.1.4.1.21829&lt;/AttributeValue&gt;
+         &lt;/Attribute&gt;
+       &lt;/mdattr:EntityAttributes&gt;
+     &lt;/md:Extensions&gt;
+     ...
+   &lt;/md:EntityDescriptor&gt;
+
+4.  Entity Category Support Attribute
+
+4.1.  Syntax
+
+   Entity category support attribute values MUST be URIs.  It is
+   RECOMMENDED that http:-scheme or https:-scheme URLs are <strike><font color='red'>used, and</font></strike> <strong><font color='green'>used; it is</font></strong>
+   further RECOMMENDED that each such value resolves to a human-readable
+   document defining the value's semantics.  A given entity category
+   value MAY be associated with multiple support values in order to
+   allow for multiple forms of support, participation, or interoperation
+   with entities in the category.  The <strike><font color='red'>authoritiy</font></strike> <strong><font color='green'>authority</font></strong> defining the entity
+   category and entity category support values MUST clearly describe the
+   relationship between (all versions of) the entity category URI and
+   (all versions of) the entity category support URIs as applicable in
+   the entity category specification.
+
+   The entity category support attribute MUST be encoded as a SAML 2.0
+   Attribute element with @NameFormat
+   urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
+   http://macedir.org/entity-category-support.
+
+   Claims that a SAML entity implements support for one or more
+   categories are represented by including the Attribute element
+   described here in the entity's metadata through use of the
+   <strike><font color='red'>[SAML2MetadataAttr]</font></strike> metadata <strike><font color='red'>extension,</font></strike>
+   <strong><font color='green'>extension defined</font></strong> in <strike><font color='red'>which</font></strike> <strong><font color='green'>[SAML2MetadataAttr].  In this extension,</font></strong> the
+   Attribute element is contained within an mdattr:EntityAttributes
+   element directly contained within an md:Extensions element directly
+   contained within the entity's md:EntityDescriptor.
+
+   The meaning of the entity category support attribute is <strike><font color='red'>undefined</font></strike> <strong><font color='green'>not defined</font></strong>
+   by this specification if it appears anywhere else within a metadata
+   <strike><font color='red'>instance,</font></strike>
+   <strong><font color='green'>instance</font></strong> or within any other XML document.
+
+   If the entity category support attribute Attribute element appears
+   more than once in the metadata for an entity, the combined set of
+   associated attribute values SHOULD be interpreted by relying parties
+   as if they all appeared within a single Attribute element.
+
+4.2.  Semantics
+
+   The presence of the entity category support attribute within an
+   entity's entity attributes represents a series of claims (one for
+   each attribute value) that the entity supports peer entities in a
+   category in a particular fashion.  The precise semantics of such a
+   claim depend on the definition of the category support identifier
+   itself.  Category support claims will often be defined to be self-
+   asserted.
+
+   An entity may be claimed to support more than one category.  In this
+   case, the entity is claimed to meet the support requirements of each
+   category independently unless otherwise specified by the category
+   definitions themselves.
+
+   The definition of the concept of "support" for a category is
+   intentionally not addressed in this document, in order to leave it as
+   general as possible.  It is assumed that entity category definitions
+   MAY define one or more support values signifying particular
+   definitions for "support" by peers as motivated by use cases arising
+   from the definition of the category itself.
+
+   A common case is expected to be the definition of a single support
+   value whose URI is identical to that defined for the category itself.
+
+   If significant changes are made to a category support definition, the
+   new version SHOULD be represented by a different category support URI
+   so that the old and new versions can be distinguished by a relying
+   party.  It is for this reason that authorities defining entity
+   categories support MAY employ some form of versioning.  When
+   versioning is <strike><font color='red'>used</font></strike> <strong><font color='green'>used,</font></strong> each version of the entity category support URI
+   MUST be treated as a separate URI.
+
+   No ordering relation is defined over entity category URIs.  Entity
+   category attribute support value URIs MUST be treated as opaque
+   strings for the purpose of comparison.  In particular, if the
+   specification defining the entity category support values relies on
+   versioning, a relying party MUST NOT assume any particular ordering
+   between different versions of the entity category support URI.  Any
+   order between versions MUST be spelled out in the specification.
+
+4.3.  Entity Category Support Example
+
+   &lt;md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+     entityID="https://idp.example.edu/entity"&gt;
+     &lt;md:Extensions&gt;
+       &lt;mdattr:EntityAttributes
+         xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute"&gt;
+         &lt;Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
+           NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+           Name="http://macedir.org/entity-category-support"&gt;
+           &lt;AttributeValue
+             &gt;http://example.org/category/dog/basic&lt;/AttributeValue&gt;
+           &lt;AttributeValue
+             &gt;http://example.org/category/dog/advanced&lt;/AttributeValue&gt;
+           &lt;AttributeValue&gt;urn:oid:1.3.6.1.4.1.21829&lt;/AttributeValue&gt;
+         &lt;/Attribute&gt;
+       &lt;/mdattr:EntityAttributes&gt;
+     &lt;/md:Extensions&gt;
+     ...
+   &lt;/md:EntityDescriptor&gt;
+
+5.  IANA Considerations
+
+   This <strike><font color='red'>memo includes</font></strike> <strong><font color='green'>document has</font></strong> no <strike><font color='red'>request to IANA.</font></strike> <strong><font color='green'>IANA actions.</font></strong>
+
+6.  Security Considerations
+
+   The presence of the entity category attribute within an entity's
+   entity attributes represents a series of claims (one for each
+   attribute value) that the entity is a member of the named categories.
+   Before accepting and acting on such claims, any relying party needs
+   to establish, at a level of assurance sufficient for the intended
+   use, a chain of trust concluding that the claim is justified.
+
+   Some of the elements in such a chain of trust might include:
+
+   o  The integrity of the metadata delivered to the relying party, <strike><font color='red'>as</font></strike> for <strike><font color='red'>example</font></strike>
+      <strong><font color='green'>example, as</font></strong> assured by a digital signature.
+
+   o  If the entity category attribute is carried within a signed
+      assertion, the assertion itself must be evaluated.
+
+   o  The policies and procedures of the immediate source of the
+      <strike><font color='red'>metadata;</font></strike>
+      <strong><font color='green'>metadata,</font></strong> in particular, any procedures the immediate source has
+      with regard to aggregation of metadata from other sources.
+
+   o  The policies and procedures implemented by agents along the
+      publication path from the original metadata <strike><font color='red'>registrar: this</font></strike> <strong><font color='green'>registrar.  This</font></strong> may
+      be determined <strike><font color='red'>either</font></strike> by examination of the published procedures of each
+      agent in <strike><font color='red'>turn,</font></strike> <strong><font color='green'>turn</font></strong> or may be simplified if the entity metadata includes
+      publication path metadata in mdrpi:PublicationPath elements as
+      described in <strike><font color='red'>[SAML2MetadataRPI] section 2.3.1.</font></strike> <strong><font color='green'>Section 2.3.1 of [SAML2MetadataRPI].</font></strong>
+
+   o  The policies and procedures implemented by the original metadata
+      registrar.  The registrar's identity may be known <strike><font color='red'>implicitly,</font></strike> <strong><font color='green'>implicitly</font></strong> or
+      may be determined from the entity metadata if it includes an
+      mdrpi:RegistrationInfo element and corresponding
+      @registrationAuthority attribute as described in
+      <strike><font color='red'>[SAML2MetadataRPI] section 2.1.1.</font></strike> <strong><font color='green'>Section 2.1.1 of
+      [SAML2MetadataRPI].</font></strong>
+
+   o  The definition of the category <strike><font color='red'>itself;</font></strike> <strong><font color='green'>itself,</font></strong> in particular, any
+      statements it makes about whether membership of the category may
+      be <strike><font color='red'>self-asserted,</font></strike> <strong><font color='green'>self-asserted</font></strong> or may only be asserted by particular
+      authorities.
+
+   Although entity category support attribute values will often be
+   defined as self-asserted claims by the containing entity, the
+   provenance of the metadata remains relevant to a relying party's
+   decision to accept a claim of support as legitimate, and the specific
+   definition of a support claim will influence the assurance required
+   to act on it.
+
+   The conclusion that a claim of category membership or support is
+   justified and should be acted upon may require a determination of the
+   origin of the claim.  This may not be necessary if the immediate
+   source of the metadata is trusted to such an extent that the trust
+   calculation is essentially delegated to it.
+
+   In many cases, a claim will be included in an entity's metadata by
+   the original metadata registrar on behalf of the entity's owner, and
+   the mdrpi:RegistrationInfo element's @registrationAuthority attribute
+   is available to carry the registrar's identity.  However, any agent
+   that is part of the chain of custody between the original registrar
+   and the final relying party may have added, <strike><font color='red'>removed</font></strike> <strong><font color='green'>removed,</font></strong> or transformed
+   claims according to local policy.  For example, an agent charged with
+   redistributing metadata may remove claims it regards as
+   <strike><font color='red'>untrustworthy,</font></strike> <strong><font color='green'>untrustworthy</font></strong>
+   or add others <strike><font color='red'>which</font></strike> <strong><font color='green'>that</font></strong> were not already present if they have value to its
+   intended audience.
+
+7.  References
+
+7.1.  Normative References
+
+   <strike><font color='red'>[BCP14]</font></strike>
+
+   <strong><font color='green'>[RFC2119]</font></strong>  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              <strong><font color='green'>DOI 10.17487/RFC2119,</font></strong> March <strike><font color='red'>1997.</font></strike> <strong><font color='green'>1997,
+              &lt;https://www.rfc-editor.org/info/rfc2119&gt;.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, &lt;https://www.rfc-editor.org/info/rfc8174&gt;.</font></strong>
+
+   [SAML2MetadataAttr]
+              Cantor, S., Ed., "SAML V2.0 Metadata Extension for Entity
+              <strike><font color='red'>Attributes",</font></strike>
+              <strong><font color='green'>Attributes Version 1.0",</font></strong> August 2009,
+              <strike><font color='red'>&lt;http://wiki.oasis-open.org/security/SAML2MetadataAttr&gt;.</font></strike> <strong><font color='green'>&lt;http://docs.oasis-
+              open.org/security/saml/Post2.0/
+              sstc-metadata-attr-cs-01.html&gt;.</font></strong>
+
+   [SAML2MetadataRPI]
+              La Joie, C., Ed., "SAML V2.0 Metadata Extensions for
+              Registration and Publication Information Version 1.0",
+              April 2012,
+              <strike><font color='red'>&lt;http://wiki.oasis-open.org/security/SAML2MetadataDRI&gt;.</font></strike> <strong><font color='green'>&lt;http://docs.oasis-
+              open.org/security/saml/Post2.0/saml-metadata-
+              rpi/v1.0/cs01/saml-metadata-rpi-v1.0-cs01.html&gt;.</font></strong>
+
+7.2.  Informative References
+
+   [REFEDS]   <strike><font color='red'>Research</font></strike>   <strong><font color='green'>"Research</font></strong> and Education <strike><font color='red'>Federations, "REFEDS Home Page",</font></strike> <strong><font color='green'>Federations Group (REFEDS)",</font></strong>
+              &lt;http://www.refeds.org/&gt;.
+
+   [REFEDS.agreement]
+              Research and Education Federations, "REFEDS Participant's
+              Agreement",
+              &lt;https://refeds.org/about/refeds-participants-agreement&gt;.
+
+   [RFC4844]  Daigle, <strike><font color='red'>L.</font></strike> <strong><font color='green'>L., Ed.</font></strong> and Internet Architecture Board, "The RFC
+              Series and RFC Editor", RFC 4844, <strong><font color='green'>DOI 10.17487/RFC4844,</font></strong>
+              July <strike><font color='red'>2007.</font></strike> <strong><font color='green'>2007, &lt;https://www.rfc-editor.org/info/rfc4844&gt;.</font></strong>
+
+   [SAML2IDAssuranceProfile]
+              Morgan, RL., Ed., Madsen, P., Ed., and S. Cantor, Ed.,
+              "SAML V2.0 Identity Assurance Profiles Version 1.0",
+              November 2010, <strike><font color='red'>&lt;https://wiki.oasis-open.org/security/
+              SAML2IDAssuranceProfile&gt;.
+
+Appendix A.</font></strike> <strong><font color='green'>&lt;http://docs.oasis-
+              open.org/security/saml/Post2.0/
+              sstc-saml-assurance-profile-cs-01.html&gt;.</font></strong>
+
+Acknowledgements
+
+   This work has been a collaborative effort within the REFEDS and MACE-
+   Dir communities.  Special thanks to <strong><font color='green'>the following individuals</font></strong> (in no
+   particular order):
+
+   o  RL 'Bob' Morgan
+
+   o  Ken Klingenstein
+
+   o  Keith Hazelton
+
+   o  Steven Olshansky
+
+   o  Mikael Linden
+
+   o  Nicole Harris
+
+   o  Tom Scavo
+
+<strike><font color='red'>Appendix B.  Change Log (to be removed by RFC Editor before publication)
+
+B.1.  Since draft-young-entity-category-05
+
+   Recommendation on versioning and language on requirements for entity
+   category specification.
+
+B.2.  Since draft-young-entity-category-04
+
+   No substantive changes.
+
+B.3.  Since draft-young-entity-category-03
+
+   Additional improvements in response to IETF Gen-Art review:
+
+   o  Section 3.2: additional SHOULD language recommending that category
+      definitions include applicability information for particular SAML
+      role descriptors.
+
+   o  Section 3.2: added an informative reference to
+      [SAML2IDAssuranceProfile] and language recommending its use over
+      entity categories where appropriate.
+
+B.4.  Since draft-young-entity-category-02
+
+   Fix link to the REFEDS Participant's Agreement [REFEDS.agreement].
+
+   Clarifications in response to IETF Gen-Art review:
+
+   o  Section 1: make explicit the fact that we don't specify any values
+      of either attribute in this document.
+
+   o  Section 3.1, Section 4.1: clarify that it is possible for
+      attribute values to appear within multiple Attribute elements, and
+      that this SHOULD be regarded as equivalent to combining them
+      within a single Attribute element.
+
+   o  Section 3.2, Section 4.2: clarify the expectation that categories
+      are independent unless their definitions say otherwise.
+
+   o  Section 3.2, Section 4.2: If significant changes are made to a
+      category definition, the new version of the category SHOULD be
+      represented by a different category URI *so that the old and new
+      versions can be distinguished by a relying party*.
+
+   o  Section 3.2, Section 4.2: *No ordering relation is defined over
+      entity category value URIs.* Entity category attribute value URIs
+      MUST be treated as opaque strings *for the purpose of comparison*.
+
+B.5.  Since draft-young-entity-category-01
+
+   Changes from REFEDS consultation process:
+
+   1.  Simplify title from "The Entity Category SAML Entity Metadata
+       Attribute Types" to "The Entity Category SAML Attribute Types".
+
+   2.  Clarify the use of [SAML2MetadataRPI] in Section 6 by indicating
+       the elements and attributes to be used, and the sections of
+       [SAML2MetadataRPI] in which they are defined.
+
+   3.  Remove any implication that category and category support claims
+       are necessarily being made "by" the entity itself.
+
+   4.  Clarify that the origin of a category membership or support claim
+       may not always be the original registrar.
+
+   Grammar fix in Abstract.
+
+   Change the reference anchor for the SAML [SAML2MetadataRPI]
+   extension, as it now more commonly known as RPI than its original DRI
+   abbreviation.
+
+B.6.  Since draft-young-entity-category-00
+
+   Update affiliations for Leif Johansson and Scott Cantor.
+
+   Remove authors from acknowledgements.
+
+   Reorganize some of the introductory boilerplate sections.
+
+B.7.  Since draft-macedir-entity-category
+
+   Adopted as base for draft-young-entity-category-00.
+
+   Changed ipr from "pre5378Trust200902" to "trust200902" and submission
+   type from IETF to independent.
+
+   Designate Ian Young as editor for this version.  Set more general
+   affiliation.
+
+   Modernised reference to RFC 2119 [BCP14] and moved that reference to
+   the introduction.
+
+   Adjusted layout of examples so that they don't exceed the RFC
+   standard line length.
+
+   Minor typographical nits but (intentionally) no substantive content
+   changes.</font></strike>
+
+Authors' Addresses
+
+   Ian A. Young (editor)
+   Independent
+
+   <strike><font color='red'>EMail:</font></strike>
+
+   <strong><font color='green'>Email:</font></strong> ian@iay.org.uk
+
+   Leif Johansson
+   SUNET
+
+   <strike><font color='red'>EMail:</font></strike>
+
+   <strong><font color='green'>Email:</font></strong> leifj@sunet.se
+
+   Scott Cantor
+   Shibboleth Consortium
+
+   <strike><font color='red'>EMail:</font></strike>
+
+   <strong><font color='green'>Email:</font></strong> cantor.2@osu.edu
+</pre>
+</body></html>

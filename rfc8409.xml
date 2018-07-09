@@ -1,0 +1,861 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+
+<?rfc toc="yes"?>
+<?rfc symrefs="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc compact="yes"?>
+<?rfc subcompact="no" ?>
+
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+]>
+
+<rfc number="8409" ipr="trust200902" submissionType="independent" category="info">
+
+  <front>
+
+    <title abbrev="Entity Category">
+      The Entity Category Security Assertion Markup Language (SAML) Attribute&nbsp;Types
+    </title>
+
+<!-- [rfced] For readability, would you like to update the title as 
+follows or otherwise?
+
+Original:
+The Entity Category SAML Attribute Types
+
+Current:
+The Entity Category Security Assertion Markup Language (SAML) Attribute Types
+
+Perhaps:
+Security Assertion Markup Language (SAML) Attributes for Entity Category 
+-->
+
+    <author initials="I.A." fullname="Ian A. Young" surname="Young" role="editor">
+      <organization>Independent</organization>
+      <address>
+        <email>ian@iay.org.uk</email>
+      </address>
+    </author>
+
+    <author fullname="Leif Johansson" initials="L." surname="Johansson">
+      <organization>SUNET</organization>
+      <address>
+        <email>leifj@sunet.se</email>
+      </address>
+    </author>
+
+    <author fullname="Scott Cantor" initials="S." surname="Cantor">
+      <organization>Shibboleth Consortium</organization>
+      <address>
+        <email>cantor.2@osu.edu</email>
+      </address>
+    </author>
+
+    <date month="June" year="2018"/>
+
+<!-- [rfced] Please insert any keywords (beyond those that appear in 
+the title) for use on https://www.rfc-editor.org/search.
+-->
+
+<keyword>example</keyword>
+
+
+    <abstract>
+
+<!-- [rfced] For clarity, may we update this sentence in 
+the abstract as follows or otherwise?
+
+Original
+   This document describes a SAML entity attribute which can be used to
+   assign category membership semantics to an entity, and a second
+   attribute for use in claiming interoperation with or support for
+   entities in such categories.
+
+Perhaps
+   This document describes two SAML entity attributes: one that can be 
+   used to assign category membership semantics to an entity and another
+   for use in claiming interoperation with or support for
+   entities in such categories.
+
+Or
+   This document describes two SAML attributes: the "entity category
+   attribute", which can be used to assign category membership semantics to an 
+   entity, and the "entity category support attribute", which can be used in 
+   claiming interoperation with or support for entities in such categories.
+-->
+      <t>
+        This document describes a Security Assertion Markup Language (SAML) entity attribute that can be used to
+        assign category membership semantics to an entity and a second attribute
+        for use in claiming interoperation with or support for entities in such categories.
+      </t>
+      <t>
+        This document is a product of the working group process of the
+	Research and Education Federations group (REFEDS).
+      </t>
+    </abstract>
+
+  </front>
+
+  <middle>
+    <section title="Introduction" anchor="introduction">
+      <t>
+        This document describes a SAML attribute referred to here as the
+	"entity category attribute". 
+        Values of this attribute represent entity types
+        or categories. When used with the
+        <xref target="SAML2MetadataAttr">SAML V2.0 Metadata Extension for Entity Attributes</xref>,
+        each such entity category attribute value represents a claim that the entity thus labeled
+        meets the requirements of, and is asserted to be a member of, the indicated category.
+      </t>
+
+      <t>
+        These category membership claims MAY be used by a relying party to provision policy
+        for release of attributes from an identity provider, to influence user interface decisions
+        such as those related to identity provider discovery, or for any other purpose.
+        In general, the intended uses of any claim of membership in a given category will
+        depend on the details of the category's definition and will often be included as
+        part of that definition.
+      </t>
+
+      <t>
+        Entity category attribute values are URIs; therefore, this document does not specify a
+        controlled vocabulary for assigning entity category values.  Category URIs may be defined 
+        by any appropriate authority without any requirement for central registration.  It is anticipated that
+        other specifications may provide management and discovery mechanisms for entity category
+        attribute values.
+      </t>
+
+      <t>
+        This document also describes a SAML attribute referred to here as the
+	"entity category support attribute". This attribute
+        contains URI values that represent claims that an entity supports and/or interoperates with
+        entities in a given category or categories. These values, defined in conjunction with
+        specific entity category values, provide entities in a category with the means to identify
+        peer entities that wish to interact with them in a fashion described by the category specification.
+      </t>
+
+      <t>
+        This document does not specify any values for either the entity category attribute
+        or the entity category support attribute.
+      </t>
+
+      <section title="REFEDS Document Process">
+        <t>
+          The Research and Education Federations group <xref target="REFEDS"/> 
+          is the voice that articulates the mutual needs of research and education
+          identity federations worldwide. It aims to represent the requirements of
+          research and education in the ever-growing space of access and identity
+          management.
+        </t>
+        <t>
+          From time to time, REFEDS
+          will publish a document in the RFC Series.  Such
+          documents will be published as part of the Independent Submission
+          stream <xref target="RFC4844"/>; however, the REFEDS Working Group
+	  sign-off process will
+          have been followed for these documents, as described in
+          the <xref target="REFEDS.agreement">REFEDS Participant's Agreement</xref>.
+        </t>
+        <t>
+          This document is a product of the REFEDS Working Group process.
+        </t>
+      </section>
+
+    </section>
+
+    <section title="Notation and Conventions">
+
+        <t>
+    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+    NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
+    "MAY", and "OPTIONAL" in this document are to be interpreted as
+    described in BCP&nbsp;14 <xref target="RFC2119"/> <xref target="RFC8174"/> 
+    when, and only when, they appear in all capitals, as shown here.
+        </t>
+
+
+    </section>
+
+    <section title="Entity Category Attribute">
+      <section anchor="cat-syntax" title="Syntax">
+        <t>
+          Entity category attribute values MUST be valid URIs. It is
+	  RECOMMENDED that http:-scheme
+          or https:-scheme URIs are used; it is further RECOMMENDED that an
+	  entity category URI
+          resolves to a human-readable document defining the category.
+        </t>
+
+        <t>
+          Authorities defining entity categories MUST produce a specification of the entity
+          category and SHOULD make arrangement for the entity category URI to resolve to the
+          specification in human-readable form. 
+        </t>
+
+        <t>
+          Authorities defining entity categories MAY use versioning of entity category URIs where 
+          appropriate; if versioning is used, each version of the specification of the entity category 
+          SHOULD clearly indicate the latest version of the entity category URI (and hence of the 
+          specification). 
+
+<!-- [rfced]  May we update "in the case when the specification may be updated"
+as follows?
+
+Original
+   The specification SHOULD include a description of
+   how the authority defining the entity category implements governance
+   for the specification in the case when the specification may be
+   updated.
+
+Perhaps
+   The specification SHOULD include a description of
+   how the authority defining the entity category implements governance
+   for the specification if the specification is updated.
+-->
+
+The specification SHOULD include a description of how the authority 
+          defining the entity category implements governance for the specification in the case 
+          when the specification may be updated.
+        </t>
+
+        <t>
+          When used in SAML metadata or protocol elements, the entity category attribute MUST 
+          be encoded as a SAML 2.0 Attribute element with @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri 
+          and @Name http://macedir.org/entity-category.
+        </t>
+
+        <t>
+          A SAML entity is associated with one or more categories by including the
+          Attribute element described here in the entity's metadata through
+	  use of the metadata extension defined in 
+          <xref target="SAML2MetadataAttr"/>. In this extension, the
+          Attribute element is contained within an mdattr:EntityAttributes
+          element directly contained within an md:Extensions element directly
+          contained within the entity's md:EntityDescriptor.
+        </t>
+
+        <t>
+          The meaning of the entity category attribute is not defined by this specification if it
+          appears anywhere else within a metadata instance or within any other XML document.
+        </t>
+
+        <t>
+          If the entity category attribute Attribute element appears more than once in the
+          metadata for an entity, the combined set of associated attribute values SHOULD be
+          interpreted by relying parties as if they all appeared within a single Attribute
+          element.
+        </t>
+      </section>
+
+      <section anchor="cat-semantics" title="Semantics">
+        <t>
+          The presence of the entity category attribute within an entity's entity attributes
+          represents a series of claims (one for each attribute value) that the entity is
+          a member of each named category.  The precise semantics of such a claim depend
+          on the definition of the category itself.
+        </t>
+
+        <t>
+          An entity may be claimed to be a member of more than one category. In this case, the entity
+          is claimed to meet the requirements of each category independently unless otherwise
+          specified by the category definitions themselves.
+        </t>
+
+
+<!-- [rfced]  Would updating these sentences as follows improve readability
+and clarity? 
+
+Original
+   The definition of the concept of a category is intentionally not
+   addressed in this document, in order to leave it as general as
+   possible. 
+...
+   The definition of the concept of "support" for a category is
+   intentionally not addressed in this document, in order to leave it as
+   general as possible.
+
+Perhaps
+   This document intentionally does not define "category", in order to 
+   leave the concept as general as possible.
+...
+   This document intentionally does not define "support" for a category,
+   in order to leave the concept as general as possible.
+-->
+        <t>
+          The definition of the concept of a "category" is intentionally not addressed in this
+          document, in order to leave it as general as possible.  However, to be useful,
+          category definitions SHOULD include the following as appropriate:
+          <list style="symbols">
+            <t>
+              A definition of the authorities who may validly assert
+              membership in the category.  While membership in some categories may be
+              self-asserted informally by an entity's owner, others may need to be
+              validated by third parties such as the entity's home federation or other
+              registrar.
+            </t>
+            <t>
+              A set of criteria by which an entity's membership in the category can be
+              objectively assessed.
+            </t>
+            <t>
+              A definition of the processes by which valid authorities
+              may determine that an entity meets the category's membership criteria.
+            </t>
+            <t>
+              A description of the anticipated uses for category membership by relying parties.
+            </t>
+            <t>
+              A statement indicating the applicability or otherwise of membership
+              of the entity category to different SAML role descriptors and any
+              protocol support restrictions that may be relevant.
+            </t>
+          </list>
+        </t>
+
+        <t>
+          Entity categories SHOULD NOT be used to indicate the certification
+          status of an entity regarding its conformance to the requirements
+          of an identity assurance framework.
+
+
+<!-- [rfced]  We do not see "extension" used in [SAML2IDAssuranceProfile]. Is
+"assurance profiles" or something else intended? Please review and let us
+know if any updates are needed.
+
+Original
+   The [SAML2IDAssuranceProfile]
+   extension SHOULD be used for this purpose.
+-->
+          The extension defined in
+	  <xref target="SAML2IDAssuranceProfile"/> SHOULD be used
+          for this purpose.
+        </t>
+
+        <t>
+          If significant changes are made to a category definition, the new version of
+          the category SHOULD be represented by a different category URI
+          so that the old and new versions can be distinguished by a relying party. It
+          is for this reason that authorities defining entity categories MAY
+          employ some form of versioning for entity category URIs. When versioning is
+          used, each version of the entity category MUST be treated as a separate URI.
+        </t>
+
+
+<!-- [rfced]  Is "over" correct here? Note that this sentence appears twice in
+the document. (We typically see usage of "defined over" as in "defined over" 
+a set or a range.)
+
+Original
+   No ordering relation is defined over entity category value URIs.
+
+Perhaps
+   No ordering relation is defined for entity category value URIs.
+-->
+        <t>
+          No ordering relation is defined over entity category value URIs.
+          Entity category attribute value URIs MUST be treated as opaque strings
+          for the purpose of comparison. In particular, if the specification defining the
+          entity category relies on versioning of the entity category URI, a relying
+          party MUST NOT assume any particular ordering between different versions of
+          the entity category. Any order between versions MUST be spelled out in the
+          specification.
+        </t>
+
+      </section>
+
+      <section title="Entity Category Example">
+        <figure>
+          <artwork><![CDATA[<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+  entityID="https://service.example.com/entity">
+  <md:Extensions>
+    <mdattr:EntityAttributes
+      xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
+      <Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
+        NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+        Name="http://macedir.org/entity-category">
+        <AttributeValue
+          >http://example.org/category/dog</AttributeValue>
+        <AttributeValue>urn:oid:1.3.6.1.4.1.21829</AttributeValue>
+      </Attribute>
+    </mdattr:EntityAttributes>
+  </md:Extensions>
+  ...
+</md:EntityDescriptor>]]></artwork>
+        </figure>
+      </section>
+    </section>
+
+    <section title="Entity Category Support Attribute">
+      <section anchor="sup-syntax" title="Syntax">
+
+
+<!-- [rfced]  The similar sentences below appear in Sections 3.1 and 4.1. 
+One uses "valid URIs" while the other uses "URIs". Please confirm that 
+this is correct.
+
+Section 3.1
+  Entity category attribute values MUST be valid URIs.
+
+Section 4.1
+  Entity category support attribute values MUST be URIs.
+-->
+
+
+        <t>
+          Entity category support attribute values MUST be URIs.  It is RECOMMENDED that
+          http:-scheme or https:-scheme URLs are used; it is further RECOMMENDED that each
+          such value resolves to a human-readable document defining the value's semantics.
+          A given entity category value MAY be associated with multiple support values in
+          order to allow for multiple forms of support, participation, or interoperation
+          with entities in the category. The authority defining the entity category and
+          entity category support values MUST clearly describe the relationship between 
+          (all versions of) the entity category URI and (all versions of) the entity 
+          category support URIs as applicable in the entity category specification.
+        </t>
+
+<!-- [rfced]  We see that http://macedir.org/entity-category redirects to
+https://tools.ietf.org/html/draft-young-entity-category-07. In addition,
+we encountered a "404 Not Found" when trying to open
+http://macedir.org/entity-category-support. Please review and let us know
+how to update.
+
+Original:
+   When used in SAML metadata or protocol elements, the entity category
+   attribute MUST be encoded as a SAML 2.0 Attribute element with
+   @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
+   http://macedir.org/entity-category.
+...
+   The entity category support attribute MUST be encoded as a SAML 2.0
+   Attribute element with @NameFormat
+   urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
+   http://macedir.org/entity-category-support.
+-->
+
+
+<!-- [rfced] Another question about this text: would it make sense
+to write out the meaning rather than use the "@" convention? 
+If so, does the text below convey the intended meaning?
+(Related question: Is "@registrationAuthority attribute" redundant? 
+It appears twice in this document.)
+
+Original:
+   When used in SAML metadata or protocol elements, the entity category
+   attribute MUST be encoded as a SAML 2.0 Attribute element with
+   @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
+   http://macedir.org/entity-category.
+...
+   The entity category support attribute MUST be encoded as a SAML 2.0
+   Attribute element with @NameFormat
+   urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
+   http://macedir.org/entity-category-support.
+...
+   ...corresponding
+   @registrationAuthority attribute as described in
+   [SAML2MetadataRPI] section 2.1.1.
+
+
+Perhaps:
+   When used in SAML metadata or protocol elements, the entity category
+   attribute MUST be encoded as a SAML 2.0 Attribute element with
+   a NameFormat attribute with the value
+   urn:oasis:names:tc:SAML:2.0:attrname-format:uri and a Name attribute 
+   with the value http://macedir.org/entity-category.
+...
+   The entity category support attribute MUST be encoded as a SAML 2.0
+   Attribute element with a NameFormat attribute with the value
+   urn:oasis:names:tc:SAML:2.0:attrname-format:uri and a Name attribute
+   with the value http://macedir.org/entity-category-support.
+...
+   ...corresponding
+   registrationAuthority attribute as described in
+   Section 2.1.1 of [SAML2MetadataRPI].
+-->
+
+        <t>
+          The entity category support attribute MUST be encoded as a SAML 2.0 Attribute
+          element with @NameFormat urn:oasis:names:tc:SAML:2.0:attrname-format:uri and
+          @Name http://macedir.org/entity-category-support.
+        </t>
+
+        <t>
+          Claims that a SAML entity implements support for one or more categories
+          are represented by including the Attribute element described here in the entity's metadata
+          through use of the metadata extension defined in <xref
+	  target="SAML2MetadataAttr"/>. 
+          In this extension,
+          the Attribute element is contained within an mdattr:EntityAttributes
+          element directly contained within an md:Extensions element directly
+          contained within the entity's md:EntityDescriptor.
+        </t>
+
+        <t>
+          The meaning of the entity category support attribute is not defined by this
+          specification if it appears anywhere else within a metadata instance or within
+          any other XML document.
+        </t>
+
+        <t>
+          If the entity category support attribute Attribute element appears more than once in the
+          metadata for an entity, the combined set of associated attribute values SHOULD be
+          interpreted by relying parties as if they all appeared within a single Attribute
+          element.
+        </t>
+      </section>
+
+      <section anchor="sup-semantics" title="Semantics">
+        <t>
+          The presence of the entity category support attribute within an entity's entity
+          attributes represents a series of claims (one for each attribute
+          value) that the entity supports peer entities in a category in a particular
+          fashion. The precise semantics of such a claim depend on the definition of the
+          category support identifier itself.
+          Category support claims will often be defined to be self-asserted.
+        </t>
+
+        <t>
+          An entity may be claimed to support more than one category. In this case, the entity
+          is claimed to meet the support requirements of each category independently unless otherwise
+          specified by the category definitions themselves.
+        </t>
+
+        <t>
+          The definition of the concept of "support" for a category is intentionally not
+          addressed in this document, in order to leave it as general as possible.  It is
+          assumed that entity category definitions MAY define one or more support values
+          signifying particular definitions for "support" by peers as motivated by use
+          cases arising from the definition of the category itself.
+        </t>
+
+        <t>
+          A common case is expected to be the definition of a single support value
+          whose URI is identical to that defined for the category itself.
+        </t>
+
+        <t>
+          If significant changes are made to a category support definition, the new version
+          SHOULD be represented by a different category support URI so that the old and new 
+          versions can be distinguished by a relying party. It is for this reason that 
+          authorities defining entity categories support MAY employ some form of versioning. 
+          When versioning is used, each version of the entity category support
+	  URI MUST be treated 
+          as a separate URI.
+        </t>
+
+<!-- [rfced]  The similar sentences below appear in Sections 3.2 and
+4.2. Should the sentence in Section 4.2 refer to "entity category
+support" rather than "entity category"?
+
+Section 3.2
+   No ordering relation is defined over entity category value URIs.
+
+Section 4.2
+   No ordering relation is defined over entity category URIs.
+-->
+
+        <t>
+          No ordering relation is defined over entity category URIs.
+          Entity category attribute support value URIs MUST be treated as opaque strings
+          for the purpose of comparison. In particular, if the specification defining the
+          entity category support values relies on versioning, a relying
+          party MUST NOT assume any particular ordering between different versions of
+          the entity category support URI. Any order between versions MUST be spelled 
+          out in the specification.
+        </t>
+
+      </section>
+
+      <section title="Entity Category Support Example">
+        <figure>
+          <artwork><![CDATA[<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+  entityID="https://idp.example.edu/entity">
+  <md:Extensions>
+    <mdattr:EntityAttributes
+      xmlns:mdattr="urn:oasis:names:tc:SAML:metadata:attribute">
+      <Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion"
+        NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri"
+        Name="http://macedir.org/entity-category-support">
+        <AttributeValue
+          >http://example.org/category/dog/basic</AttributeValue>
+        <AttributeValue
+          >http://example.org/category/dog/advanced</AttributeValue>
+        <AttributeValue>urn:oid:1.3.6.1.4.1.21829</AttributeValue>
+      </Attribute>
+    </mdattr:EntityAttributes>
+  </md:Extensions>
+  ...
+</md:EntityDescriptor>]]></artwork>
+        </figure>
+      </section>
+    </section>
+
+    <section anchor="IANA" title="IANA Considerations">
+<t>This document has no IANA actions.
+</t>
+    </section>
+
+    <section anchor="Security" title="Security Considerations">
+      <t>
+        The presence of the entity category attribute within an entity's entity attributes
+        represents a series of claims (one for each attribute value) that the entity is
+        a member of the named categories.  Before accepting and acting on such claims, any
+        relying party needs to establish, at a level of assurance sufficient for the
+        intended use, a chain of trust concluding that the claim is justified.
+      </t>
+
+      <t>
+        Some of the elements in such a chain of trust might include:
+        <list style="symbols">
+          <t>
+            The integrity of the metadata delivered to the relying party, 
+	    for
+	    example, as
+            assured by a digital signature.
+          </t>
+          <t>
+            If the entity category attribute is carried within a signed assertion, the assertion
+            itself must be evaluated.
+          </t>
+          <t>
+            The policies and procedures of the immediate source of the metadata,
+            in particular, any procedures the immediate source has with regard to aggregation
+            of metadata from other sources.
+          </t>
+          <t>
+            The policies and procedures implemented by agents along the publication path from
+            the original metadata registrar. This may be determined by examination of
+            the published procedures of each agent in turn or may be simplified if the
+            entity metadata includes publication path metadata in mdrpi:PublicationPath
+            elements as described in Section 2.3.1 of 
+            <xref target="SAML2MetadataRPI"/>.
+          </t>
+          <t>
+            The policies and procedures implemented by the original metadata registrar.
+            The registrar's identity may be known implicitly or may be determined
+            from the entity metadata if it includes an mdrpi:RegistrationInfo element
+            and corresponding @registrationAuthority attribute as described in
+	    Section 2.1.1 of 
+            <xref target="SAML2MetadataRPI"/>.
+          </t>
+          <t>
+            The definition of the category itself, in particular, any
+	    statements it makes about
+            whether membership of the category may be self-asserted or may
+	    only be asserted
+            by particular authorities.
+          </t>
+        </list>
+      </t>
+      <t>
+        Although entity category support attribute values will often be defined as self-asserted
+        claims by the containing entity, the provenance of the metadata remains
+        relevant to a relying party's decision to accept a claim of support as legitimate,
+        and the specific definition of a support claim will influence the assurance
+        required to act on it.
+      </t>
+
+      <t>
+        The conclusion that a claim of category membership or support is justified and
+        should be acted upon may require a determination of the origin of the claim.
+        This may not be necessary if the immediate source of the metadata is trusted to such
+        an extent that the trust calculation is essentially delegated to it.
+      </t>
+
+      <t>
+        In many cases, a claim will be included in an entity's metadata by the
+        original metadata registrar on behalf of the entity's owner, and the mdrpi:RegistrationInfo
+        element's @registrationAuthority attribute is available to carry the registrar's identity.
+        However, any agent that is part of the chain of custody between the original registrar and the final
+        relying party may have added, removed, or transformed claims according to local policy.
+        For example, an agent charged with redistributing metadata may remove claims it regards
+        as untrustworthy or add others that were not already present if they have value to
+        its intended audience.
+      </t>
+
+    </section>
+  </middle>
+
+  <back>
+    <references title="Normative References">
+
+<?rfc include="reference.RFC.2119"?>
+<?rfc include="reference.RFC.8174"?>
+
+
+<!-- [rfced]  Please note that we updated the URLs for the following
+references to point directly to the document being referenced.
+Please let us know if you prefer otherwise.
+
+Original:
+   [SAML2MetadataAttr]
+              Cantor, S., Ed., "SAML V2.0 Metadata Extension for Entity
+              Attributes", August 2009,
+              <http://wiki.oasis-open.org/security/SAML2MetadataAttr>.
+
+   [SAML2MetadataRPI]
+              La Joie, C., Ed., "SAML V2.0 Metadata Extensions for
+              Registration and Publication Information Version 1.0",
+              April 2012,
+              <http://wiki.oasis-open.org/security/SAML2MetadataDRI>.
+
+   [SAML2IDAssuranceProfile]
+              Morgan, RL., Ed., Madsen, P., Ed., and S. Cantor, Ed.,
+              "SAML V2.0 Identity Assurance Profiles Version 1.0",
+              November 2010, <https://wiki.oasis-open.org/security/
+              SAML2IDAssuranceProfile>.
+
+Current:
+(Side note: the placement of line breaks in the URLs will be 
+improved before final publication.)
+
+   [SAML2MetadataAttr]
+              Cantor, S., Ed., "SAML V2.0 Metadata Extension for Entity
+              Attributes Version 1.0", August 2009, <http://docs.oasis-
+              open.org/security/saml/Post2.0/
+              sstc-metadata-attr-cs-01.html>.
+
+   [SAML2MetadataRPI]
+              La Joie, C., Ed., "SAML V2.0 Metadata Extensions for
+              Registration and Publication Information Version 1.0",
+              April 2012, <http://docs.oasis-
+              open.org/security/saml/Post2.0/saml-metadata-
+              rpi/v1.0/cs01/saml-metadata-rpi-v1.0-cs01.html>.
+
+   [SAML2IDAssuranceProfile]
+              Morgan, RL., Ed., Madsen, P., Ed., and S. Cantor, Ed.,
+              "SAML V2.0 Identity Assurance Profiles Version 1.0",
+              November 2010, <http://docs.oasis-
+              open.org/security/saml/Post2.0/
+              sstc-saml-assurance-profile-cs-01.html>.
+-->
+      <reference anchor="SAML2MetadataAttr"
+        target="http://docs.oasis-open.org/security/saml/Post2.0/sstc-metadata-attr-cs-01.html">
+        <front>
+          <title>SAML V2.0 Metadata Extension for Entity Attributes Version 1.0</title>
+          <author fullname="Scott Cantor" role="editor" initials="S." surname="Cantor"/>
+          <date day="3" month="August" year="2009"/>
+        </front>
+      </reference>
+
+      <reference anchor="SAML2MetadataRPI"
+        target="http://docs.oasis-open.org/security/saml/Post2.0/saml-metadata-rpi/v1.0/cs01/saml-metadata-rpi-v1.0-cs01.html">
+        <front>
+          <title>SAML V2.0 Metadata Extensions for Registration and Publication Information Version 1.0</title>
+          <author surname="La Joie" initials="C." role="editor" fullname="Chad La Joie"/>
+          <date day="3" month="April" year="2012"/>
+        </front>
+      </reference>
+
+    </references>
+
+    <references title="Informative References">
+
+<?rfc include="reference.RFC.4844"?>
+
+
+      <reference anchor="REFEDS" target="http://www.refeds.org/">
+        <front>
+          <title>Research and Education Federations Group (REFEDS)</title>
+          <author>
+            <organization></organization>
+          </author>
+          <date/>
+        </front>
+      </reference>
+
+      <reference anchor="REFEDS.agreement" target="https://refeds.org/about/refeds-participants-agreement">
+        <front>
+          <title>REFEDS Participant's Agreement</title>
+          <author>
+            <organization>Research and Education Federations</organization>
+          </author>
+          <date/>
+        </front>
+      </reference>
+
+      <reference anchor="SAML2IDAssuranceProfile"
+        target="http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-assurance-profile-cs-01.html">
+        <front>
+          <title>SAML V2.0 Identity Assurance Profiles Version 1.0</title>
+          <author fullname='RL "Bob" Morgan' role="editor" initials="RL" surname="Morgan"/>
+          <author fullname="Paul Madsen" role="editor" initials="P" surname="Madsen"/>
+          <author fullname="Scott Cantor" role="editor" initials="S." surname="Cantor"/>
+          <date day="5" month="November" year="2010"/>
+        </front>
+      </reference>
+
+    </references>
+
+    <section anchor="Acknowledgements" title="Acknowledgements" numbered="no">
+      <t>
+        This work has been a collaborative effort within the REFEDS and MACE-Dir
+        communities. Special thanks to the following individuals (in no particular order):
+        <list style="symbols">
+          <t>RL 'Bob' Morgan</t>
+
+          <t>Ken Klingenstein</t>
+
+          <t>Keith Hazelton</t>
+
+          <t>Steven Olshansky</t>
+
+          <t>Mikael Linden</t>
+
+          <t>Nicole Harris</t>
+
+          <t>Tom Scavo</t>
+        </list>
+      </t>
+    </section>
+
+
+<!-- [rfced]  Terminology
+
+a) Should the expansion for REFEDS include the word "group"? In other words,
+should the expansion be "Research and Education Federations (REFEDS)" or
+as "Research and Education Federations group (REFEDS)"? We see it appears
+both ways in this document and on https://refeds.org/ (main page vs. 
+Participant's Agreement).
+
+
+b) We see the following forms used in the document. Should these be
+consistent? If so, please let us know which form is preferred. Alternately,
+would it improve readability to recast these to read "value of the entity
+category attribute" and "value of the entity category support attribute?
+
+entity category value vs. entity category attribute value
+
+entity category support value vs. entity category support attribute value
+
+
+c) We see the following forms used for URIs in this document. Should these be
+consistent? If so, please let us know which form is preferred.
+
+entity category URI 
+category URI 
+entity category value URI 
+entity category attribute value URI
+
+entity category support URI 
+category support URI 
+attribute support value URI
+entity category attribute support value URI
+
+
+d) We find "entity category attribute Attribute element" and "entity category
+support attribute Attribute element" difficult to read in these sentences. How
+can we recast these for clarity?
+
+Original
+   If the entity category attribute Attribute element appears more than
+   once in the metadata for an entity, the combined set of associated
+   attribute values SHOULD be interpreted by relying parties as if they
+   all appeared within a single Attribute element.
+...
+   If the entity category support attribute Attribute element appears
+   more than once in the metadata for an entity, the combined set of
+   associated attribute values SHOULD be interpreted by relying parties
+   as if they all appeared within a single Attribute element.
+-->
+
+  </back>
+</rfc>
