@@ -1,31 +1,21 @@
 # Entity Category Specification
 
-This is the working area for the draft Entity Category specification.
-The main directory contains the editor's working copy of the draft in its XML
+This is the working area for the Entity Category specification.
+The main directory contains the editor's working copy in its XML
 and plain text forms.
 
-The current IETF process status for this document can be viewed at
-its [tracker page](https://datatracker.ietf.org/doc/draft-young-entity-category/).
-
-The editor's working copy may be fresher, but less stable, than the most
-recent formally submitted Internet Draft.
+The specification is no longer an Internet-Draft; instead, it has moved to the
+[AUTH48](https://www.rfc-editor.org/pubprocess/auth48/) state prior
+to becoming RFC 8409. We are working on resolving the RFC Editor's final
+issues for the document.
 
 Prior versions submitted as Internet Drafts, and the MACE-Dir base document,
 are also archived in the `history` directory here for quick comparison between versions.
 
-## Contributing
-
-This document is being standardised within the Research and Education Federations
-(REFEDS) Working Group process, as described in the
-[REFEDS Participant's Agreement](https://refeds.org/about/refeds-participants-agreement).
-
-Discussion of the current draft will normally take place on the REFEDS mailing list.
-
 ## Background
 
 The base document for the current specification was published at <http://macedir.org>.
-The present effort aims to republish that specification as an informational RFC within
-the REFEDS stream.
+The present effort aims to republish that specification as an informational RFC.
 
 ## Building the Documents
 
@@ -35,6 +25,5 @@ The repository always includes that form plus `.txt` versions rendered from the
 XML.
 
 I'm using the included `Makefile` to build the HTML and text forms of the
-document.  This requires a locally installed copy of version 2.x of the
-[`xml2rfc` tool](https://pypi.python.org/pypi/xml2rfc/).  An
-[online version](http://xml.resource.org) of `xml2rfc` is also available.
+document.  This requires a locally installed copy of version 2.9.x of the
+[`xml2rfc` tool](https://pypi.python.org/pypi/xml2rfc/).
