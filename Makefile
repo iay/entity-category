@@ -1,4 +1,4 @@
-all: draft-young-entity-category.txt draft-young-entity-category.html
+all: rfc8409.txt rfc8409.html
 
 %.txt: %.xml
 	xml2rfc $< --text -o $@
