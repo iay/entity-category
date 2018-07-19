@@ -55,9 +55,11 @@ Security Assertion Markup Language (SAML) Attributes for Entity Category
 
 <!-- [rfced] Please insert any keywords (beyond those that appear in
 the title) for use on https://www.rfc-editor.org/search.
+
+  [2] RESOLVED: replace "example" keyword with "REFEDS"
 -->
 
-<keyword>example</keyword>
+    <keyword>REFEDS</keyword>
 
 
     <abstract>
