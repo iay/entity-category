@@ -10,7 +10,7 @@ Category: Informational                                     L. Johansson
 ISSN: 2070-1721                                                    SUNET
                                                                S. Cantor
                                                    Shibboleth Consortium
-                                                               June 2018
+                                                               July 2018
 
 
      The Entity Category Security Assertion Markup Language (SAML)
@@ -57,7 +57,7 @@ Copyright Notice
 
 Young, et al.                 Informational                     [Page 1]
 
-RFC 8409                     Entity Category                   June 2018
+RFC 8409                     Entity Category                   July 2018
 
 
    carefully, as they describe your rights and restrictions with respect
@@ -113,7 +113,7 @@ Table of Contents
 
 Young, et al.                 Informational                     [Page 2]
 
-RFC 8409                     Entity Category                   June 2018
+RFC 8409                     Entity Category                   July 2018
 
 
    This document also describes a SAML attribute referred to here as the
@@ -169,7 +169,7 @@ RFC 8409                     Entity Category                   June 2018
 
 Young, et al.                 Informational                     [Page 3]
 
-RFC 8409                     Entity Category                   June 2018
+RFC 8409                     Entity Category                   July 2018
 
 
    Authorities defining entity categories MAY use versioning of entity
@@ -225,7 +225,7 @@ RFC 8409                     Entity Category                   June 2018
 
 Young, et al.                 Informational                     [Page 4]
 
-RFC 8409                     Entity Category                   June 2018
+RFC 8409                     Entity Category                   July 2018
 
 
    o  A definition of the authorities who may validly assert membership
@@ -281,7 +281,7 @@ RFC 8409                     Entity Category                   June 2018
 
 Young, et al.                 Informational                     [Page 5]
 
-RFC 8409                     Entity Category                   June 2018
+RFC 8409                     Entity Category                   July 2018
 
 
    <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
@@ -337,7 +337,7 @@ RFC 8409                     Entity Category                   June 2018
 
 Young, et al.                 Informational                     [Page 6]
 
-RFC 8409                     Entity Category                   June 2018
+RFC 8409                     Entity Category                   July 2018
 
 
    The meaning of the entity category support attribute is not defined
@@ -393,7 +393,7 @@ RFC 8409                     Entity Category                   June 2018
 
 Young, et al.                 Informational                     [Page 7]
 
-RFC 8409                     Entity Category                   June 2018
+RFC 8409                     Entity Category                   July 2018
 
 
    between different versions of the entity category support URI.  Any
@@ -449,7 +449,7 @@ RFC 8409                     Entity Category                   June 2018
 
 Young, et al.                 Informational                     [Page 8]
 
-RFC 8409                     Entity Category                   June 2018
+RFC 8409                     Entity Category                   July 2018
 
 
    o  The policies and procedures implemented by agents along the
@@ -505,7 +505,7 @@ RFC 8409                     Entity Category                   June 2018
 
 Young, et al.                 Informational                     [Page 9]
 
-RFC 8409                     Entity Category                   June 2018
+RFC 8409                     Entity Category                   July 2018
 
 
 7.1.  Normative References
@@ -561,7 +561,7 @@ RFC 8409                     Entity Category                   June 2018
 
 Young, et al.                 Informational                    [Page 10]
 
-RFC 8409                     Entity Category                   June 2018
+RFC 8409                     Entity Category                   July 2018
 
 
 Acknowledgements
