@@ -86,11 +86,14 @@ Or
    attribute", which can be used to assign category membership semantics to an
    entity, and the "entity category support attribute", which can be used in
    claiming interoperation with or support for entities in such categories.
+
+[3] RESOLVED: accept "perhaps" variant
 -->
       <t>
-        This document describes a Security Assertion Markup Language (SAML) entity attribute that can be used to
-        assign category membership semantics to an entity and a second attribute
-        for use in claiming interoperation with or support for entities in such categories.
+        This document describes two SAML entity attributes: one that can be
+        used to assign category membership semantics to an entity and another
+        for use in claiming interoperation with or support for
+        entities in such categories.
       </t>
       <t>
         This document is a product of the working group process of the

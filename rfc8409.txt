@@ -18,10 +18,10 @@ ISSN: 2070-1721                                                    SUNET
 
 Abstract
 
-   This document describes a Security Assertion Markup Language (SAML)
-   entity attribute that can be used to assign category membership
-   semantics to an entity and a second attribute for use in claiming
-   interoperation with or support for entities in such categories.
+   This document describes two SAML entity attributes: one that can be
+   used to assign category membership semantics to an entity and another
+   for use in claiming interoperation with or support for entities in
+   such categories.
 
    This document is a product of the working group process of the
    Research and Education FEDerations (REFEDS) group.
