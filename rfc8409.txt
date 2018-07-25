@@ -261,7 +261,7 @@ RFC 8409                     Entity Category                   July 2018
    category URIs.  When versioning is used, each version of the entity
    category MUST be treated as a separate URI.
 
-   No ordering relation is defined over entity category value URIs.
+   No ordering relation is defined for entity category value URIs.
    Entity category attribute value URIs MUST be treated as opaque
    strings for the purpose of comparison.  In particular, if the
    specification defining the entity category relies on versioning of

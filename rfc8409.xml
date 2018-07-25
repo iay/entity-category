@@ -367,9 +367,12 @@ Original
 
 Perhaps
    No ordering relation is defined for entity category value URIs.
+
+[7] RESOLVED: we did in fact intend "over" in the mathematical sense, but
+    nevertheless think that your proposal is clearer.
 -->
         <t>
-          No ordering relation is defined over entity category value URIs.
+          No ordering relation is defined for entity category value URIs.
           Entity category attribute value URIs MUST be treated as opaque strings
           for the purpose of comparison. In particular, if the specification defining the
           entity category relies on versioning of the entity category URI, a relying
