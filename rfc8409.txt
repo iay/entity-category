@@ -24,7 +24,7 @@ Abstract
    interoperation with or support for entities in such categories.
 
    This document is a product of the working group process of the
-   Research and Education Federations group (REFEDS).
+   Research and Education FEDerations (REFEDS) group.
 
 Status of This Memo
 
@@ -130,7 +130,7 @@ RFC 8409                     Entity Category                   July 2018
 
 1.1.  REFEDS Document Process
 
-   The Research and Education Federations group [REFEDS] is the voice
+   The Research and Education FEDerations [REFEDS] group is the voice
    that articulates the mutual needs of research and education identity
    federations worldwide.  It aims to represent the requirements of
    research and education in the ever-growing space of access and
@@ -534,7 +534,7 @@ RFC 8409                     Entity Category                   July 2018
 
 7.2.  Informative References
 
-   [REFEDS]   "Research and Education Federations Group (REFEDS)",
+   [REFEDS]   "Research and Education FEDerations (REFEDS) Group",
               <http://www.refeds.org/>.
 
    [REFEDS.agreement]

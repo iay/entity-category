@@ -92,7 +92,7 @@ Or
       </t>
       <t>
         This document is a product of the working group process of the
-	Research and Education Federations group (REFEDS).
+	      Research and Education FEDerations (REFEDS) group.
       </t>
     </abstract>
 
@@ -143,7 +143,7 @@ Or
 
       <section title="REFEDS Document Process">
         <t>
-          The Research and Education Federations group <xref target="REFEDS"/>
+          The Research and Education FEDerations <xref target="REFEDS"/> group
           is the voice that articulates the mutual needs of research and education
           identity federations worldwide. It aims to represent the requirements of
           research and education in the ever-growing space of access and identity
@@ -759,7 +759,7 @@ improved before final publication.)
 
       <reference anchor="REFEDS" target="http://www.refeds.org/">
         <front>
-          <title>Research and Education Federations Group (REFEDS)</title>
+          <title>Research and Education FEDerations (REFEDS) Group</title>
           <author>
             <organization></organization>
           </author>
@@ -821,6 +821,8 @@ as "Research and Education Federations group (REFEDS)"? We see it appears
 both ways in this document and on https://refeds.org/ (main page vs.
 Participant's Agreement).
 
+[13a] RESOLVED: after consultation with Nicole Harris at REFEDS, we have changed
+the text to be "Research and Education FEDerations (REFEDS) group" throughout.
 
 b) We see the following forms used in the document. Should these be
 consistent? If so, please let us know which form is preferred. Alternately,
