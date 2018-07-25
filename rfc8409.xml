@@ -218,11 +218,13 @@ Perhaps
    The specification SHOULD include a description of
    how the authority defining the entity category implements governance
    for the specification if the specification is updated.
+
+[4] RESOLVED: accept "perhaps" variant
 -->
 
-The specification SHOULD include a description of how the authority
-          defining the entity category implements governance for the specification in the case
-          when the specification may be updated.
+          The specification SHOULD include a description of
+          how the authority defining the entity category implements governance
+          for the specification if the specification is updated.
         </t>
 
         <t>
