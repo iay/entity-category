@@ -215,10 +215,10 @@ RFC 8409                     Entity Category                   July 2018
    category independently unless otherwise specified by the category
    definitions themselves.
 
-   The definition of the concept of a "category" is intentionally not
-   addressed in this document, in order to leave it as general as
-   possible.  However, to be useful, category definitions SHOULD include
-   the following as appropriate:
+   This document intentionally does not define "category", in order to
+   leave the concept as general as possible.  However, to be useful,
+   category definitions SHOULD include the following as appropriate:
+
 
 
 
@@ -364,12 +364,12 @@ RFC 8409                     Entity Category                   July 2018
    category independently unless otherwise specified by the category
    definitions themselves.
 
-   The definition of the concept of "support" for a category is
-   intentionally not addressed in this document, in order to leave it as
-   general as possible.  It is assumed that entity category definitions
-   MAY define one or more support values signifying particular
-   definitions for "support" by peers as motivated by use cases arising
-   from the definition of the category itself.
+   This document intentionally does not define "support" for a category,
+   in order to leave the concept as general as possible.  It is assumed
+   that entity category definitions MAY define one or more support
+   values signifying particular definitions for "support" by peers as
+   motivated by use cases arising from the definition of the category
+   itself.
 
    A common case is expected to be the definition of a single support
    value whose URI is identical to that defined for the category itself.

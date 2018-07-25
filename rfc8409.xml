@@ -289,10 +289,13 @@ Perhaps
 ...
    This document intentionally does not define "support" for a category,
    in order to leave the concept as general as possible.
+
+[5] RESOLVED: accept "perhaps" variant
 -->
         <t>
-          The definition of the concept of a "category" is intentionally not addressed in this
-          document, in order to leave it as general as possible.  However, to be useful,
+          This document intentionally does not define "category", in order to
+          leave the concept as general as possible.
+          However, to be useful,
           category definitions SHOULD include the following as appropriate:
           <list style="symbols">
             <t>
@@ -528,8 +531,9 @@ Perhaps:
         </t>
 
         <t>
-          The definition of the concept of "support" for a category is intentionally not
-          addressed in this document, in order to leave it as general as possible.  It is
+          This document intentionally does not define "support" for a category,
+          in order to leave the concept as general as possible.
+          It is
           assumed that entity category definitions MAY define one or more support values
           signifying particular definitions for "support" by peers as motivated by use
           cases arising from the definition of the category itself.
