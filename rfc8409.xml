@@ -180,6 +180,10 @@ Or
     when, and only when, they appear in all capitals, as shown here.
         </t>
 
+        <t>
+          The notation "@example" is used as a shorthand for an XML attribute
+          with attribute name "example".
+        </t>
 
     </section>
 
@@ -492,6 +496,17 @@ Perhaps:
    ...corresponding
    registrationAuthority attribute as described in
    Section 2.1.1 of [SAML2MetadataRPI].
+
+[10] RESOLVED: we'd prefer to retain the @name notation (which derives from
+    XPath and we assume would be familiar to readers) because we feel that using
+    it in these cases reduces confusion caused by the many different senses in
+    which we are forced to use "attribute". We feel the main issue is that
+    we don't reference XPath explicitly. To remedy this, we have added a
+    paragraph to the "Notation and Conventions" section above explaining the
+    notation. We don't think an explicit reference to XPath is required here.
+
+    On the "related question", we agree that the word "attribute" is indeed
+    redundant there, and have struck it from both places it appears.
 -->
 
         <t>
@@ -656,7 +671,7 @@ Section 4.2
             The policies and procedures implemented by the original metadata registrar.
             The registrar's identity may be known implicitly or may be determined
             from the entity metadata if it includes an mdrpi:RegistrationInfo element
-            and corresponding @registrationAuthority attribute as described in
+            and corresponding @registrationAuthority as described in
 	    Section 2.1.1 of
             <xref target="SAML2MetadataRPI"/>.
           </t>
@@ -687,7 +702,7 @@ Section 4.2
       <t>
         In many cases, a claim will be included in an entity's metadata by the
         original metadata registrar on behalf of the entity's owner, and the mdrpi:RegistrationInfo
-        element's @registrationAuthority attribute is available to carry the registrar's identity.
+        element's @registrationAuthority is available to carry the registrar's identity.
         However, any agent that is part of the chain of custody between the original registrar and the final
         relying party may have added, removed, or transformed claims according to local policy.
         For example, an agent charged with redistributing metadata may remove claims it regards

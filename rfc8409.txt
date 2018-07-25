@@ -71,7 +71,7 @@ Table of Contents
    3.  Entity Category Attribute . . . . . . . . . . . . . . . . . .   3
      3.1.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . .   3
      3.2.  Semantics . . . . . . . . . . . . . . . . . . . . . . . .   4
-     3.3.  Entity Category Example . . . . . . . . . . . . . . . . .   5
+     3.3.  Entity Category Example . . . . . . . . . . . . . . . . .   6
    4.  Entity Category Support Attribute . . . . . . . . . . . . . .   6
      4.1.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . .   6
      4.2.  Semantics . . . . . . . . . . . . . . . . . . . . . . . .   7
@@ -152,6 +152,9 @@ RFC 8409                     Entity Category                   July 2018
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
+   The notation "@example" is used as a shorthand for an XML attribute
+   with attribute name "example".
+
 3.  Entity Category Attribute
 
 3.1.  Syntax
@@ -161,9 +164,6 @@ RFC 8409                     Entity Category                   July 2018
    RECOMMENDED that an entity category URI resolves to a human-readable
    document defining the category.
 
-   Authorities defining entity categories MUST produce a specification
-   of the entity category and SHOULD make arrangement for the entity
-   category URI to resolve to the specification in human-readable form.
 
 
 
@@ -171,6 +171,10 @@ Young, et al.                 Informational                     [Page 3]
 
 RFC 8409                     Entity Category                   July 2018
 
+
+   Authorities defining entity categories MUST produce a specification
+   of the entity category and SHOULD make arrangement for the entity
+   category URI to resolve to the specification in human-readable form.
 
    Authorities defining entity categories MAY use versioning of entity
    category URIs where appropriate; if versioning is used, each version
@@ -215,10 +219,6 @@ RFC 8409                     Entity Category                   July 2018
    category independently unless otherwise specified by the category
    definitions themselves.
 
-   This document intentionally does not define "category", in order to
-   leave the concept as general as possible.  However, to be useful,
-   category definitions SHOULD include the following as appropriate:
-
 
 
 
@@ -227,6 +227,10 @@ Young, et al.                 Informational                     [Page 4]
 
 RFC 8409                     Entity Category                   July 2018
 
+
+   This document intentionally does not define "category", in order to
+   leave the concept as general as possible.  However, to be useful,
+   category definitions SHOULD include the following as appropriate:
 
    o  A definition of the authorities who may validly assert membership
       in the category.  While membership in some categories may be self-
@@ -270,10 +274,6 @@ RFC 8409                     Entity Category                   July 2018
    category.  Any order between versions MUST be spelled out in the
    specification.
 
-3.3.  Entity Category Example
-
-
-
 
 
 
@@ -283,6 +283,8 @@ Young, et al.                 Informational                     [Page 5]
 
 RFC 8409                     Entity Category                   July 2018
 
+
+3.3.  Entity Category Example
 
    <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
      entityID="https://service.example.com/entity">
@@ -329,8 +331,6 @@ RFC 8409                     Entity Category                   July 2018
    Attribute element is contained within an mdattr:EntityAttributes
    element directly contained within an md:Extensions element directly
    contained within the entity's md:EntityDescriptor.
-
-
 
 
 
@@ -463,7 +463,7 @@ RFC 8409                     Entity Category                   July 2018
       registrar.  The registrar's identity may be known implicitly or
       may be determined from the entity metadata if it includes an
       mdrpi:RegistrationInfo element and corresponding
-      @registrationAuthority attribute as described in Section 2.1.1 of
+      @registrationAuthority as described in Section 2.1.1 of
       [SAML2MetadataRPI].
 
    o  The definition of the category itself, in particular, any
@@ -486,10 +486,10 @@ RFC 8409                     Entity Category                   July 2018
 
    In many cases, a claim will be included in an entity's metadata by
    the original metadata registrar on behalf of the entity's owner, and
-   the mdrpi:RegistrationInfo element's @registrationAuthority attribute
-   is available to carry the registrar's identity.  However, any agent
-   that is part of the chain of custody between the original registrar
-   and the final relying party may have added, removed, or transformed
+   the mdrpi:RegistrationInfo element's @registrationAuthority is
+   available to carry the registrar's identity.  However, any agent that
+   is part of the chain of custody between the original registrar and
+   the final relying party may have added, removed, or transformed
    claims according to local policy.  For example, an agent charged with
    redistributing metadata may remove claims it regards as untrustworthy
    or add others that were not already present if they have value to its
