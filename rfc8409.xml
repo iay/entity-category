@@ -337,8 +337,13 @@ know if any updates are needed.
 Original
    The [SAML2IDAssuranceProfile]
    extension SHOULD be used for this purpose.
+
+[6] RESOLVED: "extension" in this sense is a term that we assume to be
+    familiar to our readers (see, e.g., the "Related Work" section in the
+    referenced specification). To help to clarify that we intend the SAML
+    usage, we have changed "extension" to "SAML extension" below.
 -->
-          The extension defined in
+          The SAML extension defined in
 	  <xref target="SAML2IDAssuranceProfile"/> SHOULD be used
           for this purpose.
         </t>

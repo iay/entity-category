@@ -250,7 +250,7 @@ RFC 8409                     Entity Category                   July 2018
 
    Entity categories SHOULD NOT be used to indicate the certification
    status of an entity regarding its conformance to the requirements of
-   an identity assurance framework.  The extension defined in
+   an identity assurance framework.  The SAML extension defined in
    [SAML2IDAssuranceProfile] SHOULD be used for this purpose.
 
    If significant changes are made to a category definition, the new
