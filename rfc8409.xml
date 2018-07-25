@@ -186,7 +186,7 @@ Or
     <section title="Entity Category Attribute">
       <section anchor="cat-syntax" title="Syntax">
         <t>
-          Entity category attribute values MUST be valid URIs. It is
+          Entity category attribute values MUST be URIs. It is
 	  RECOMMENDED that http:-scheme
           or https:-scheme URIs are used; it is further RECOMMENDED that an
 	  entity category URI
@@ -418,6 +418,9 @@ Section 3.1
 
 Section 4.1
   Entity category support attribute values MUST be URIs.
+
+[8] RESOLVED: thanks for spotting this one. "valid" is redundant here, so we
+    have struck it from its appearance in Section 3.1 above.
 -->
 
 

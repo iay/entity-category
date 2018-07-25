@@ -156,10 +156,10 @@ RFC 8409                     Entity Category                   July 2018
 
 3.1.  Syntax
 
-   Entity category attribute values MUST be valid URIs.  It is
-   RECOMMENDED that http:-scheme or https:-scheme URIs are used; it is
-   further RECOMMENDED that an entity category URI resolves to a human-
-   readable document defining the category.
+   Entity category attribute values MUST be URIs.  It is RECOMMENDED
+   that http:-scheme or https:-scheme URIs are used; it is further
+   RECOMMENDED that an entity category URI resolves to a human-readable
+   document defining the category.
 
    Authorities defining entity categories MUST produce a specification
    of the entity category and SHOULD make arrangement for the entity
