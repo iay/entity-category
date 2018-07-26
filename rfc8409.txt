@@ -382,7 +382,7 @@ RFC 8409                     Entity Category                   July 2018
    versioning is used, each version of the entity category support URI
    MUST be treated as a separate URI.
 
-   No ordering relation is defined over entity category support value
+   No ordering relation is defined for entity category support value
    URIs.  Entity category attribute support value URIs MUST be treated
    as opaque strings for the purpose of comparison.  In particular, if
    the specification defining the entity category support values relies

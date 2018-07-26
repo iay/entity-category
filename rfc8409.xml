@@ -594,7 +594,7 @@ Section 4.2
 -->
 
         <t>
-          No ordering relation is defined over entity category support value URIs.
+          No ordering relation is defined for entity category support value URIs.
           Entity category attribute support value URIs MUST be treated as opaque strings
           for the purpose of comparison. In particular, if the specification defining the
           entity category support values relies on versioning, a relying
