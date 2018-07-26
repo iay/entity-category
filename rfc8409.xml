@@ -253,10 +253,10 @@ Perhaps
         </t>
 
         <t>
-          If the entity category attribute Attribute element appears more than once in the
-          metadata for an entity, the combined set of associated attribute values SHOULD be
-          interpreted by relying parties as if they all appeared within a single Attribute
-          element.
+          If the entity category attribute appears more than once in the
+          metadata for an entity, relying parties SHOULD interpret the combined
+          set of associated attribute values as if they all appeared together
+          within a single entity category attribute.
         </t>
       </section>
 
@@ -533,10 +533,10 @@ Perhaps:
         </t>
 
         <t>
-          If the entity category support attribute Attribute element appears more than once in the
-          metadata for an entity, the combined set of associated attribute values SHOULD be
-          interpreted by relying parties as if they all appeared within a single Attribute
-          element.
+          If the entity category support attribute appears more than once in the
+          metadata for an entity, relying parties SHOULD interpret the combined
+          set of associated attribute values as if they all appeared together
+          within a single entity category support attribute.
         </t>
       </section>
 
@@ -901,6 +901,9 @@ Original
    more than once in the metadata for an entity, the combined set of
    associated attribute values SHOULD be interpreted by relying parties
    as if they all appeared within a single Attribute element.
+
+[13d] RESOLVED: we agree that this could be clearer so have reworded both of
+      these paragraphs to avoid things like "attribute Attribute".
 -->
 
   </back>

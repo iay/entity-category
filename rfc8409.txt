@@ -201,10 +201,10 @@ RFC 8409                     Entity Category                   July 2018
    specification if it appears anywhere else within a metadata instance
    or within any other XML document.
 
-   If the entity category attribute Attribute element appears more than
-   once in the metadata for an entity, the combined set of associated
-   attribute values SHOULD be interpreted by relying parties as if they
-   all appeared within a single Attribute element.
+   If the entity category attribute appears more than once in the
+   metadata for an entity, relying parties SHOULD interpret the combined
+   set of associated attribute values as if they all appeared together
+   within a single entity category attribute.
 
 3.2.  Semantics
 
@@ -344,10 +344,10 @@ RFC 8409                     Entity Category                   July 2018
    by this specification if it appears anywhere else within a metadata
    instance or within any other XML document.
 
-   If the entity category support attribute Attribute element appears
-   more than once in the metadata for an entity, the combined set of
-   associated attribute values SHOULD be interpreted by relying parties
-   as if they all appeared within a single Attribute element.
+   If the entity category support attribute appears more than once in
+   the metadata for an entity, relying parties SHOULD interpret the
+   combined set of associated attribute values as if they all appeared
+   together within a single entity category support attribute.
 
 4.2.  Semantics
 
