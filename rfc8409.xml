@@ -456,6 +456,14 @@ Original:
    Attribute element with @NameFormat
    urn:oasis:names:tc:SAML:2.0:attrname-format:uri and @Name
    http://macedir.org/entity-category-support.
+
+[9] RESOLVED: these values must not be changed; to do so would be to invalidate
+the entire installed base of current users of the mechanism described here.
+
+Note that the values are URIs rather than URLs, so that it is not necessary for
+them to resolve to human-readable documents. Nevertheless, we will be working
+to make sure that they do resolve to the final RFC at some point. We don't believe
+that it is necessary for that to be the case to proceed to publication of the RFC.
 -->
 
 
