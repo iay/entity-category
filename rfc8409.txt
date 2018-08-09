@@ -10,7 +10,7 @@ Category: Informational                                     L. Johansson
 ISSN: 2070-1721                                                    SUNET
                                                                S. Cantor
                                                    Shibboleth Consortium
-                                                               July 2018
+                                                             August 2018
 
 
      The Entity Category Security Assertion Markup Language (SAML)
@@ -57,7 +57,7 @@ Copyright Notice
 
 Young, et al.                 Informational                     [Page 1]
 
-RFC 8409                     Entity Category                   July 2018
+RFC 8409                     Entity Category                 August 2018
 
 
    carefully, as they describe your rights and restrictions with respect
@@ -113,7 +113,7 @@ Table of Contents
 
 Young, et al.                 Informational                     [Page 2]
 
-RFC 8409                     Entity Category                   July 2018
+RFC 8409                     Entity Category                 August 2018
 
 
    This document also describes a SAML attribute referred to here as the
@@ -169,7 +169,7 @@ RFC 8409                     Entity Category                   July 2018
 
 Young, et al.                 Informational                     [Page 3]
 
-RFC 8409                     Entity Category                   July 2018
+RFC 8409                     Entity Category                 August 2018
 
 
    It is RECOMMENDED that http:-scheme or https:-scheme URIs are used;
@@ -225,7 +225,7 @@ RFC 8409                     Entity Category                   July 2018
 
 Young, et al.                 Informational                     [Page 4]
 
-RFC 8409                     Entity Category                   July 2018
+RFC 8409                     Entity Category                 August 2018
 
 
    category independently unless otherwise specified by the category
@@ -281,7 +281,7 @@ RFC 8409                     Entity Category                   July 2018
 
 Young, et al.                 Informational                     [Page 5]
 
-RFC 8409                     Entity Category                   July 2018
+RFC 8409                     Entity Category                 August 2018
 
 
 3.3.  Entity Category Example
@@ -337,7 +337,7 @@ RFC 8409                     Entity Category                   July 2018
 
 Young, et al.                 Informational                     [Page 6]
 
-RFC 8409                     Entity Category                   July 2018
+RFC 8409                     Entity Category                 August 2018
 
 
    element directly contained within an md:Extensions element directly
@@ -393,7 +393,7 @@ RFC 8409                     Entity Category                   July 2018
 
 Young, et al.                 Informational                     [Page 7]
 
-RFC 8409                     Entity Category                   July 2018
+RFC 8409                     Entity Category                 August 2018
 
 
    versioning, a relying party MUST NOT assume any particular ordering
@@ -449,7 +449,7 @@ RFC 8409                     Entity Category                   July 2018
 
 Young, et al.                 Informational                     [Page 8]
 
-RFC 8409                     Entity Category                   July 2018
+RFC 8409                     Entity Category                 August 2018
 
 
    o  The policies and procedures of the immediate source of the
@@ -505,7 +505,7 @@ RFC 8409                     Entity Category                   July 2018
 
 Young, et al.                 Informational                     [Page 9]
 
-RFC 8409                     Entity Category                   July 2018
+RFC 8409                     Entity Category                 August 2018
 
 
 7.  References
@@ -561,7 +561,7 @@ RFC 8409                     Entity Category                   July 2018
 
 Young, et al.                 Informational                    [Page 10]
 
-RFC 8409                     Entity Category                   July 2018
+RFC 8409                     Entity Category                 August 2018
 
 
 Acknowledgements
