@@ -317,7 +317,7 @@ RFC 8409                     Entity Category                   July 2018
    A given category URI MAY be associated with multiple category support
    URIs in order to allow for multiple forms of support, participation,
    or interoperation with entities in the category.  The authority
-   defining the entity category and category support URIs MUST clearly
+   defining the category URI and category support URIs MUST clearly
    describe the relationship between (all versions of) the category URI
    and (all versions of) the category support URIs as applicable in the
    entity category specification.
