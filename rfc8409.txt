@@ -160,7 +160,7 @@ RFC 8409                     Entity Category                 August 2018
 3.1.  Syntax
 
    Entity category attribute values MUST be URIs.  Such values are also
-   referred to in this document as category URIs.
+   referred to as "category URIs" in this document.
 
 
 
@@ -308,7 +308,7 @@ RFC 8409                     Entity Category                 August 2018
 4.1.  Syntax
 
    Entity category support attribute values MUST be URIs.  Such values
-   are also referred to in this document as category support URIs.
+   are also referred to as "category support URIs" in this document.
 
    It is RECOMMENDED that http:-scheme or https:-scheme URLs are used;
    it is further RECOMMENDED that each such value resolves to a human-
