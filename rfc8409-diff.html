@@ -102,13 +102,13 @@ Table of Contents
 
 1.  Introduction
 
-   This document describes a SAML <strike><font color='red'>attribute,</font></strike> <strong><font color='green'>attribute</font></strong> referred to here as the
-   "entity category <strike><font color='red'>attribute", values</font></strike> <strong><font color='green'>attribute".  Values</font></strong> of <strike><font color='red'>which</font></strike> <strong><font color='green'>this attribute</font></strong> represent
-   entity types or categories.  When used with the SAML V2.0 Metadata
-   Extension for Entity Attributes <strike><font color='red'>[SAML2MetadataAttr]</font></strike> <strong><font color='green'>[SAML2MetadataAttr],</font></strong> each such entity
-   category attribute value represents a claim that the entity thus <strike><font color='red'>labelled</font></strike>
-   <strong><font color='green'>labeled</font></strong> meets the requirements of, and is asserted to be a member of,
-   the indicated category.
+   This document describes a SAML <strike><font color='red'>attribute, referred to here as</font></strike> <strong><font color='green'>attribute called</font></strong> the "entity category <strike><font color='red'>attribute", values</font></strike>
+   <strong><font color='green'>attribute".  Values</font></strong> of <strike><font color='red'>which</font></strike> <strong><font color='green'>this attribute</font></strong> represent entity types or
+   categories.  When used with the SAML V2.0 Metadata Extension for
+   Entity Attributes <strike><font color='red'>[SAML2MetadataAttr]</font></strike> <strong><font color='green'>[SAML2MetadataAttr],</font></strong> each such entity category
+   attribute value represents a claim that the entity thus <strike><font color='red'>labelled</font></strike> <strong><font color='green'>labeled</font></strong> meets
+   the requirements of, and is asserted to be a member of, the indicated
+   category.
 
    These category membership claims MAY be used by a relying party to
    provision policy for release of attributes from an identity provider,
@@ -127,16 +127,16 @@ Table of Contents
    specifications may provide management and discovery mechanisms for
    entity category attribute values.
 
-   <strike><font color='red'>A second</font></strike>
+   <strike><font color='red'>A second SAML attribute, referred to here as</font></strike>
 
-   <strong><font color='green'>This document also describes a</font></strong> SAML <strike><font color='red'>attribute,</font></strike> <strong><font color='green'>attribute</font></strong> referred to here as the
-   "entity category support <strike><font color='red'>attribute",</font></strike> <strong><font color='green'>attribute".  This attribute</font></strong> contains URI
-   values <strike><font color='red'>which</font></strike> <strong><font color='green'>that</font></strong> represent claims that an entity supports and/or
-   interoperates with entities in a given category or categories.  These
-   values, defined in conjunction with specific entity category
-   <strong><font color='green'>attribute</font></strong> values, provide entities in a category with the means to
-   identify peer entities that wish to interact with them in a fashion
-   described by the category specification.
+   <strong><font color='green'>This document also describes a SAML attribute called</font></strong> the "entity
+   category support <strike><font color='red'>attribute",</font></strike> <strong><font color='green'>attribute".  This attribute</font></strong> contains URI values <strike><font color='red'>which</font></strike> <strong><font color='green'>that</font></strong>
+   represent claims that an entity supports and/or interoperates with
+   entities in a given category or categories.  These values, defined in
+   conjunction with specific entity category <strong><font color='green'>attribute</font></strong> values, provide
+   entities in a category with the means to identify peer entities that
+   wish to interact with them in a fashion described by the category
+   specification.
 
    This document does not specify any values <strike><font color='red'>either</font></strike> for <strong><font color='green'>either</font></strong> the entity
    category attribute or <strike><font color='red'>for</font></strike> the entity category support attribute.
@@ -379,8 +379,9 @@ Table of Contents
    versioning is <strike><font color='red'>used</font></strike> <strong><font color='green'>used,</font></strong> each version of the <strike><font color='red'>entity</font></strike> category support URI MUST be
    treated as a separate URI.
 
-   No ordering relation is defined <strike><font color='red'>over</font></strike> <strong><font color='green'>for</font></strong> entity category <strike><font color='red'>URIs.</font></strike> <strong><font color='green'>support attribute
-   values.</font></strong>  Entity category <strike><font color='red'>attribute</font></strike> support <strike><font color='red'>value URIs</font></strike> <strong><font color='green'>attribute values</font></strong> MUST be treated as
+   No ordering relation is defined <strike><font color='red'>over</font></strike> <strong><font color='green'>for</font></strong> entity category <strike><font color='red'>URIs.  Entity
+   category</font></strike> <strong><font color='green'>support</font></strong> attribute
+   <strong><font color='green'>values.  Entity category</font></strong> support <strike><font color='red'>value URIs</font></strike> <strong><font color='green'>attribute values</font></strong> MUST be treated as
    opaque strings for the purpose of comparison.  In particular, if the
    specification defining the <strike><font color='red'>entity</font></strike> category support <strike><font color='red'>values</font></strike> <strong><font color='green'>URIs</font></strong> relies on
    versioning, a relying party MUST NOT assume any particular ordering

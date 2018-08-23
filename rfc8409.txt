@@ -86,13 +86,13 @@ Table of Contents
 
 1.  Introduction
 
-   This document describes a SAML attribute referred to here as the
-   "entity category attribute".  Values of this attribute represent
-   entity types or categories.  When used with the SAML V2.0 Metadata
-   Extension for Entity Attributes [SAML2MetadataAttr], each such entity
-   category attribute value represents a claim that the entity thus
-   labeled meets the requirements of, and is asserted to be a member of,
-   the indicated category.
+   This document describes a SAML attribute called the "entity category
+   attribute".  Values of this attribute represent entity types or
+   categories.  When used with the SAML V2.0 Metadata Extension for
+   Entity Attributes [SAML2MetadataAttr], each such entity category
+   attribute value represents a claim that the entity thus labeled meets
+   the requirements of, and is asserted to be a member of, the indicated
+   category.
 
    These category membership claims MAY be used by a relying party to
    provision policy for release of attributes from an identity provider,
@@ -116,14 +116,14 @@ Young, et al.                 Informational                     [Page 2]
 RFC 8409                     Entity Category                 August 2018
 
 
-   This document also describes a SAML attribute referred to here as the
-   "entity category support attribute".  This attribute contains URI
-   values that represent claims that an entity supports and/or
-   interoperates with entities in a given category or categories.  These
-   values, defined in conjunction with specific entity category
-   attribute values, provide entities in a category with the means to
-   identify peer entities that wish to interact with them in a fashion
-   described by the category specification.
+   This document also describes a SAML attribute called the "entity
+   category support attribute".  This attribute contains URI values that
+   represent claims that an entity supports and/or interoperates with
+   entities in a given category or categories.  These values, defined in
+   conjunction with specific entity category attribute values, provide
+   entities in a category with the means to identify peer entities that
+   wish to interact with them in a fashion described by the category
+   specification.
 
    This document does not specify any values for either the entity
    category attribute or the entity category support attribute.
