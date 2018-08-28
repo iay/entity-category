@@ -1,16 +1,25 @@
+# RFC 8409 Published
+
+The document developed here has now been published as RFC 8409:
+
+>Young, I., Ed., Johansson, L., and S. Cantor, *The Entity Category Security
+>Assertion Markup Language (SAML) Attribute Types*, RFC&nbsp;8409,
+>DOI&nbsp;10.17487/RFC8409, August&nbsp;2018.
+
+Full details are available at <https://www.rfc-editor.org/info/rfc8409>.
+
+With that publication, this repository is now of only historical interest
+(unless we ever need to develop a new version).
+
 # Entity Category Specification
 
 This is the working area for the Entity Category specification.
 The main directory contains the editor's working copy in its XML
 and plain text forms.
 
-The specification is no longer an Internet-Draft; instead, it has moved to the
-[AUTH48](https://www.rfc-editor.org/pubprocess/auth48/) state prior
-to becoming RFC 8409. We are working on resolving the RFC Editor's final
-issues for the document.
-
-Prior versions submitted as Internet Drafts, and the MACE-Dir base document,
-are also archived in the `history` directory here for quick comparison between versions.
+Prior versions submitted as Internet Drafts, and the MACE-Dir base document, are
+also archived in the `history` directory here for quick comparison between
+versions.
 
 ## Background
 
