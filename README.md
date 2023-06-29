@@ -23,7 +23,8 @@ versions.
 
 ## Background
 
-The base document for the current specification was published at <http://macedir.org>.
+The base document for the current specification was published at
+[http://macedir.org](https://web.archive.org/web/20130919024622/http://macedir.org/draft-macedir-entity-category-00.html).
 The present effort aims to republish that specification as an informational RFC.
 
 ## Building the Documents
